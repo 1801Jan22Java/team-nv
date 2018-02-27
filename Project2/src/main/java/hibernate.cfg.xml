@@ -15,5 +15,7 @@
 		<!-- map domain object classes -->
 		<mapping class="beans.Progress"/>
 		<mapping class="beans.Tag"/>
+		<mapping class="beans.Users"/>
+		<mapping class="beans.Group"/>
 	</session-factory>
 </hibernate-configuration>

@@ -8,12 +8,14 @@ import beans.Tag;
 public interface TagDao {
 	public List<Tag> getAllTags();
 	
-	public List<Progress> getProgressByEmployeeId(String EmploeeId);
+	public List<Tag> getProgressByEmployeeId(String EmploeeId);
 
-	public Progress getProgressById(int id);
+	public Tag getProgressById(int id);
 
-	public void addProgress(Progress p);
+	public void addTag(Tag t);
 	
-	public void deleteProgress(int progressId);
+	public void deleteTag(int tagId);
+	
+	public int changeTag(int tagId, String tagName);
 }
 

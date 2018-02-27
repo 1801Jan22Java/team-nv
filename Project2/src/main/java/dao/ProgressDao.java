@@ -14,4 +14,6 @@ public interface ProgressDao {
 	public void addProgress(Progress p);
 	
 	public void deleteProgress(int progressId);
+	
+	public void changeProgress(int progressId);
 }
