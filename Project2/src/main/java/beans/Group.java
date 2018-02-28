@@ -14,6 +14,7 @@ import javax.persistence.*;
 import beans.*;
 
 @Entity
+<<<<<<< HEAD
 @Table(name = "GROUP_TABLE")
 // GROUP IS A KEYWORD
 public class Group {
@@ -28,6 +29,13 @@ public class Group {
 
 
 	public Group() {
+=======
+@Table(name = "GROUPTable")
+// GROUP IS A KEYWORD
+public class Group {
+    
+    public Group() {
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
         super();
     }
     
@@ -40,6 +48,7 @@ public class Group {
     
     @Column(name="GROUPNAME")
     private String groupName;
+<<<<<<< HEAD
     
     @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROUPLEADER_ID")
@@ -52,6 +61,10 @@ public class Group {
             inverseJoinColumns = { @JoinColumn(name = "Flashcard_Id") }
         )
     private Collection<Group> flashcards = new ArrayList();
+=======
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
 
 //_____________________________________________Mapping Join____________________________________________________________________________
 
@@ -69,27 +82,97 @@ public class Group {
     
     
 //_____________________________________________Getters/Setters____________________________________________________________________________
+<<<<<<< HEAD
+=======
+/*
+    public void addGroup (User p) {
+        groups.add(p);
+    }
+    
+    public List<User> getGroup(){
+        return groups;
+    }
+    */
+    
+    /*
+public List<User> getPeople() {
+        return people;
+    }
+
+
+
+
+    public void setPeople(List<User> people) {
+        this.people = people;
+    }
+
+*/
+/*
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+
+
+
+    public void setGroups(Group groups) {
+        this.groups.add(groups);
+    }
+
+*/
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
 
     public int getId() {
         return id;
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
     public Collection getUsers() {
         return users;
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
     public void setUsers(Users users) {
         this.users.add(users);
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
     public void setId(int id) {
         this.id = id;
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
     public String getGroupName() {
         return groupName;
     }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }

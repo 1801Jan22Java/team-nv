@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: R2D2
 Build-Jdk: 1.8.0_45
+=======
+Built-By: panda
+Build-Jdk: 9.0.1
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
 Created-By: Maven Integration for Eclipse
 

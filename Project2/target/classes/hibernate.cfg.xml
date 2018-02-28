@@ -10,6 +10,7 @@
         	<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<!-- this can be noisy in the console -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<!--property name="hibernate.show_sql">true</property-->
 		<!-- choose whether to create db or update existing db -->
 		<property name="hibernate.hbm2ddl.auto">update</property>
@@ -19,6 +20,8 @@
 		<mapping class="main.java.beans.Users"/>
 		<mapping class="main.java.beans.Group"/>
 =======
+=======
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
 		<property name="hibernate.show_sql">true</property>
 		<!-- choose whether to create db or update existing db -->
 		<property name="hibernate.hbm2ddl.auto">create</property>
@@ -27,7 +30,10 @@
 		<mapping class="beans.Tag"/>
 		<mapping class="beans.Users"/>
 		<mapping class="beans.Group"/>
+<<<<<<< HEAD
 		<mapping class="beans.Flashcard"/>
 >>>>>>> f05ba8fab54d4a886b3007fc292f0d4fba411620
+=======
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
 	</session-factory>
 </hibernate-configuration>

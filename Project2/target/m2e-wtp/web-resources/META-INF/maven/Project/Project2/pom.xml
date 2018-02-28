@@ -6,7 +6,12 @@
   <packaging>war</packaging>
   
   <build>
+<<<<<<< HEAD
     <!--  sourceDirectory>src</sourceDirectory-->
+=======
+    <sourceDirectory>src</sourceDirectory>
+    
+>>>>>>> 6da80ad7df5cf6ffceb735883e1c64acff6ceeb5
   </build>
   
   <properties>
