@@ -14,11 +14,20 @@ import javax.persistence.*;
 import beans.*;
 
 @Entity
-@Table(name = "GROUPTable")
+@Table(name = "GROUP_TABLE")
 // GROUP IS A KEYWORD
 public class Group {
     
-    public Group() {
+    public Group(String groupName, Users groupLeader) {
+		super();
+		this.groupName = groupName;
+		this.groupLeader = groupLeader;
+	}
+
+
+
+
+	public Group() {
         super();
     }
     
@@ -31,8 +40,18 @@ public class Group {
     
     @Column(name="GROUPNAME")
     private String groupName;
-
-
+    
+    @ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "GROUPLEADER_ID")
+    private Users groupLeader;
+    
+    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+    @JoinTable(
+            name = "GROUP_FLASHCARDS", 
+            joinColumns = { @JoinColumn(name = "Group_Id") }, 
+            inverseJoinColumns = { @JoinColumn(name = "Flashcard_Id") }
+        )
+    private Collection<Group> flashcards = new ArrayList();
 
 //_____________________________________________Mapping Join____________________________________________________________________________
 
@@ -50,78 +69,26 @@ public class Group {
     
     
 //_____________________________________________Getters/Setters____________________________________________________________________________
-/*
-    public void addGroup (User p) {
-        groups.add(p);
-    }
-    
-    public List<User> getGroup(){
-        return groups;
-    }
-    */
-    
-    /*
-public List<User> getPeople() {
-        return people;
-    }
-
-
-
-
-    public void setPeople(List<User> people) {
-        this.people = people;
-    }
-
-*/
-/*
-    public List<Group> getGroups() {
-        return groups;
-    }
-
-
-
-
-    public void setGroups(Group groups) {
-        this.groups.add(groups);
-    }
-
-*/
-
 
     public int getId() {
         return id;
     }
 
-
-
-
     public Collection getUsers() {
         return users;
     }
-
-
-
 
     public void setUsers(Users users) {
         this.users.add(users);
     }
 
-
-
-
     public void setId(int id) {
         this.id = id;
     }
 
-
-
-
     public String getGroupName() {
         return groupName;
     }
-
-
-
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;

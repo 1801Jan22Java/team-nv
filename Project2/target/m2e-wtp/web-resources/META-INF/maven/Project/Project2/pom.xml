@@ -6,7 +6,7 @@
   <packaging>war</packaging>
   
   <build>
-    <sourceDirectory>src</sourceDirectory>
+    <!--  sourceDirectory>src</sourceDirectory-->
     
   </build>
   
