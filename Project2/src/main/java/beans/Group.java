@@ -15,7 +15,6 @@ import beans.*;
 
 @Entity
 @Table(name = "GROUP_TABLE")
-// GROUP IS A KEYWORD
 public class Group {
     
     public Group(String groupName, Users groupLeader) {
@@ -35,7 +34,7 @@ public class Group {
     @Id
     @GeneratedValue(strategy=GenerationType.SEQUENCE,generator="Group_IdSequence")
     @SequenceGenerator(allocationSize=1,name="Group_IdSequence",sequenceName="SQ_Group_PK")
-    @Column(name="Group_Id")
+    @Column(name="GROUP_ID")
     private int id;
     
     @Column(name="GROUPNAME")

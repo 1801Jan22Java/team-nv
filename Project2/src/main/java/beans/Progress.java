@@ -72,4 +72,8 @@ public class Progress {
 	public void setTag(Tag tag) {
 		this.tag = tag;
 	}
+	
+	public String toString(){
+		return this.tag+" "+this.user.toString();
+	}
 }

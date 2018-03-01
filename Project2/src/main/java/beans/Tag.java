@@ -36,7 +36,7 @@ public class Tag {
 	public void setTagName(String tagName) {
 		this.tagName = tagName;
 	}
-	
-	
-	
+	public String toString() {
+		return this.tagName;
+	}
 }
