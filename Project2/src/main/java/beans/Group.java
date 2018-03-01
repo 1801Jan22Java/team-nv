@@ -41,6 +41,9 @@ public class Group {
     @Column(name="GROUPNAME")
     private String groupName;
     
+    @Column(name="GROUP_DESCRIPTION")
+    private String groupDescription;
+    
     @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROUPLEADER_ID")
     private Users groupLeader;

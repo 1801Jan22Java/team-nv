@@ -2,44 +2,55 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import beans.Flashcard;
+import beans.Tag;
+import util.HibernateUtil;
+
+import java.util.List;
+
 import beans.Tag;
 
-public class TagDaoImpl implements TagDao{
-
-	@Override
+public class TagDaoImpl {
 	public List<Tag> getAllTags() {
-		// TODO Auto-generated method stub
-		return null;
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		Query q = s.createQuery("from Tag");
+		List<Tag> items = q.list();
+		s.close();
+		return items;
 	}
 
-	@Override
-	public List<Tag> getProgressByEmployeeId(String EmploeeId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public Tag getProgressById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
 	public void addTag(Tag t) {
-		// TODO Auto-generated method stub
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		s.save(t);
+		tx.commit();
+		s.close();
 		
 	}
 
-	@Override
 	public void deleteTag(int tagId) {
-		// TODO Auto-generated method stub
-		
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		Tag tag = (Tag)s.get(Tag.class, tagId);
+		s.delete(tag);
+		tx.commit();
+		s.close();
 	}
 
-	@Override
 	public int changeTag(int tagId, String tagName) {
-		// TODO Auto-generated method stub
-		return 0;
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		Tag tag = (Tag)s.get(Tag.class, tagId);
+		tag.setTagName(tagName);
+		tx.commit();
+		s.close();
+		return 1;
 	}
-
 }
