@@ -10,9 +10,8 @@ public class Tag {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Tag(int id, String tagName) {
+	public Tag(String tagName) {
 		super();
-		this.id = id;
 		this.tagName = tagName;
 	}
 	//This is the primary key generated from a sequence and the foreign key to the progress table
@@ -37,7 +36,7 @@ public class Tag {
 	public void setTagName(String tagName) {
 		this.tagName = tagName;
 	}
-	
-	
-	
+	public String toString() {
+		return this.tagName;
+	}
 }

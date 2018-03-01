@@ -4,19 +4,20 @@ import javax.persistence.*;
 
 import beans.Tag;
 @Entity
-@Table
+@Table(name = "PROGRESS")
 public class Progress {
 	public Progress() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Progress(int progressId, int total, int numCorrect, Tag tag) {
+	public Progress(int progressId, int total, int numCorrect, Tag tag, Users u) {
 		super();
 		this.progressId = progressId;
 		this.total = total;
 		this.numCorrect = numCorrect;
 		this.tag = tag;
+		this.user=u;
 	}
 
 	//This is the PK value for the progress table and the sequence that generates it
@@ -35,6 +36,10 @@ public class Progress {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "TAG_ID")
 	private Tag tag;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "User_ID")
+	private Users user;
 
 	public int getProgressId() {
 		return progressId;
@@ -66,5 +71,9 @@ public class Progress {
 
 	public void setTag(Tag tag) {
 		this.tag = tag;
+	}
+	
+	public String toString(){
+		return this.tag+" "+this.user.toString();
 	}
 }
