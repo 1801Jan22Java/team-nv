@@ -15,7 +15,7 @@ export class CreateGroupComponent implements OnInit {
    }
 
   onSubmit(heroForm:NgForm){
-     
+     console.log(heroForm.value);
   }
 
   getProfile(){
