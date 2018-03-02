@@ -1,38 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-/** import AngularFire **/
-import { AngularFireModule } from 'angularfire2';
+import { CoreModule } from './core/core.module';
+import { FormsModule }   from '@angular/forms';
 
-/** export firebaseConfig **/
-export const firebaseConfig = {
-	apiKey: '',
-	authDomain: '',
-	databaseURL: '',
-	storageBucket: '',
-	messagingSenderId: ''
-};
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { EmailComponent } from './email/email.component';
-import { SignupComponent } from './signup/signup.component';
-import { MembersComponent } from './members/members.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    EmailComponent,
-    SignupComponent,
-    MembersComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    // Firebase  modules
+    AppRoutingModule,
+    CoreModule,
     FormsModule,
-    HttpModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebase, 'GetGewd'),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
