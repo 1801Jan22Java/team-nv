@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CoreModule } from './core/core.module';
 import { FormsModule }   from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -44,6 +45,7 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     CreateGroupPageComponent,
     TableComponent,
     ProgressPageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,8 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    HttpClientModule,
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

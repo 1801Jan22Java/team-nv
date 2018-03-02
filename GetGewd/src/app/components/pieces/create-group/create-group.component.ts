@@ -9,10 +9,13 @@ import{HttpClient} from '@angular/common/http';
   styleUrls: ['./create-group.component.css']
 })
 export class CreateGroupComponent implements OnInit {
-  constructor(private httpClient:HttpClient) { }
-  name:string = '';
+  name:string = "";
+  constructor(private httpClient:HttpClient) {
+    
+   }
+
   onSubmit(heroForm:NgForm){
-      this.name = heroForm.value;
+     
   }
 
   getProfile(){
@@ -22,3 +25,4 @@ export class CreateGroupComponent implements OnInit {
   ngOnInit() {
   }
 }
+// router garud prevents users from going to certain paiges 
