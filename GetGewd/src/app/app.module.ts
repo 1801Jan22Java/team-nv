@@ -1,42 +1,38 @@
-import { CoreModule } from './core/core.module';
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-// routing
-import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { FormsModule }   from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-// angularfire
+import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-// credentials
-import { environment } from '../environments/environment';
-import { AuthService } from './core/auth.service';
-// user profile 
-import { LoginComponent } from './login/login.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+
+import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    UserProfileComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase, 'GetGewd'),
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
