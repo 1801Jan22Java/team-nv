@@ -10,16 +10,16 @@ import { AuthService } from '../../core/auth.service';
 
 export class LoginComponent {
 
-  constructor(public auth: AuthService) { 
+  constructor(public auth: AuthService, private router: Router) { 
   }
 
-/*  signInWithGoogle() {
-  	this.authService.googleLogin()
+  signInWithGoogle() {
+  	this.auth.googleLogin()
   	.then((res) => {
-  		this.router.navigate(['userhome'])
+  		this.router.navigate(['homepage'])
   	})
   	.catch((err) => console.log(err)); 
-  }*/
+  }
 
 /*  signInWithEmail() {
     this.authService.signInRegular(this.user.email, this.user.password)

@@ -15,12 +15,35 @@ import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 
+import { NavComponent } from './components/pieces/nav/nav.component';
+import { ProfileComponent } from './components/pieces/profile/profile.component';
+import { ProfileSidebarComponent } from './components/pieces/profile-sidebar/profile-sidebar.component';
+import { SidebarButtonsComponent } from './components/pieces/sidebar-buttons/sidebar-buttons.component';
+import { JoinGroupTableComponent } from './components/pieces/join-group-table/join-group-table.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { JoinPageComponent } from './components/join-page/join-page.component';
+import { CreateGroupComponent } from './components/pieces/create-group/create-group.component';
+import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
+import { TableComponent } from './components/pieces/table/table.component';
+import { ProgressPageComponent } from './components/progress-page/progress-page.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    NavComponent,
+    ProfileComponent,
+    ProfileSidebarComponent,
+    SidebarButtonsComponent,
+    JoinGroupTableComponent,
+    HomePageComponent,
+    JoinPageComponent,
+    CreateGroupComponent,
+    CreateGroupPageComponent,
+    TableComponent,
+    ProgressPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +53,7 @@ import { HomeComponent } from './components/home/home.component';
     AngularFireModule.initializeApp(environment.firebase, 'GetGewd'),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
