@@ -1,67 +1,42 @@
-package main.java.dao;
-
-import java.util.List;
-
-import org.hibernate.Query;
+package dao;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import util.HibernateUtil;
+import beans.*;
+public class UsersDaoImpl implements UsersDao{
 
-import beans.Users;
-import main.java.util.*;
+	@Override
+	public Users getUser(String UserId) {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		
+		Users u = (Users)s.get(Users.class, UserId);
+		tx.commit();
+		s.close();
+		return u;
+	}
 
-public class UsersDaoImpl {
-	
-	public String getFirstName(int userId){
+	@Override
+	public void addUser(String userId) {
 		Session s = HibernateUtil.getSession();
-		Query q = s.createQuery("from Users where id = :var");
-		q.setParameter("var", userId);
-		List<Users> person = q.list();
-		s.close();
-		return person.get(0).getFirstName();
-	}
-	
-	public String getLastName(int userId){
-		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
 		
-		Query q = s.getNamedQuery("from Users where id =:var");
-		q.setInteger("var", userId);
-		List<Users> person = q.list();
+		Users u = new Users(userId);
+		s.save(u);
+		tx.commit();
 		s.close();
-		return person.get(0).getLastName();
 	}
-	
-	public String getEmail(int userId){
-		Session s = HibernateUtil.getSession();
-		
-		Query q = s.getNamedQuery("from Users where id =:var");
-		q.setInteger("var", userId);
-		List<Users> person = q.list();
-		s.close();
-		return person.get(0).getEmail();
-	}
-	
-	public String getUsername(int userId){
-		Session s = HibernateUtil.getSession();
-		
-		Query q = s.getNamedQuery("from Users where id =:var");
-		q.setInteger("var", userId);
-		List<Users> person = q.list();
-		s.close();
-		return person.get(0).getUsername();
-	}
-	
-	public void setFirstName(int userId, String name){
-		Session s = HibernateUtil.getSession();
-		Query q = s.createQuery("from Users where user_id =:var");
-		q.setParameter("var", userId);
-		List<Users> person = q.list();
-		System.out.println(person.get(0).getLastName());
-		System.out.println(person.get(0).getEmail());
-		Users new_person = new Users( name, person.get(0).getLastName(),person.get(0).getEmail());
-		s.save(new_person);
-		s.close();
-		
-	}
-		
-	
 
+	@Override
+	public void addUser(Users u) {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		
+		s.save(u);
+		tx.commit();
+		s.close();
+	}
+ 
+    
+    
 }

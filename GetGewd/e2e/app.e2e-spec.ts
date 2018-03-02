@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('get-gewd App', () => {
+describe('get-gewd-again App', () => {
   let page: AppPage;
 
   beforeEach(() => {
