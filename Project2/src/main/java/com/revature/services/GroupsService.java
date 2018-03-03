@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.*;
 import com.revature.dao.GroupDaoImpl;
+import com.revature.messages.GroupMessage;
 
 @Service("groupService")
 public class GroupsService {
@@ -16,7 +17,7 @@ public class GroupsService {
 	public Collection<Group> getAllGroups(){
 		return gdi.getAllGroups();
 	}
-	public Group getGroupById(int groupId){
-		return gdi.getGroupById(groupId);
+	public GroupMessage getGroupById(int groupId){
+		return new GroupMessage(gdi.getGroupById(groupId));
 	}
 }

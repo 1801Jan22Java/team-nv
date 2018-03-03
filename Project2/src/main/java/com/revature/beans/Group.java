@@ -62,7 +62,7 @@ public class Group {
     @OneToMany(fetch = FetchType.LAZY)
     private Collection<PendingFlashcard> pendingFlashcards;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROUPLEADER_ID")
     private Users groupLeader;
     
