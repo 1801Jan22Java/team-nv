@@ -87,3 +87,4 @@ public Flashcard(String question, String answer, String hint, Tag tag) {
 		return this.Question+" "+this.Hint+" "+this.Answer;
 	}
 }
+
