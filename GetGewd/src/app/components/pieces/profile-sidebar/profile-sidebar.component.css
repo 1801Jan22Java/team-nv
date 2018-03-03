@@ -1,0 +1,16 @@
+#sidebar{
+    width:20%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.9;
+    top:9%;
+
+}
+
+#div-image{
+    height: 100%;
+    width: 100%;
+    background-image: url(../../../../assets/images/3.jpg);
+    opacity: 0.5;
+}

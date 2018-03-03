@@ -15,18 +15,18 @@ export class LoginComponent {
     email: '',
     password: ''
   };
-
+  
   constructor(public auth: AuthService, private router: Router) { 
-    
   }
 
   signInWithGoogle() {
   	this.auth.googleLogin()
   	.then((res) => {
-  		this.router.navigate(['userhome'])
+  		this.router.navigate(['homepage'])
   	})
   	.catch((err) => console.log(err)); 
   }
+
 /** Added after lunch, email login ability **/
   signInWithEmail() {
     this.auth.signInRegular(this.user.email, this.user.password)
