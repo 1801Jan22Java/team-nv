@@ -1,15 +1,16 @@
-package dao;
+package com.revature.dao;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.revature.beans.*;
+
 import java.util.List;
-import beans.*;
 
-import util.HibernateUtil;
+import com.revature.util.HibernateUtil;
 
-public class ProgressDaoImpl {
+public class ProgressDaoImpl implements ProgressDao{
 
 	public List<Progress> getAllProgress() {
 		Session s = HibernateUtil.getSession();

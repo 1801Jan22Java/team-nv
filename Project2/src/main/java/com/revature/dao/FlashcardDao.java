@@ -1,4 +1,4 @@
-package dao;
+package com.revature.dao;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import beans.Flashcard;
-import util.HibernateUtil;
+import com.revature.beans.Flashcard;
+
+import com.revature.util.HibernateUtil;
 
 public interface FlashcardDao {
 	public String getQuestion(int flashCardId);

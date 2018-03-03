@@ -1,4 +1,4 @@
-package beans;
+package com.revature.beans;
 
 import javax.persistence.*;
 

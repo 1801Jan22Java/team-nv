@@ -1,4 +1,4 @@
-package dao;
+package com.revature.dao;
 
 import java.util.List;
 
@@ -6,10 +6,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import beans.*;
-import util.HibernateUtil;
+import com.revature.beans.*;
 
-public class FlashcardDaoImpl {
+import com.revature.util.HibernateUtil;
+
+public class FlashcardDaoImpl implements FlashcardDao{
 	public String getQuestion(int flashCardId){
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();

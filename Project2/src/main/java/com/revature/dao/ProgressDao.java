@@ -1,9 +1,9 @@
-package dao;
+package com.revature.dao;
 
 import java.util.List;
 
-import beans.Progress;
-import beans.Tag;
+import com.revature.beans.Progress;
+import com.revature.beans.Tag;
 
 public interface ProgressDao {
 public List<Progress> getAllProgress();
