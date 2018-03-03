@@ -27,7 +27,7 @@ export class LoginComponent {
   	})
   	.catch((err) => console.log(err)); 
   }
-/** Added after lunch, email login **/
+/** Added after lunch, email login ability **/
   signInWithEmail() {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
