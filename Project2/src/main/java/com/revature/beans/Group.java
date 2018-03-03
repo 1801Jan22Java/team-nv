@@ -1,4 +1,4 @@
-package beans;
+package com.revature.beans;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,13 +11,29 @@ import java.util.List;
 import java.util.Set;
 import java.io.Serializable;
 import javax.persistence.*;
-import beans.*;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import com.revature.beans.*;
+
+@Component("users")
 @Entity
+@Scope("prototype")
 @Table(name = "GROUP_TABLE")
 public class Group {
     
-    public Group(String groupName, Users groupLeader) {
+    public Group(String groupName, String groupDescription, Users groupLeader) {
+		super();
+		this.groupName = groupName;
+		this.groupDescription = groupDescription;
+		this.groupLeader = groupLeader;
+	}
+
+
+
+
+	public Group(String groupName, Users groupLeader) {
 		super();
 		this.groupName = groupName;
 		this.groupLeader = groupLeader;
@@ -43,6 +59,9 @@ public class Group {
     @Column(name="GROUP_DESCRIPTION")
     private String groupDescription;
     
+    @OneToMany(fetch = FetchType.EAGER)
+    private Collection<PendingFlashcard> pendingFlashcards;
+    
     @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROUPLEADER_ID")
     private Users groupLeader;
@@ -53,7 +72,7 @@ public class Group {
             joinColumns = { @JoinColumn(name = "Group_Id") }, 
             inverseJoinColumns = { @JoinColumn(name = "Flashcard_Id") }
         )
-    private Collection<Group> flashcards = new ArrayList();
+    private Collection<Flashcard> flashcards = new ArrayList();
 
 //_____________________________________________Mapping Join____________________________________________________________________________
 
@@ -103,6 +122,69 @@ public class Group {
     public String toString() {
         return "Group [id=" + id + ", groupName=" + groupName + "]";
     }
+
+
+
+
+	public String getGroupDescription() {
+		return groupDescription;
+	}
+
+
+
+
+	public void setGroupDescription(String groupDescription) {
+		this.groupDescription = groupDescription;
+	}
+
+
+
+
+	public Users getGroupLeader() {
+		return groupLeader;
+	}
+
+
+
+
+	public void setGroupLeader(Users groupLeader) {
+		this.groupLeader = groupLeader;
+	}
+
+
+
+
+	public Collection<Flashcard> getFlashcards() {
+		return flashcards;
+	}
+
+
+
+
+	public void setFlashcards(Collection<Flashcard> flashcards) {
+		this.flashcards = flashcards;
+	}
+
+
+
+
+	public void setUsers(Collection<Users> users) {
+		this.users = users;
+	}
+
+
+
+
+	public Collection<PendingFlashcard> getPendingFlashcards() {
+		return pendingFlashcards;
+	}
+
+
+
+
+	public void setPendingFlashcards(Collection<PendingFlashcard> pendingFlashcards) {
+		this.pendingFlashcards = pendingFlashcards;
+	}
 
 
 

@@ -1,4 +1,4 @@
-package beans;
+package com.revature.beans;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,20 +20,22 @@ public class PendingFlashcard {
 		// TODO Auto-generated constructor stub
 	}
 
-	public PendingFlashcard(int flashcardId, int groupId) {
+	public PendingFlashcard(Flashcard flashcard, Group group) {
 		super();
-		this.flashcardId = flashcardId;
-		this.groupId = groupId;
+		this.flashcard = flashcard;
+		this.group = group;
 	}
 
 	//These are simply  references in a table to the flash cards that are yet to be connected to a group
 	//Once a flash card has been rejected or accepted, the reference should be deleted from this table
 
-	@Column(name="FLASHCARD_ID")
-    private int flashcardId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "FLASHCARD")
+    private Flashcard flashcard;
 	
-	@Column(name = "GROUP_ID")
-    private int groupId;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "GROUPS")
+    private Group group;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="Pending_Flashcard_IdSequence")
@@ -41,23 +43,23 @@ public class PendingFlashcard {
 	@Column(name="Pending_Flashcard_Id")
 	private int id;
 	
-	public int getFlashcardId() {
-		return flashcardId;
+	public Flashcard getFlashcardId() {
+		return flashcard;
 	}
 
-	public void setFlashcardId(int flashcardId) {
-		this.flashcardId = flashcardId;
+	public void setFlashcard(Flashcard flashcard) {
+		this.flashcard = flashcard;
 	}
 
-	public int getGroupId() {
-		return groupId;
+	public Group getGroupId() {
+		return group;
 	}
 
-	public void setGroupId(int groupId) {
-		this.groupId = groupId;
+	public void setGroupId(Group groupId) {
+		this.group = groupId;
 	}
 	
 	public String toString() {
-		return "FlashcardId: "+this.flashcardId+" GroupId: "+this.groupId;
+		return "FlashcardId: "+this.flashcard.getFlashcardId()+" GroupId: "+this.group.getId();
 	}
 }

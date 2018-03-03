@@ -1,8 +1,8 @@
-package beans;
+package com.revature.beans;
 
 import javax.persistence.*;
 
-import beans.Tag;
+import com.revature.beans.Tag;
 @Entity
 @Table(name = "PROGRESS")
 public class Progress {
@@ -11,11 +11,10 @@ public class Progress {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Progress(int progressId, int total, int numCorrect, Tag tag, Users u) {
+	public Progress(Tag tag, Users u) {
 		super();
-		this.progressId = progressId;
-		this.total = total;
-		this.numCorrect = numCorrect;
+		this.total = 0;
+		this.numCorrect = 0;
 		this.tag = tag;
 		this.user=u;
 	}
