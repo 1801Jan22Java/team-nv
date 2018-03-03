@@ -18,5 +18,6 @@
 		<mapping class="beans.Users"/>
 		<mapping class="beans.Group"/>
 		<mapping class="beans.Flashcard"/>
+		<mapping class="beans.PendingFlashcard"/>
 	</session-factory>
 </hibernate-configuration>
