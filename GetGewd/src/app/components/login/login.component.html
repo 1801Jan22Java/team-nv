@@ -1,23 +1,46 @@
 
-<div *ngIf="auth.user | async; then authenticated else guest">
+<!-- <div *ngIf="auth.user | async; then authenticated else guest"> -->
         <!-- template will replace this div -->
-</div>
+<!-- </div> -->
 
 
 <!-- User NOT logged in -->
-<ng-template #guest>
-    <h3>Welcome, GUEST</h3>
-    <p>Login to get started...</p>
-    
-    <button (click)="signInWithGoogle()" type="button" class="btn btn-block">
-        <i class="fab fa-google"></i> Connect Google
-    </button>
+<!-- <ng-template #guest> -->
 
-</ng-template>
+<div class="uk-cover-container" uk-height-viewport>
+    <img src="../../../assets/images/1.gif" alt="" uk-cover>
+
+    <div class="container col-6">
+        <form id="mainForm" method="post" #formCtrl="ngForm">
+            <h3>Welcome, GUEST</h3>
+            <p>Login to get started...</p>
+            <div class="form-group">
+                <label for="inputEmail">Email address</label>
+                <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="user.password">
+            </div>
+            <!-- Regular Login button -->
+            <button type="button" class="btn btn-primary" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">Submit</button>
+            <p>or</p>
+            <!-- Google button -->
+            <button (click)="signInWithGoogle()" type="button" class="btn btn-primary btn-sm btn-block">
+                <i class="fab fa-google"></i> Connect Google
+            </button>
+
+            <button (click)="auth.signOut()" type="button" class="btn btn-primary btn-sm btn-block">Logout</button>
+        </form>
+    </div>
+</div>
+
+<!-- </ng-template> -->
 
 
 <!-- User logged in -->
-<ng-template #authenticated>
+<!-- <ng-template #authenticated>
     <div *ngIf="auth.user | async as user">
         <h3>Welcome, {{ user.displayName }}</h3>
         <img  [src]="user.photoURL">
@@ -25,7 +48,7 @@
         <p>Favorite Color: {{ user?.favoriteColor }} </p>
         <button (click)="auth.signOut()">Logout</button>
     </div>
-</ng-template>
+</ng-template> -->
 
 
 

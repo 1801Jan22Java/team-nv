@@ -9,7 +9,7 @@ import { AuthService } from '../../core/auth.service';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   user = {
     email: '',
@@ -32,9 +32,12 @@ export class LoginComponent {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
         console.log(res);
-        this.router.navigate(['userhome']);
+        this.router.navigate(['homepage']);
       })
       .catch((err) => console.log('error: ' + err));
+  }
+
+   ngOnInit() {
   }
 
 }
