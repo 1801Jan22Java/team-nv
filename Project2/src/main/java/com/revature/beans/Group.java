@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 import com.revature.beans.*;
 
-@Component("users")
+@Component("group")
 @Entity
 @Scope("prototype")
 @Table(name = "GROUP_TABLE")
@@ -59,14 +59,14 @@ public class Group {
     @Column(name="GROUP_DESCRIPTION")
     private String groupDescription;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     private Collection<PendingFlashcard> pendingFlashcards;
     
     @ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "GROUPLEADER_ID")
     private Users groupLeader;
     
-    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
+    @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.REMOVE)
     @JoinTable(
             name = "GROUP_FLASHCARDS", 
             joinColumns = { @JoinColumn(name = "Group_Id") }, 

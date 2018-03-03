@@ -10,7 +10,7 @@ import com.revature.beans.*;
 
 import com.revature.util.HibernateUtil;
 
-public class FlashcardDaoImpl {
+public class FlashcardDaoImpl implements FlashcardDao{
 	public String getQuestion(int flashCardId){
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();

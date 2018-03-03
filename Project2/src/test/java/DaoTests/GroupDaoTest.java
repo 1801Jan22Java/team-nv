@@ -18,7 +18,7 @@ import com.revature.util.HibernateUtil;
 
 public class GroupDaoTest {
 	public static GroupDaoImpl groupDao = new GroupDaoImpl();
-	
+	public static DataBaseDriver driver = new DataBaseDriver();
 	//@Test
 	public void addGroupTest() {
 		Session s = HibernateUtil.getSession();
@@ -65,7 +65,15 @@ public class GroupDaoTest {
 	}
 	@Test
 	public void getAllGroupsTest() {
+		//driver.create();
 		Collection<Group> test = groupDao.getAllGroups();
+		System.out.println(test);
+		assertNotNull(test);
+	}
+	//@Test
+	public void getGroupByIdTest() {
+		Group test = groupDao.getGroupById(1);
+		System.out.println(test);
 		assertNotNull(test);
 	}
 }
