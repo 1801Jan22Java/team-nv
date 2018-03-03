@@ -17,7 +17,7 @@ import com.revature.messages.UserValidation;
 import com.revature.services.GroupsService;
 import com.revature.services.UsersService;
 
-@Controller("groupController")
+@Controller("userController")
 @RequestMapping("/user")
 public class UsersController {
 	@Autowired
