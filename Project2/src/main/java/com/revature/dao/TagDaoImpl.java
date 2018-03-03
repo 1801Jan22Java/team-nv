@@ -1,4 +1,4 @@
-package dao;
+package com.revature.dao;
 
 import java.util.List;
 
@@ -6,13 +6,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import beans.Flashcard;
-import beans.Tag;
-import util.HibernateUtil;
+import com.revature.beans.Flashcard;
+import com.revature.beans.Tag;
+
+import com.revature.util.HibernateUtil;
 
 import java.util.List;
-
-import beans.Tag;
 
 public class TagDaoImpl {
 	public List<Tag> getAllTags() {

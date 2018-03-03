@@ -1,4 +1,4 @@
-package beans;
+package com.revature.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Set;
 import java.io.Serializable;
 import javax.persistence.*;
 
-import beans.*;
+import com.revature.beans.*;
 
 
 @Entity

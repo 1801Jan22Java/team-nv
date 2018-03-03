@@ -1,8 +1,8 @@
-package beans;
+package com.revature.beans;
 
 import javax.persistence.*;
 
-import beans.Tag;
+import com.revature.beans.Tag;
 
 @Entity
 @Table(name = "FLASHCARD")
