@@ -37,6 +37,12 @@ export class AuthService {
         })
   }
 
+/** Added after lunch email login **/
+  signInRegular(email, password) {
+    const credential = firebase.auth.EmailAuthProvider.credential(email, password);
+    return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+  }
+
   googleLogin() {
     const provider = new firebase.auth.GoogleAuthProvider()
     return this.oAuthLogin(provider);
