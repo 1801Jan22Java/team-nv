@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.beans.Group;
+import com.revature.messages.GroupMessage;
 import com.revature.services.GroupsService;
 
 @Controller("groupController")
@@ -27,7 +28,7 @@ public class GroupController {
 		return new ResponseEntity<>(groupService.getAllGroups(), HttpStatus.OK);
 	}
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public ResponseEntity<Group> getGroupById(@PathVariable("id") int groupId){
+	public ResponseEntity<GroupMessage> getGroupById(@PathVariable("id") int groupId){
 		return new ResponseEntity<>(groupService.getGroupById(groupId), HttpStatus.OK);
 	}
 
