@@ -17,7 +17,7 @@ import com.revature.beans.Group;
 import com.revature.messages.GroupMessage;
 import com.revature.services.GroupsService;
 
-@Controller("groupController")
+@Controller("userController")
 @RequestMapping("/group")
 public class GroupController {
 	@Autowired
