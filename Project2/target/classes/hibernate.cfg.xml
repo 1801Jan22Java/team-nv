@@ -11,13 +11,13 @@
 		<!-- this can be noisy in the console -->
 		<property name="hibernate.show_sql">true</property>
 		<!-- choose whether to create db or update existing db -->
-		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<!-- map domain object classes -->
-		<mapping class="beans.Progress"/>
-		<mapping class="beans.Tag"/>
-		<mapping class="beans.Users"/>
-		<mapping class="beans.Group"/>
-		<mapping class="beans.Flashcard"/>
-		<mapping class="beans.PendingFlashcard"/>
+		<mapping class="com.revature.beans.Progress"/>
+		<mapping class="com.revature.beans.Tag"/>
+		<mapping class="com.revature.beans.Users"/>
+		<mapping class="com.revature.beans.Group"/>
+		<mapping class="com.revature.beans.Flashcard"/>
+		<mapping class="com.revature.beans.PendingFlashcard"/>
 	</session-factory>
 </hibernate-configuration>

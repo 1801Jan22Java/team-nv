@@ -11,7 +11,7 @@ import com.revature.dao.GroupDaoImpl;
 @Service("groupService")
 public class GroupsService {
 	
-	static GroupDaoImpl gdi;
+	static GroupDaoImpl gdi = new GroupDaoImpl();
 	
 	public Collection<Group> getAllGroups(){
 		return gdi.getAllGroups();

@@ -27,7 +27,7 @@ public class GroupController {
 		return new ResponseEntity<>(groupService.getAllGroups(), HttpStatus.OK);
 	}
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public ResponseEntity<String> getGroupById(@PathVariable int groupId){
-		return new ResponseEntity<>("Hello!", HttpStatus.OK);
+	public ResponseEntity<Group> getGroupById(@PathVariable("id") int groupId){
+		return new ResponseEntity<>(groupService.getGroupById(groupId), HttpStatus.OK);
 	}
 }
