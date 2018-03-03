@@ -19,4 +19,6 @@ public class GroupsService {
 	public Group getGroupById(int groupId){
 		return gdi.getGroupById(groupId);
 	}
+
 }
+

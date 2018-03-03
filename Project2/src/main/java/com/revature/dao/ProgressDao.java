@@ -19,4 +19,6 @@ public List<Progress> getAllProgress();
 	public void changeProgressNumCorrect(int progressId, int numCorrect);
 	public void changeProgressTag(int progressId, Tag tag);
 	public void changeProgressTotal(int progressId, int total);
+
 }
+

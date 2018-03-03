@@ -1,4 +1,3 @@
-
 package com.revature.util;
 
 import org.hibernate.Session;
@@ -23,5 +22,5 @@ public class HibernateUtil {
 	public static Session getSession(){
 		return getSessionFactory("hibernate.cfg.xml").openSession();
 	}
-
 }
+

@@ -76,3 +76,4 @@ public class Progress {
 		return this.tag+" "+this.user.toString();
 	}
 }
+
