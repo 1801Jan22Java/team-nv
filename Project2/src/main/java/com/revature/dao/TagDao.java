@@ -13,5 +13,6 @@ public interface TagDao {
 	public void deleteTag(int tagId);
 	
 	public int changeTag(int tagId, String tagName);
+
 }
 

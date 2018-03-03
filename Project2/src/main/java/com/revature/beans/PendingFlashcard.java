@@ -62,4 +62,6 @@ public class PendingFlashcard {
 	public String toString() {
 		return "FlashcardId: "+this.flashcard.getFlashcardId()+" GroupId: "+this.group.getId();
 	}
+
 }
+

@@ -31,4 +31,6 @@ public class GroupController {
 	public ResponseEntity<GroupMessage> getGroupById(@PathVariable("id") int groupId){
 		return new ResponseEntity<>(groupService.getGroupById(groupId), HttpStatus.OK);
 	}
+
 }
+
