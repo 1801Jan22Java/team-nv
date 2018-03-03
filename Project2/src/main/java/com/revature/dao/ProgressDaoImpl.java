@@ -10,7 +10,7 @@ import java.util.List;
 
 import com.revature.util.HibernateUtil;
 
-public class ProgressDaoImpl {
+public class ProgressDaoImpl implements ProgressDao{
 
 	public List<Progress> getAllProgress() {
 		Session s = HibernateUtil.getSession();

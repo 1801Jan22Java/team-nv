@@ -13,7 +13,7 @@ import com.revature.util.HibernateUtil;
 
 import java.util.List;
 
-public class TagDaoImpl {
+public class TagDaoImpl implements TagDao{
 	public List<Tag> getAllTags() {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
