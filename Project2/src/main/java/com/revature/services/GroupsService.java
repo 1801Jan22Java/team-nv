@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,8 +15,13 @@ public class GroupsService {
 	
 	static GroupDaoImpl gdi = new GroupDaoImpl();
 	
-	public Collection<Group> getAllGroups(){
-		return gdi.getAllGroups();
+	public Collection<GroupMessage> getAllGroups(){
+		List<GroupMessage> groupMessages = new ArrayList<GroupMessage>();
+		for(Group g : gdi.getAllGroups())
+		{
+			groupMessages.add(new GroupMessage(g));
+		}
+		return groupMessages;
 	}
 	public GroupMessage getGroupById(int groupId){
 		return new GroupMessage(gdi.getGroupById(groupId));

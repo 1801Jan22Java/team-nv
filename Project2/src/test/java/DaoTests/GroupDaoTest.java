@@ -63,14 +63,14 @@ public class GroupDaoTest {
 		Collection<Users>test = groupDao.getGroupsUsers(groupId);
 		assertNotNull(test);
 	}
-	//@Test
+	@Test
 	public void getAllGroupsTest() {
-		driver.create();
+		//driver.create();
 		Collection<Group> test = groupDao.getAllGroups();
 		System.out.println(test);
 		assertNotNull(test);
 	}
-	@Test
+	//@Test
 	public void getGroupByIdTest() {
 		Group test = groupDao.getGroupById(1);
 		System.out.println(test);

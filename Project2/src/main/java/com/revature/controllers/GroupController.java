@@ -24,7 +24,7 @@ public class GroupController {
 	private GroupsService groupService;
 	@GetMapping("/all")
 	@ResponseBody
-	public ResponseEntity<Collection<Group>> getAllGroupes() {
+	public ResponseEntity<Collection<GroupMessage>> getAllGroupes() {
 		return new ResponseEntity<>(groupService.getAllGroups(), HttpStatus.OK);
 	}
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)

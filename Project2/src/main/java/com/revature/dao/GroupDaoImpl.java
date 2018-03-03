@@ -67,7 +67,7 @@ public class GroupDaoImpl implements GroupDao{
 	@Override
 	public List<Group> getAllGroups() {
 		Session s = HibernateUtil.getSession();
-		List<Group> allGroups = s.createCriteria(Group.class).list();
+		List<Group> allGroups = s.createQuery("from Group").list();
 		s.close();
 		return allGroups;
 	}
