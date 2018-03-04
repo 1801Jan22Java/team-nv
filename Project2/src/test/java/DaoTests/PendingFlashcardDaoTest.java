@@ -14,7 +14,7 @@ import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class PendingFlashcardDaoTest {
-	
+	/*
 	static PendingFlashcardDaoImpl pfcd = new PendingFlashcardDaoImpl();
 	
 	@Test
@@ -34,5 +34,5 @@ public class PendingFlashcardDaoTest {
 		System.out.println(temp);
 		//assertNotNull(temp);
 		s.close();
-	}
+	}*/
 }
