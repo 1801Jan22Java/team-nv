@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.beans.Flashcard;
@@ -28,7 +29,7 @@ public class UsersController {
 	@Autowired
 	private UsersService userService;
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	//@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<UserValidation> getUserById(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.validateUser(userId), HttpStatus.OK);
 	}
@@ -42,7 +43,7 @@ public class UsersController {
 	}
 	@PostMapping("/addUser")
 	@ResponseBody
-	public ResponseEntity<UserAdded> addUser(@RequestBody String userId){
+	public ResponseEntity<UserAdded> addUser(@RequestParam(value = "userId") String userId){
 		if(userService.validateUser(userId).getIsValidated()) {
 			return new ResponseEntity<>(null, HttpStatus.OK);
 		}
