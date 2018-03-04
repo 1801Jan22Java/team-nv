@@ -34,7 +34,7 @@ public class UsersDaoTest {
 		s.close();
 		assertNotNull(temp);
 	}
-	@Test
+	//@Test
 	public void getUserTest() {
 		DataBaseDriver.create();
 		userDao.addUser(new Users("temp"));
@@ -44,7 +44,7 @@ public class UsersDaoTest {
 		assertNotNull(temp);
 		DataBaseDriver.destroy();
 	}
-	@Test
+	//@Test
 	public void getGroupFlashcard() {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();

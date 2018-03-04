@@ -42,8 +42,15 @@ public class UsersController {
 	}
 	@PostMapping("/addUser")
 	@ResponseBody
-	public ResponseEntity<UserAdded> addGroup(@RequestBody String userId){
-		return new ResponseEntity<>(userService.addUser(userId), HttpStatus.OK);
+	public ResponseEntity<UserAdded> addUser(@RequestBody String userId){
+		if(userService.validateUser(userId).getIsValidated()) {
+			return new ResponseEntity<>(null, HttpStatus.OK);
+		}
+		else {
+			System.out.println(userId);
+			return new ResponseEntity<>(userService.addUser(userId), HttpStatus.OK);
+		}
+		
 	}
 	
 }
