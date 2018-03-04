@@ -18,7 +18,7 @@ import com.revature.dao.UsersDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class UsersDaoTest {
-	
+	/*
 	public static UsersDaoImpl userDao = new UsersDaoImpl();
 	
 	@Test
@@ -61,5 +61,5 @@ public class UsersDaoTest {
 		s.close();
 		Collection<Flashcard>test = userDao.getUsersFlashcards(userId);
 		assertNotNull(test);
-	}
+	}*/
 }

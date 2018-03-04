@@ -3,6 +3,8 @@ package com.revature.controllers;
 import java.util.Collection;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +31,7 @@ public class UsersController {
 	@Autowired
 	private UsersService userService;
 	
-	//@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<UserValidation> getUserById(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.validateUser(userId), HttpStatus.OK);
 	}
@@ -41,9 +43,9 @@ public class UsersController {
 	public ResponseEntity<Collection<GroupMessage>> getUserGroups(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersGroups(userId), HttpStatus.OK);
 	}
-	@PostMapping("/addUser")
+	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<UserAdded> addUser(@RequestParam(value = "userId") String userId){
+	public ResponseEntity<UserAdded> addUser(@RequestParam(value = "userId", required = false) String userId){
 		if(userService.validateUser(userId).getIsValidated()) {
 			return new ResponseEntity<>(null, HttpStatus.OK);
 		}
