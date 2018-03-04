@@ -27,6 +27,10 @@ import { CreateGroupComponent } from './components/pieces/create-group/create-gr
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
 import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
+import { GroupHomeComponent } from './components/group-home/group-home.component';
+import { GroupFlashcardsService } from './group-flashcards.service';
+import { AuthService } from './core/auth.service';
+//import { UidService } from './uid.service';
 
 
 @NgModule({
@@ -45,7 +49,8 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     CreateGroupPageComponent,
     TableComponent,
     ProgressPageComponent,
-    
+    ProgressPageComponent,
+    GroupHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +64,12 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     HttpClientModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [
+    GroupFlashcardsService,
+    //UidService,
+    AuthService,
+    /* . . . */
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
