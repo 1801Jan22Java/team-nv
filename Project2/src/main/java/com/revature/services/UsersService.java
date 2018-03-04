@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
 import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.UsersDaoImpl;
@@ -23,5 +24,9 @@ static UsersDaoImpl udi = new UsersDaoImpl();
 	}
 	public UserValidation validateUser(String userId){
 		return new UserValidation(udi.getUser(userId)!=null);
+	}
+	public Collection<Flashcard> getUsersFlashcards(String userId)
+	{
+		return udi.getUsersFlashcards(userId);
 	}
 }

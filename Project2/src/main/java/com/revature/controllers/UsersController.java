@@ -1,5 +1,8 @@
 package com.revature.controllers;
 
+import java.util.Collection;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.revature.beans.Flashcard;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
@@ -24,12 +28,17 @@ public class UsersController {
 	private UsersService userService;
 	
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
-	public ResponseEntity<UserValidation> getGroupById(@PathVariable("id") String userId){
+	public ResponseEntity<UserValidation> getUserById(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.validateUser(userId), HttpStatus.OK);
+	}
+	@RequestMapping(value="flashcard/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Collection<Flashcard>> getUserFlashcards(@PathVariable("id") String userId){
+		return new ResponseEntity<>(userService.getUsersFlashcards(userId), HttpStatus.OK);
 	}
 	@PostMapping("/addUser")
 	@ResponseBody
 	public ResponseEntity<UserAdded> addGroup(@RequestBody String userId){
 		return new ResponseEntity<>(userService.addUser(userId), HttpStatus.OK);
 	}
+	
 }
