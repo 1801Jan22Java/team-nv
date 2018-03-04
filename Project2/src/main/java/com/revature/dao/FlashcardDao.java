@@ -17,6 +17,6 @@ public interface FlashcardDao {
 	
 	public String getHint(int flashCardId);
 	
-	
+	public Flashcard getFlashcardById(int flashcardId);
 
 }
