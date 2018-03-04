@@ -20,7 +20,7 @@ public class UsersService {
 static UsersDaoImpl udi = new UsersDaoImpl();
 	
 	public UserAdded addUser(String userId) {
-		udi.addUser(userId);
+		udi.addUser(new Users(userId));
 		return new UserAdded(udi.getUser(userId) != null);
 	}
 	public Users getUser(String userId) {
