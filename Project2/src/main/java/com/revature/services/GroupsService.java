@@ -26,4 +26,6 @@ public class GroupsService {
 	public GroupMessage getGroupById(int groupId){
 		return new GroupMessage(gdi.getGroupById(groupId));
 	}
+
 }
+
