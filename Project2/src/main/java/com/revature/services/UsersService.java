@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
+import com.revature.beans.Users;
 import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.UsersDaoImpl;
 import com.revature.messages.GroupMessage;
@@ -21,6 +22,10 @@ static UsersDaoImpl udi = new UsersDaoImpl();
 	public UserAdded addUser(String userId) {
 		udi.addUser(userId);
 		return new UserAdded(udi.getUser(userId) != null);
+	}
+	public Users getUser(String userId) {
+		//udi.addUser(userId);
+		return udi.getUser(userId);
 	}
 	public UserValidation validateUser(String userId){
 		return new UserValidation(udi.getUser(userId)!=null);
@@ -38,4 +43,5 @@ static UsersDaoImpl udi = new UsersDaoImpl();
 		}
 		return usersGroups;
 	}
+	
 }
