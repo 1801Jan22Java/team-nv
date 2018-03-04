@@ -66,7 +66,7 @@ public class Group {
 	@JoinColumn(name = "GROUPLEADER_ID")
     private Users groupLeader;
     
-    @ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.REMOVE)
+    @ManyToMany(fetch=FetchType.EAGER, cascade=CascadeType.REMOVE)
     @JoinTable(
             name = "GROUP_FLASHCARDS", 
             joinColumns = { @JoinColumn(name = "Group_Id") }, 

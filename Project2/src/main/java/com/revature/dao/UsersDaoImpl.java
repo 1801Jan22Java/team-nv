@@ -23,7 +23,6 @@ public class UsersDaoImpl implements UsersDao{
 	public void addUser(String userId) {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
-		
 		Users u = new Users(userId);
 		s.save(u);
 		tx.commit();
