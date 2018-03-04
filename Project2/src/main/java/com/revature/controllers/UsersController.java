@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.beans.Flashcard;
+import com.revature.beans.Group;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
@@ -34,6 +35,10 @@ public class UsersController {
 	@RequestMapping(value="flashcard/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Collection<Flashcard>> getUserFlashcards(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersFlashcards(userId), HttpStatus.OK);
+	}
+	@RequestMapping(value="group/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Collection<GroupMessage>> getUserGroups(@PathVariable("id") String userId){
+		return new ResponseEntity<>(userService.getUsersGroups(userId), HttpStatus.OK);
 	}
 	@PostMapping("/addUser")
 	@ResponseBody

@@ -29,4 +29,13 @@ static UsersDaoImpl udi = new UsersDaoImpl();
 	{
 		return udi.getUsersFlashcards(userId);
 	}
+	public Collection<GroupMessage> getUsersGroups(String userId)
+	{
+		ArrayList<GroupMessage> usersGroups = new ArrayList<GroupMessage>();
+		for(Group g :udi.getUsersGroups(userId))
+		{
+			usersGroups.add(new GroupMessage(g));
+		}
+		return usersGroups;
+	}
 }
