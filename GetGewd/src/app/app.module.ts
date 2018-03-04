@@ -5,6 +5,9 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
+import{AngularFireAuth} from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -12,8 +15,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
 
 import { NavComponent } from './components/pieces/nav/nav.component';
@@ -27,6 +30,8 @@ import { CreateGroupComponent } from './components/pieces/create-group/create-gr
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
 import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
+//made change
+import {AuthService} from './core/auth.service';
 
 
 @NgModule({
@@ -46,6 +51,7 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     TableComponent,
     ProgressPageComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -56,10 +62,14 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,    
     HttpClientModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [
+    // made change
+    AuthService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

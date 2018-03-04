@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import{HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create-group',
@@ -10,17 +12,20 @@ import{HttpClient} from '@angular/common/http';
 })
 export class CreateGroupComponent implements OnInit {
   name:string = "";
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient:HttpClient,private router:Router) {
     
    }
 
   onSubmit(heroForm:NgForm){
-     console.log(heroForm.value);
-  }
+   // console.log(heroForm.value);
+    // this.httpClient.get(`http://localhost:8080/Project2/group/1`).subscribe((data:any[]) => {
+      //console.log(data);
+      
+  //})
+  
+  this.router.navigate(['homepage']);
+}
 
-  getProfile(){
-
-  }
 
   ngOnInit() {
   }
