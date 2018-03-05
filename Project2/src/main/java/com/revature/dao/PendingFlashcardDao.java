@@ -13,7 +13,7 @@ public interface PendingFlashcardDao {
 	
 	public void deletePendingFlashcard(int pendingFlashcardId);
 	
-	public Collection<PendingFlashcard> getPendingFlashcards(int groupId);
+	public Collection<Flashcard> getPendingFlashcards(int groupId);
 
 }
 
