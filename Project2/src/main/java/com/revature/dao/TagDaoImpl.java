@@ -52,5 +52,15 @@ public class TagDaoImpl implements TagDao{
 		s.close();
 		return 1;
 	}
+
+
+
+	@Override
+	public Tag getTag(int tagId) {
+		Session s = HibernateUtil.getSession();
+		Tag tag = (Tag)s.get(Tag.class, tagId);
+		s.close();
+		return tag;
+	}
 }
 

@@ -10,6 +10,8 @@ public interface TagDao {
 
 	public void addTag(Tag t);
 	
+	public Tag getTag(int tagId);
+	
 	public void deleteTag(int tagId);
 	
 	public int changeTag(int tagId, String tagName);

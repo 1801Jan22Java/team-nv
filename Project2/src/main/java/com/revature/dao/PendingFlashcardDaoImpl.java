@@ -18,18 +18,13 @@ import com.revature.util.HibernateUtil;
 public class PendingFlashcardDaoImpl implements PendingFlashcardDao{
 
 	@Override
-	public Collection<Flashcard> getPendingFlashcards(int groupId) {
+	public Collection<PendingFlashcard> getPendingFlashcards(int groupId) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.beginTransaction();
+		//Query q = s.createQuery("select FlashcardId from PendingFlashcard where GroupId = :param1");
+		//q.setParameter("param1",groupId);
 		Group currentGroup = (Group)s.get(Group.class, groupId);
 		Collection<PendingFlashcard> pendingFlashcards = currentGroup.getPendingFlashcards();
-		Collection<Flashcard> flashcards = new ArrayList<Flashcard>();
-		Collection<PendingFlashcard>copy = pendingFlashcards;
-		s.close();
-		for(PendingFlashcard pfc: copy) {
-			flashcards.add(pfc.getFlashcardId());
-		}
-		return flashcards;
+		return pendingFlashcards;
 	}
 
 	@Override
@@ -71,8 +66,7 @@ public class PendingFlashcardDaoImpl implements PendingFlashcardDao{
 		System.out.println(groupId);
 		tx.commit();
 		s.close();
-		Collection<Flashcard> temp = pfcd.getPendingFlashcards(groupId);
+		Collection<PendingFlashcard> temp = pfcd.getPendingFlashcards(groupId);
 		System.out.println(temp);
-		//assertNotNull(temp);
 	}
 }
