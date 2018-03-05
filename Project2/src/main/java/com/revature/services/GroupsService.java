@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.*;
 import com.revature.dao.GroupDaoImpl;
+import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.messages.GroupAdded;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
@@ -19,6 +20,8 @@ import com.revature.util.HibernateUtil;
 public class GroupsService {
 	
 	static GroupDaoImpl gdi = new GroupDaoImpl();
+	static PendingFlashcardDaoImpl pfcdi = new PendingFlashcardDaoImpl();
+	
 	public GroupAdded addGroup(Group g) {
 		gdi.addGroup(g);
 		return new GroupAdded(gdi.getGroupById(g.getId())!=null);
@@ -42,6 +45,18 @@ public class GroupsService {
 		for(Flashcard f:lazyFlashcards)
 		{
 			flashcards.add(new Flashcard(f.getAnswer(),f.getQuestion(),f.getHint(),f.getTag()));
+		}
+		s.close();
+		return flashcards;
+	}
+	public Collection<Flashcard> getgroupPendingFlashcards(int groupId)
+	{
+		Collection<Flashcard> flashcards = new ArrayList<Flashcard>();
+		Session s = HibernateUtil.getSession();
+		Collection<PendingFlashcard> lazyFlashcards = pfcdi.getPendingFlashcards(groupId);
+		for(PendingFlashcard f:lazyFlashcards)
+		{
+			flashcards.add(f.getFlashcardId());
 		}
 		s.close();
 		return flashcards;

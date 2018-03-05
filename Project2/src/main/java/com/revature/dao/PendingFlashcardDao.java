@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
+import com.revature.beans.PendingFlashcard;
 
 public interface PendingFlashcardDao {
 	
@@ -12,7 +13,7 @@ public interface PendingFlashcardDao {
 	
 	public void deletePendingFlashcard(int pendingFlashcardId);
 	
-	public Collection<Flashcard> getPendingFlashcards(int groupId);
+	public Collection<PendingFlashcard> getPendingFlashcards(int groupId);
 
 }
 

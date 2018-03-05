@@ -40,10 +40,14 @@ public class GroupController {
 		return new ResponseEntity<>(groupService.getGroupById(groupId), HttpStatus.OK);
 	}
 	@RequestMapping(value="flashcard/{id}",method=RequestMethod.GET)
-	public ResponseEntity<Collection<Flashcard>> getUserFlashcards(@PathVariable("id") int groupId){
+	public ResponseEntity<Collection<Flashcard>> getGroupsFlashcards(@PathVariable("id") int groupId){
 		return new ResponseEntity<>(groupService.getgroupFlashcards(groupId), HttpStatus.OK);
 	}
-	@PostMapping("/addUser")
+	@RequestMapping(value="pendingflashcard/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Collection<Flashcard>> getGroupsPendingFlashcards(@PathVariable("id") int groupId){
+		return new ResponseEntity<>(groupService.getgroupPendingFlashcards(groupId), HttpStatus.OK);
+	}
+	@PostMapping("/addGroup")
 	@ResponseBody
 	public ResponseEntity<GroupAdded> addGroup(@RequestBody String groupName,@RequestBody String groupDescription,@RequestBody String leaderId){
 		return new ResponseEntity<>(groupService.addGroup(new Group(groupName,groupDescription, userService.getUser(leaderId))), HttpStatus.OK);

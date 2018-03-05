@@ -33,7 +33,7 @@ public class PendingFlashcard {
 	@JoinColumn(name = "FLASHCARD")
     private Flashcard flashcard;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "GROUPS")
     private Group group;
 
