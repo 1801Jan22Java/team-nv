@@ -17,13 +17,13 @@ export class CreateGroupComponent implements OnInit {
    }
 
   onSubmit(heroForm:NgForm){
-   // console.log(heroForm.value);
-    // this.httpClient.get(`http://localhost:8080/Project2/group/1`).subscribe((data:any[]) => {
-      //console.log(data);
+    console.log(heroForm.value);
+     this.httpClient.get(`http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/flashcard/userTest2`).subscribe((data:any[]) => {
+      console.log(data);
       
-  //})
+  })
   
-  this.router.navigate(['homepage']);
+  //this.router.navigate(['homepage']);
 }
 
 

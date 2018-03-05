@@ -6,6 +6,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { JoinPageComponent } from './components/join-page/join-page.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
+import {AddFlashcardPageComponent} from "./components/add-flashcard-page/add-flashcard-page.component"
 
 const routes: Routes =[
 	{ path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes =[
   {path:'joinPage',component:JoinPageComponent},
   {path:'createGroup',component:CreateGroupPageComponent},
   {path:'progress',component:ProgressPageComponent},
+  {path:'addFlashcards', component:AddFlashcardPageComponent},
 ];
 @NgModule({
   imports: [

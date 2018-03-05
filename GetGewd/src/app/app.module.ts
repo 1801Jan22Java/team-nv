@@ -32,6 +32,8 @@ import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
 //made change
 import {AuthService} from './core/auth.service';
+import { AddFlashcardPageComponent } from './components/add-flashcard-page/add-flashcard-page.component';
+import { AddFlashcardFormComponent } from './components/add-flashcard-form/add-flashcard-form.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import {AuthService} from './core/auth.service';
     CreateGroupPageComponent,
     TableComponent,
     ProgressPageComponent,
+    AddFlashcardPageComponent,
+    AddFlashcardFormComponent,
     
     
   ],

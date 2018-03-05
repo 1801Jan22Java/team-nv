@@ -8,14 +8,23 @@ import { Component, OnInit } from '@angular/core';
 export class TableComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() {
-    var things = [0, 5, 10];
-    var graphContext = document.getElementById("graphContainer");
-      for (let i = 0; i < things.length; i++) {
-        document.createElement("div").setAttribute("style", "width:200px;height:200px;background-color:black");
-        console.log("got here");
+  
+  createGraph(){
+        let things = [0, 5, 10];        
+        let box = document.createElement("div");
+        box.id = "stuff";
+        box.setAttribute("style","position:absolute;width:200px;height:20%;background:black;top:50%");
+        
+        document.getElementById("things").appendChild(box);
+       
       }
     
-  }
+  
 
+  
+
+  ngOnInit() {
+    this.createGraph();
+
+}
 }
