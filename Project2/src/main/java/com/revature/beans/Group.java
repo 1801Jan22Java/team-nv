@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 import com.revature.beans.*;
 
-@Component("users")
+@Component("group")
 @Entity
 @Scope("prototype")
 @Table(name = "GROUP_TABLE")
@@ -59,7 +59,7 @@ public class Group {
     @Column(name="GROUP_DESCRIPTION")
     private String groupDescription;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     private Collection<PendingFlashcard> pendingFlashcards;
     
     @ManyToOne(fetch = FetchType.EAGER)

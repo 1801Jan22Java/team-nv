@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap'
 import { User } from '../user'
 
-//interface User {
+// interface User {
 //  uid: string;
 //  email: string;
 //  photoURL?: string;
@@ -20,7 +20,7 @@ import { User } from '../user'
 
 @Injectable()
 export class AuthService {
-
+   things:string;
   user: Observable<User>;
 
   //userid: String;
@@ -74,11 +74,21 @@ export class AuthService {
     return userRef.set(data, { merge: true })
 
   }
+  updateItems(){
+    this.user.subscribe(data => this.setitem(data.displayName))
+  }
+  setitem(abc){
+    this.things = abc;
+   
+  }
 
+  getitem():String{
+    return this.things;
+  }
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-      this.router.navigate(['']);
+        this.router.navigate(['login']);
     });
   }
 

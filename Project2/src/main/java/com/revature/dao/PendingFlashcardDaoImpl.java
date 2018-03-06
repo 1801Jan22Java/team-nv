@@ -20,16 +20,12 @@ public class PendingFlashcardDaoImpl implements PendingFlashcardDao{
 	@Override
 	public Collection<Flashcard> getPendingFlashcards(int groupId) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.beginTransaction();
+		Query q = s.createQuery("select flashcard from PendingFlashcard where groups = :param1");
+		q.setParameter("param1",groupId);
 		Group currentGroup = (Group)s.get(Group.class, groupId);
-		Collection<PendingFlashcard> pendingFlashcards = currentGroup.getPendingFlashcards();
-		Collection<Flashcard> flashcards = new ArrayList<Flashcard>();
-		Collection<PendingFlashcard>copy = pendingFlashcards;
-		s.close();
-		for(PendingFlashcard pfc: copy) {
-			flashcards.add(pfc.getFlashcardId());
-		}
-		return flashcards;
+		Collection<Flashcard> pendingFlashcards = q.list();
+				//currentGroup.getPendingFlashcards();
+		return pendingFlashcards;
 	}
 
 	@Override
@@ -52,27 +48,5 @@ public class PendingFlashcardDaoImpl implements PendingFlashcardDao{
 		tx.commit();
 		s.close();
 		List<Flashcard> pendingFlashcards = new ArrayList<Flashcard>();
-	}
-	public static void main(String[] args) {
-		PendingFlashcardDaoImpl pfcd = new PendingFlashcardDaoImpl();
-		Session s = HibernateUtil.getSession();
-		Transaction tx = s.beginTransaction();
-		Group g = new Group("Group name","Desctiption",(Users)s.get(Users.class, "temp1"));
-		Tag tag = new Tag("goupTest");
-		Flashcard fc = new Flashcard("q","h","a",tag);
-		PendingFlashcard pfc = new PendingFlashcard(fc,g);
-		s.persist(tag);
-		s.persist(fc);
-		s.persist(g);
-		s.persist(pfc);
-		System.out.println(pfc);
-		//g.getPendingFlashcards().add(pfc);
-		int groupId = g.getId();
-		System.out.println(groupId);
-		tx.commit();
-		s.close();
-		Collection<Flashcard> temp = pfcd.getPendingFlashcards(groupId);
-		System.out.println(temp);
-		//assertNotNull(temp);
 	}
 }

@@ -82,6 +82,12 @@ public class DataBaseDriver
 		s.persist(p3);
 		s.persist(p4);
 		s.persist(p5);
+		//Add Groups to Users
+		u1.getGroups().add(g1);
+		u1.getGroups().add(g2);
+		u1.getGroups().add(g3);
+		u1.getGroups().add(g4);
+		u1.getGroups().add(g5);
 		//Add Flashcards to Users
 		u1.getFlashcards().add(f1);
 		u2.getFlashcards().add(f2);

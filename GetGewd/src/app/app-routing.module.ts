@@ -8,6 +8,8 @@ import { CreateGroupPageComponent } from './components/create-group-page/create-
 import { AllGroupsComponent } from './components/all-groups/all-groups.component';
 import { MyGroupsComponent } from './components/my-groups/my-groups.component';
 import { GroupHomeComponent } from './components/group-home/group-home.component';
+import {AddFlashcardPageComponent} from "./components/add-flashcard-page/add-flashcard-page.component";
+import { FlashcardPageComponent } from './components/flashcard-page/flashcard-page.component';
 
 const routes: Routes =[
 	{ path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -19,6 +21,8 @@ const routes: Routes =[
   {path:'allgroups',component:AllGroupsComponent},
   {path:'mygroups',component:MyGroupsComponent},
   {path:'grouphome/:group.groupId',component:GroupHomeComponent},
+  {path:'addFlashcards', component:AddFlashcardPageComponent},
+  {path: 'flashcards', component: FlashcardPageComponent},
 ];
 @NgModule({
   imports: [

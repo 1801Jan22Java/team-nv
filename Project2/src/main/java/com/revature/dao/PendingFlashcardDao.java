@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
+import com.revature.beans.PendingFlashcard;
 
 public interface PendingFlashcardDao {
 	
