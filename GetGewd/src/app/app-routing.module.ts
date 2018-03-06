@@ -7,6 +7,7 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
 import { AllGroupsComponent } from './components/all-groups/all-groups.component';
 import { MyGroupsComponent } from './components/my-groups/my-groups.component';
+import { GroupHomeComponent } from './components/group-home/group-home.component';
 
 const routes: Routes =[
 	{ path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -15,8 +16,9 @@ const routes: Routes =[
   {path:'joinPage',component:JoinPageComponent},
   {path:'createGroup',component:CreateGroupPageComponent},
   {path:'progress',component:ProgressPageComponent},
-  {path:'allGroups',component:AllGroupsComponent},
-  {path:'myGroups',component:MyGroupsComponent},
+  {path:'allgroups',component:AllGroupsComponent},
+  {path:'mygroups',component:MyGroupsComponent},
+  {path:'grouphome/:group.groupId',component:GroupHomeComponent},
 ];
 @NgModule({
   imports: [

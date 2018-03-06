@@ -11,10 +11,14 @@ export class GroupService {
   constructor(private httpClient: HttpClient) { }
 
   getAllGroups(): Observable<Group[]> {
-    return this.httpClient.get<Group[]>('http://localhost:8084/Project2/group/all'); //=> {      
+    return this.httpClient.get<Group[]>('http://localhost:8084/Project2/group/all');     
   }
 
   getGroupsByUid(uid: String): Observable<Group[]> {
-    return this.httpClient.get<Group[]>(`http://localhost:8084/Project2/group/${uid}`); //=> {
+    return this.httpClient.get<Group[]>(`http://localhost:8084/Project2/user/group/${uid}`); 
+  }
+
+  getGroupsByGroupId(uriId: number): Observable<Group[]> {
+    return this.httpClient.get<Group[]>(`http://localhost:8084/Project2/group/${uriId}`); 
   }
 }

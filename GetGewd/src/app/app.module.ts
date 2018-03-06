@@ -30,6 +30,7 @@ import { AuthService } from './core/auth.service';
 import { GroupService } from './group.service';
 import { AllGroupsComponent } from './components/all-groups/all-groups.component';
 import { MyGroupsComponent } from './components/my-groups/my-groups.component';
+import { GroupHomeComponent } from './components/group-home/group-home.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { MyGroupsComponent } from './components/my-groups/my-groups.component';
     ProgressPageComponent,
     AllGroupsComponent,
     MyGroupsComponent,
+    GroupHomeComponent,
   ],
   imports: [
     BrowserModule,
