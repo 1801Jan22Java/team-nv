@@ -47,7 +47,7 @@ public class UsersController {
 	}
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<UserAdded> addUser(@RequestParam(value = "userId", required = false) String userId){
+	public ResponseEntity<UserAdded> addUser(@RequestBody String userId){
 		if(userService.validateUser(userId).getIsValidated()) {
 			return new ResponseEntity<>(null, HttpStatus.OK);
 		}
