@@ -86,4 +86,23 @@ public class ProgressDaoImpl implements ProgressDao{
 		
 		
 	}
+
+	@Override
+	public Progress getProgress(int tagId, String userId) {
+		Session s =HibernateUtil.getSession();
+		Progress progress = null;
+		Query q =s.createQuery("from Progress where User_Id =:param1");
+		q.setParameter("param1", userId);
+		Tag tag = (Tag)s.get(Tag.class, tagId);
+		System.out.println(q.list());
+		List<Progress> usersProgresses = q.list();
+		for(Progress p: usersProgresses) {
+			if(p.getTag()==tag) {
+				System.out.println(p.getNumCorrect());
+				progress = p;
+			}
+		}
+		s.close();
+		return progress;
+	}
 }
