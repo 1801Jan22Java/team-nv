@@ -14,7 +14,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 
 import { NavComponent } from './components/pieces/nav/nav.component';
 import { ProfileComponent } from './components/pieces/profile/profile.component';
@@ -27,17 +26,14 @@ import { CreateGroupComponent } from './components/pieces/create-group/create-gr
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
 import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
-import { GroupHomeComponent } from './components/group-home/group-home.component';
-import { GroupFlashcardsService } from './group-flashcards.service';
 import { AuthService } from './core/auth.service';
-//import { UidService } from './uid.service';
+import { GroupService } from './group.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     NavComponent,
     ProfileComponent,
     ProfileSidebarComponent,
@@ -50,7 +46,6 @@ import { AuthService } from './core/auth.service';
     TableComponent,
     ProgressPageComponent,
     ProgressPageComponent,
-    GroupHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,9 +60,8 @@ import { AuthService } from './core/auth.service';
     HttpModule,
   ],
   providers: [
-    GroupFlashcardsService,
-    //UidService,
     AuthService,
+    GroupService,
     /* . . . */
   ],
   bootstrap: [AppComponent]

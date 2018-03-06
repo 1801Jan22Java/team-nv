@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { JoinPageComponent } from './components/join-page/join-page.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
