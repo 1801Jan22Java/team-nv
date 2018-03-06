@@ -1,17 +1,16 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Project</groupId>
-	<artifactId>Project2</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Project</groupId>
+  <artifactId>Project2</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 
-	<properties>
-
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -22,8 +21,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<dependencies>
-		<dependency>
+ <dependencies>
+  	<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
@@ -33,48 +32,29 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.2</version>
 		</dependency>
->
+   	 <dependency>
+    	<groupId>junit</groupId>
+     	<artifactId>junit</artifactId>
+     	<version>4.11</version>
+     	<scope>test</scope>
+    </dependency>
   	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-aspects</artifactId>
-		<version>4.3.3.RELEASE</version>
-	</dependency>
- 	<dependency>
-		<groupId>org.hibernate</groupId>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>4.3.3.RELEASE</version>
+		</dependency>
+ 		<dependency>
+			<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-core</artifactId>
     	<version>4.3.11.Final</version>
-	</dependency>
+		</dependency>
   
-	<dependency>
+		<dependency>
     	<groupId>org.hibernate</groupId>
    		<artifactId>hibernate-entitymanager</artifactId>
     	<version>4.3.11.Final</version>
-	</dependency>  
+		</dependency>  
 	
-	<dependency>
-		<groupId>com.oracle.ojdbc</groupId>
-		<artifactId>ojdbc</artifactId>
-		<version>12.1.0.1</version>
-	</dependency>
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>servlet-api</artifactId>
-		<version>2.5</version>
-	</dependency>
-	<dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.11.Final</version>
-		</dependency>
-
 		<dependency>
 			<groupId>com.oracle.ojdbc</groupId>
 			<artifactId>ojdbc</artifactId>
@@ -94,16 +74,16 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.6.3</version>
+		</dependency>	
+		<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>4.3.7.RELEASE</version>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-test</artifactId>
+	    	<version>4.3.7.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -121,5 +101,5 @@
 			<version>4.3.3.RELEASE</version>
 		</dependency>
 	</dependencies>
-
+  
 </project>
