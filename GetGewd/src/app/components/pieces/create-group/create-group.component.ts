@@ -29,8 +29,9 @@ export class CreateGroupComponent implements OnInit {
     this.auth.user.subscribe(data =>{
       groupObject.leaderId = data.uid;
       //console.log(groupObject);
-      this.httpClient.post("http://localhost:8080/Project2/group/addGroup",data.uid).subscribe();
+      this.httpClient.post("http://localhost:8080/Project2/group/addGroup",groupObject).subscribe();
     })
+    this.router.navigate(["/homepage"]);
     
   }
   
