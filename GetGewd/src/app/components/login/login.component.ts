@@ -23,25 +23,25 @@ export class LoginComponent implements OnInit {
   signInWithGoogle() {
   	this.auth.googleLogin()
   	.then((res) => {
-      console.log()
-      this.auth.user.subscribe(data => {this.httpClient.post('http://localhost:8080/Project2/user/addUser',data.uid);
-      console.log(data.uid);
+      this.auth.user.subscribe(data => {this.httpClient.post("http://localhost:8080/Project2/user/addUser","userId="+data.uid).subscribe();
+
     
     });
-      //this.router.navigate(['homepage']);
+      this.router.navigate(['homepage']);
       
   	})
   	.catch((err) => console.log(err)); 
   }
 
-/** Added after lunch, email login ability **/
   signInWithEmail() {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
-        console.log(res);
-        this.router.navigate(['homepage']);
       })
       .catch((err) => console.log('error: ' + err));
+      this.auth.user.subscribe(data =>{
+        this.httpClient.post("http://localhost:8080/Project2/user/addUser","userId="+data.uid).subscribe();
+      })
+      this.router.navigate(['homepage']);
   }
 
    ngOnInit() {
