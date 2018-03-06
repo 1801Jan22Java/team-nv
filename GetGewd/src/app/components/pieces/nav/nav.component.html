@@ -1,20 +1,13 @@
-<!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">GetGewd</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <a class="navbar-brand">SiteName</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink="/homepage">Home</a>
+        <a class="nav-item nav-link active" routerLink="/homepage">My Groups</a>
+        <a class="nav-item nav-link active" routerLink="/homepage">Settings</a>
+        <a class="nav-item nav-link active" (click) ="travelAddFlashcard()">Add Flashcard</a>
+        <a class="nav-item nav-link active" routerLink="/homepage" style ="position:absolute;left:90%;"(click)="auth.signOut()">Logout</a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" routerLink="/homepage">Home</li>
-         <li class="nav-item" routerLink="/homepage">My Groups</li>
-         <li class="nav-item" routerLink="/homepage">Settings</li>
-      </ul>
-
-
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="button" (click)="auth.signOut()">Log Out</button>
-
+      </div>
     </div>
   </nav>
-  <!-- end Navbar -->
