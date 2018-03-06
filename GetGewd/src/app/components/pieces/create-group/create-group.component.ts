@@ -3,6 +3,7 @@ import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import{HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../core/auth.service';
 
 
 @Component({
@@ -12,13 +13,25 @@ import { Router } from '@angular/router';
 })
 export class CreateGroupComponent implements OnInit {
   name:string = "";
-  constructor(private httpClient:HttpClient,private router:Router) {
+  constructor(private httpClient:HttpClient,private router:Router,public auth: AuthService) {
     
    }
 
   onSubmit(heroForm:NgForm){
+    let groupObject ={
+      groupName:heroForm.value.id,
+      groupDescription:heroForm.value.description,
+      leaderId:null,
+    }
+  console.log(heroForm.value.description);
+    
     console.log(heroForm.value);
-      
+    this.auth.user.subscribe(data =>{
+      groupObject.leaderId = data.uid;
+      //console.log(groupObject);
+      this.httpClient.post("http://localhost:8080/Project2/group/addGroup",data.uid).subscribe();
+    })
+    
   }
   
  // this.router.navigate(['homepage']);

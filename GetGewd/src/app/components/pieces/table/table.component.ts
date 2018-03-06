@@ -12,9 +12,9 @@ export class TableComponent implements OnInit {
   constructor(public auth: AuthService, private router: Router,private httpClient:HttpClient) { }
 
   //groupNames,percentages
-  createGraph(groupNames,percentages) {
-    //let groupNames = ["biology", "physics", "math"];
-    //let percentages = [100, 50, 25];
+  createGraph() {
+    let groupNames = ["biology", "physics", "math"];
+    let percentages = [100, 50, 25];
     
     
     for (var i = 0; i < percentages.length; i++) {
@@ -31,10 +31,11 @@ export class TableComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
-      console.log(data);
+   // this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
+      //console.log(data);
       
-  })
+ // })
+ this.createGraph();
 
   }
 }
