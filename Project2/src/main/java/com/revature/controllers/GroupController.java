@@ -28,10 +28,13 @@ import com.revature.services.UsersService;
 @RequestMapping("/group")
 @CrossOrigin(origins="http://localhost:4200")
 public class GroupController {
+	
 	@Autowired
 	private GroupsService groupService;
+	
 	@Autowired
 	private UsersService userService;
+	
 	@GetMapping("/all")
 	@ResponseBody
 	public ResponseEntity<Collection<GroupMessage>> getAllGroupes() {

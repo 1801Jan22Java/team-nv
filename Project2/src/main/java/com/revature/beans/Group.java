@@ -120,7 +120,7 @@ public class Group {
 
     @Override
     public String toString() {
-        return "Group [id=" + id + ", groupName=" + groupName + "]";
+        return "Group [id=" + id + ", groupName=" + groupName + "GroupLeader " +groupLeader+"Description"+this.groupDescription+"]";
     }
 
 
