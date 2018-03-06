@@ -1,0 +1,14 @@
+#carouselExampleControls{
+    position: relative;;
+    left: 20%;
+    width:80%;
+    height: 80%;
+    
+}
+.thing{
+    position: relative;
+    background:black;
+    height: 90%;
+    width: 90%;
+
+}
