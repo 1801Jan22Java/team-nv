@@ -9,7 +9,9 @@ export class AddFlashcardPageComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
+  
   }
 
 }
