@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {NgForm} from '@angular/forms';
+import{HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-add-flashcard-form',
@@ -9,11 +10,11 @@ import {NgForm} from '@angular/forms';
 })
 export class AddFlashcardFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   onSubmit(heroForm:NgForm){
-    console.log(heroForm.value);
-      
+    // need to post 
+   this.http.post("http://localhost:8080/Project2/user/addUser",heroForm.value).subscribe();
   }
   ngOnInit() {
   }

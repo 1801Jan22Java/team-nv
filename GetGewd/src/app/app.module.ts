@@ -33,7 +33,9 @@ import { ProgressPageComponent } from './components/progress-page/progress-page.
 //made change
 import {AuthService} from './core/auth.service';
 import { AddFlashcardPageComponent } from './components/add-flashcard-page/add-flashcard-page.component';
-import { AddFlashcardFormComponent } from './components/add-flashcard-form/add-flashcard-form.component';
+import { AddFlashcardFormComponent } from './components/pieces/add-flashcard-form/add-flashcard-form.component';
+import { FlashcardPageComponent } from './components/flashcard-page/flashcard-page.component';
+import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/flashcard-wheel.component';
 
 
 @NgModule({
@@ -54,6 +56,8 @@ import { AddFlashcardFormComponent } from './components/add-flashcard-form/add-f
     ProgressPageComponent,
     AddFlashcardPageComponent,
     AddFlashcardFormComponent,
+    FlashcardPageComponent,
+    FlashcardWheelComponent,
     
     
   ],
