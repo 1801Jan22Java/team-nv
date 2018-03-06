@@ -23,16 +23,4 @@ export class AllGroupsComponent implements OnInit {
     });
   }
 
-  //myEvent(event : number) {
-    //console.log(event);
-  //}
-
-  //dosomething(val : any){
-  //  console.log(val);
-  //}
-
-  goToGroup(groupId) {
-    console.log(groupId);
-  }
-
 }

@@ -23,8 +23,8 @@ export class MyGroupsComponent implements OnInit {
       this.user = user
       console.log(this.user.uid);
 
-      // below method should have this.user.uid
-      this.groupService.getGroupsByUid("userTest2").subscribe((groups: Group[]) => {
+      // below method should be switched to this.user.uid as argument
+      this.groupService.getGroupsByUid("userTest1").subscribe((groups: Group[]) => {
         this.groups = groups
         console.log(this.groups);
       });

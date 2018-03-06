@@ -26,11 +26,10 @@ export class GroupHomeComponent implements OnInit {
     this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
       this.group = group
       console.log(this.group);
+
+    // Post method to add user to group here.
+    // Gets added if not already a member, otherwise do nothing.
     });
   }
-
-  // method to have user join group IF user is not already a part of the group (similar to addUser post)
-  // method for checking if group leader (to determine if review cards button will show)
-  // method to load previous pages information
 
 }
