@@ -26,10 +26,10 @@ export class HomePageComponent implements OnInit {
 
     //  console.log(this.user.uid);
 
-      this.groupService.getAllGroups().subscribe((groups: Group[]) => {
+      /*this.groupService.getAllGroups().subscribe((groups: Group[]) => {
         this.groups = groups
         console.log(this.groups);
-      });
+      });*/
 
       
 
@@ -37,6 +37,6 @@ export class HomePageComponent implements OnInit {
       //console.log(this.groupService.getGroupsByUid(this.user.uid));
 
     //});
-  };
+  }
 
 }

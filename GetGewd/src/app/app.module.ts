@@ -28,6 +28,8 @@ import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
 import { AuthService } from './core/auth.service';
 import { GroupService } from './group.service';
+import { AllGroupsComponent } from './components/all-groups/all-groups.component';
+import { MyGroupsComponent } from './components/my-groups/my-groups.component';
 
 
 @NgModule({
@@ -46,6 +48,8 @@ import { GroupService } from './group.service';
     TableComponent,
     ProgressPageComponent,
     ProgressPageComponent,
+    AllGroupsComponent,
+    MyGroupsComponent,
   ],
   imports: [
     BrowserModule,

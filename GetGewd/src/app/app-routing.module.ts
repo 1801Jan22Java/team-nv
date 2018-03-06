@@ -5,6 +5,8 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { JoinPageComponent } from './components/join-page/join-page.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
+import { AllGroupsComponent } from './components/all-groups/all-groups.component';
+import { MyGroupsComponent } from './components/my-groups/my-groups.component';
 
 const routes: Routes =[
 	{ path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -13,6 +15,8 @@ const routes: Routes =[
   {path:'joinPage',component:JoinPageComponent},
   {path:'createGroup',component:CreateGroupPageComponent},
   {path:'progress',component:ProgressPageComponent},
+  {path:'allGroups',component:AllGroupsComponent},
+  {path:'myGroups',component:MyGroupsComponent},
 ];
 @NgModule({
   imports: [
