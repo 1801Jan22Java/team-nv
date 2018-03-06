@@ -28,33 +28,33 @@ public class DataBaseDriver
 		s.persist(u4);
 		s.persist(u5);
 		//Create Tags
-		Tag tag1 = new Tag("tag1");
-		Tag tag2 = new Tag("tag2");
-		Tag tag3 = new Tag("tag3");
-		Tag tag4 = new Tag("tag4");
-		Tag tag5 = new Tag("tag5");
+		Tag tag1 = new Tag("jokes");
+		Tag tag2 = new Tag("fractions");
+		Tag tag3 = new Tag("biology");
+		Tag tag4 = new Tag("division");
+		Tag tag5 = new Tag("paradox");
 		s.persist(tag1);
 		s.persist(tag2);
 		s.persist(tag3);
 		s.persist(tag4);
 		s.persist(tag5);
 		//Create Flashcards
-		Flashcard f1 = new Flashcard("Question1", "Answer1", "Hint1",tag1);
-		Flashcard f2 = new Flashcard("Question1", "Answer1", "Hint1",tag2);
-		Flashcard f3 = new Flashcard("Question1", "Answer1", "Hint1",tag3);
-		Flashcard f4 = new Flashcard("Question1", "Answer1", "Hint1",tag4);
-		Flashcard f5 = new Flashcard("Question1", "Answer1", "Hint1",tag5);
+		Flashcard f1 = new Flashcard("What does the fox say?", "Ring Ding Ding and such", "don't let you memes be dreams",tag1);
+		Flashcard f2 = new Flashcard("1/2 * 1/4", "1/8", "multiply across",tag2);
+		Flashcard f3 = new Flashcard("What is the study of birds called?", "Ornothology", "birds yo",tag3);
+		Flashcard f4 = new Flashcard("123/0", "undefined", "never do this",tag4);
+		Flashcard f5 = new Flashcard("can you burn toast?", "no", "what about bread?",tag5);
 		s.persist(f1);
 		s.persist(f2);
 		s.persist(f3);
 		s.persist(f4);
 		s.persist(f5);
 		//Create Groups
-		Group g1 = new Group("group1", "desription1",u1);
-		Group g2 = new Group("group1", "desription1",u2);
-		Group g3 = new Group("group1", "desription1",u3);
-		Group g4 = new Group("group1", "desription1",u4);
-		Group g5 = new Group("group1", "desription1",u5);
+		Group g1 = new Group("Totology Club", "We meet where the Totology Club meets",u1);
+		Group g2 = new Group("Meme group", "how can you kill that which has no life?",u2);
+		Group g3 = new Group("Crab people", "talk like crab, tast like human",u3);
+		Group g4 = new Group("Clubsandwhich", "tastes better than the crab peopl group",u4);
+		Group g5 = new Group("The meming of life", "42 doge coins",u5);
 		s.persist(g1);
 		s.persist(g2);
 		s.persist(g3);
@@ -121,6 +121,6 @@ public class DataBaseDriver
 	}
 	public static void main(String[] args) {
 		create();
-		//destroy();
+		//	destroy();
 	}
 }

@@ -56,5 +56,12 @@ public class GroupsService {
 		s.close();
 		return flashcards;
 	}
+	public static void main(String[] args) {
+		GroupsService gs = new GroupsService();
+		System.out.println(gdi.getAllGroups());
+		GroupMessage gm = new GroupMessage(gdi.getGroupById(53));
+		System.out.println(gm);
+		System.out.println(gs.getAllGroups());
+	}
 }
 

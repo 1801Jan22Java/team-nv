@@ -9,7 +9,9 @@ public class GroupMessage {
 		this.groupName = g.getGroupName();
 		this.groupDescription = g.getGroupDescription();
 		this.groupId = g.getId();
-		this.groupLeader = g.getGroupLeader().getId();
+		if(groupLeader != null){
+			this.groupLeader = g.getGroupLeader().toString();
+		}
 	}
 	private String groupName;
 	private String groupDescription;

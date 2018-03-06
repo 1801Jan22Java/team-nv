@@ -17,7 +17,7 @@ import com.revature.dao.GroupDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class GroupDaoTest {
-	/*
+	
 	public static GroupDaoImpl groupDao = new GroupDaoImpl();
 	public static DataBaseDriver driver = new DataBaseDriver();
 	//@Test
@@ -76,5 +76,5 @@ public class GroupDaoTest {
 		Group test = groupDao.getGroupById(1);
 		System.out.println(test);
 		assertNotNull(test);
-	}*/
+	}
 }
