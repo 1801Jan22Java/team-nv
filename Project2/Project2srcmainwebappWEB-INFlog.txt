@@ -1,0 +1,71 @@
+2018-03-06 17:13:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-06 17:13:25 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-03-06 17:13:25 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-06 17:13:25 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-06 17:13:25 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2018-03-06 17:13:25 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2018-03-06 17:13:25 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-03-06 17:13:25 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-03-06 17:13:26 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL]
+2018-03-06 17:13:26 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=HarmsP, password=****}
+2018-03-06 17:13:26 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-03-06 17:13:26 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-03-06 17:13:27 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-03-06 17:13:27 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-06 17:13:27 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-06 17:13:27 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2018-03-06 17:13:27 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2018-03-06 17:13:28 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.FLASHCARD
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [answer, question, hint, flashcard_id, tag]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_lnnf4r8jhk1i4hh3qk0gxd4yt]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010039]
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.GROUP_FLASHCARDS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [group_id, flashcard_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_okyb56qcwkvan4t64vofal2d, fk_gi93hlvpxx4aq6y6t1af0y7n9]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: []
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.GROUP_TABLE
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [group_id, groupleader_id, groupname, group_description]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_ogghaj55eq7640l5u43k16f2n]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010043]
+2018-03-06 17:13:28 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.PENDING_FLASHCARDS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [flashcard, pending_flashcard_id, groups]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_7jwbv81qqy6ekpgirk4iecdxb, fk_g2fka1qeid7vj04chgssxirn4]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010045]
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.PROGRESS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [numcorrect, total, user_id, tag_id, proress_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_nhofq3phix5jog6k3mwy4xm5m, fk_alvy53mcstu5h2l2n42o0e4ku]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010047]
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.TAG
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [animal_name, tag_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010049]
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.USERS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [user_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: [sys_c0010051]
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.USERS_FLASHCARDS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, flashcard_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_rvkq7dw4u68hdsf0am7g69jr6, fk_2bqswic66rvctq2hi3ly3w2xe]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: []
+2018-03-06 17:13:28 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.USERS_GROUPS
+2018-03-06 17:13:28 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, group_id]
+2018-03-06 17:13:28 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_emd19e17ekvtcf6xk3aabanj1, fk_rmwpd0qjtrorqi6xm3npy08a]
+2018-03-06 17:13:28 INFO  TableMetadata:69 - HHH000126: Indexes: []
+2018-03-06 17:13:29 INFO  TableMetadata:65 - HHH000261: Table found: HARMSP.USERS_TAGS
+2018-03-06 17:13:29 INFO  TableMetadata:66 - HHH000037: Columns: [user_id, tag_id]
+2018-03-06 17:13:29 INFO  TableMetadata:68 - HHH000108: Foreign keys: [fk_p1jco702k6b1sqh23kuejss6w, fk_cf44ra1p8rkn6chl8gg64ng3k]
+2018-03-06 17:13:29 INFO  TableMetadata:69 - HHH000126: Indexes: []
+2018-03-06 17:13:29 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-06 17:13:29 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-06 17:13:29 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: create table GROUP_TABLE_PENDING_FLASHCARDS (GROUP_TABLE_GROUP_ID number(10,0) not null, pendingFlashcards_Pending_Flashcard_Id number(10,0) not null)
+2018-03-06 17:13:29 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-06 17:13:29 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_b0wkhrwm5vb9vcnxyvhoxjk4x foreign key (pendingFlashcards_Pending_Flashcard_Id) references PENDING_FLASHCARDS
+2018-03-06 17:13:29 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-06 17:13:29 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_ofq2rm7gk0ik8w3asjk4rsuog foreign key (GROUP_TABLE_GROUP_ID) references GROUP_TABLE
+2018-03-06 17:13:29 ERROR SchemaUpdate:262 - ORA-00942: table or view does not exist
+
+2018-03-06 17:13:29 INFO  SchemaUpdate:267 - HHH000232: Schema update complete

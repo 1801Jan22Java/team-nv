@@ -28,7 +28,7 @@ import com.revature.services.UsersService;
 
 @Controller("userController")
 @RequestMapping("/user")
-@CrossOrigin(origins="localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 public class UsersController {
 	@Autowired
 	private UsersService userService;
@@ -47,7 +47,7 @@ public class UsersController {
 	}
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<UserAdded> addUser(@RequestParam(value = "userId", required = false) String userId){
+	public ResponseEntity<UserAdded> addUser(@RequestBody String userId){
 		if(userService.validateUser(userId).getIsValidated()) {
 			return new ResponseEntity<>(null, HttpStatus.OK);
 		}

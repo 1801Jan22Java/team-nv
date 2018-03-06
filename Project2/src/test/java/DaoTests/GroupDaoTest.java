@@ -31,7 +31,7 @@ public class GroupDaoTest {
 		assertNotNull(temp);
 		s.close();
 	}
-	//@Test
+	@Test
 	public void getGroupFlashcardTest() {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
@@ -48,7 +48,7 @@ public class GroupDaoTest {
 		Collection<Flashcard>test = groupDao.getGroupFlashcards(groupId);
 		assertNotNull(test);
 	}
-	//@Test
+	@Test
 	public void getGroupUsersTest() {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
@@ -71,7 +71,7 @@ public class GroupDaoTest {
 		System.out.println(test);
 		assertNotNull(test);
 	}
-	//@Test
+	@Test
 	public void getGroupByIdTest() {
 		Group test = groupDao.getGroupById(1);
 		System.out.println(test);
