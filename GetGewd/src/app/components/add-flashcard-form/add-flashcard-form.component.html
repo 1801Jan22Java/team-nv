@@ -1,14 +1,21 @@
 <div id="formContainer">
-
-<form action="">
-<h1 id="title">Add new cards</h1>
-Flashcard Name
-<input type="text" name ="flashcardName">
-Question
-<input type="text" name ="flashcardQuestion">
-Answer
-<input type="text" name ="flashcardValue">
-<button type ="submit" id="submitButton">Submit</button>
-
-</form>
+    <h1>Add new Cards</h1>
+<form (ngSubmit)="onSubmit(Form)" #Form="ngForm"novalidate>
+        <div class="form-group">
+          <label for="name">Question</label>
+          <input type="text" class="form-control" id="name" name="question" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Answer</label>
+          <input type = "text" name ="answer" class="form-control" id="power"ngModel>
+          
+        </div>
+        <div class="form-group">
+                <label>Hint</label>
+                <input type = "text" name ="hint" class="form-control" id="hint"ngModel>
+                
+              </div>
+  
+        <button class="btn btn-success">Submit</button>
+      </form>
 </div>

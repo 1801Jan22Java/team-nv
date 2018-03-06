@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import{FormBuilder,FormGroup,Validators} from '@angular/forms';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-add-flashcard-form',
@@ -9,6 +11,10 @@ export class AddFlashcardFormComponent implements OnInit {
 
   constructor() { }
 
+  onSubmit(heroForm:NgForm){
+    console.log(heroForm.value);
+      
+  }
   ngOnInit() {
   }
 

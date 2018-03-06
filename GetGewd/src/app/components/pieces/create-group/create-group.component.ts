@@ -18,16 +18,16 @@ export class CreateGroupComponent implements OnInit {
 
   onSubmit(heroForm:NgForm){
     console.log(heroForm.value);
-     this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
-      console.log(data);
       
-  })
+  }
   
-  this.router.navigate(['homepage']);
-}
+ // this.router.navigate(['homepage']);
+
 
 
   ngOnInit() {
   }
 }
 // router garud prevents users from going to certain paiges 
+//this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
+  //console.log(data);
