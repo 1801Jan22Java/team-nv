@@ -14,18 +14,19 @@ import { Observable } from 'rxjs/Observable';
 export class GroupHomeComponent implements OnInit {
 
   private uriId: number;  // same as groupId
-  private groups: Group[];
+  private group: Group;
 
   constructor(private router: Router, private authService: AuthService, private groupService: GroupService) { }
 
   ngOnInit() {
     let uri: string = this.router.url;
-    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/')+1));
+    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
     console.log(this.uriId);
 
-    this.groupService.getGroupsByGroupId(this.uriId).subscribe((groups: Group[]) => {
-      this.groups = groups
-      console.log(this.groups);
+    this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
+      this.group = group
+      console.log(this.group);
+    });
   }
 
   // method to have user join group IF user is not already a part of the group (similar to addUser post)

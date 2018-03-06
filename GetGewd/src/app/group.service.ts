@@ -18,7 +18,7 @@ export class GroupService {
     return this.httpClient.get<Group[]>(`http://localhost:8084/Project2/user/group/${uid}`); 
   }
 
-  getGroupsByGroupId(uriId: number): Observable<Group[]> {
-    return this.httpClient.get<Group[]>(`http://localhost:8084/Project2/group/${uriId}`); 
+  getGroupByGroupId(uriId: number): Observable<Group> {
+    return this.httpClient.get<Group>(`http://localhost:8084/Project2/group/${uriId}`); 
   }
 }

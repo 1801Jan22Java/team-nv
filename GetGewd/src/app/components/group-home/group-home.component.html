@@ -1,3 +1,8 @@
-<p>
-  group-home works!
-</p>
+<!--<p>Group home works!</p>-->
+<div *ngIf="group">
+<p>Group Name: {{group.groupName}}</p>
+<p>Group Description: {{group.groupDescription}}</p> 
+<p>Group Leader: {{group.groupLeader}}</p>
+<a routerLink="/flashcards" routerLinkActive="active">Study Flashcards</a>
+<a routerLink="addFlashcards" routerLinkActive="active">Create Flashcards</a>
+</div>
