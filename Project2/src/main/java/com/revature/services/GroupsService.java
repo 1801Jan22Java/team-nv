@@ -44,15 +44,8 @@ public class GroupsService {
 	}
 	public Collection<Flashcard> getgroupFlashcards(int groupId)
 	{
-		Collection<Flashcard> flashcards = new ArrayList<Flashcard>();
-		Session s = HibernateUtil.getSession();
 		Collection<Flashcard> lazyFlashcards = gdi.getGroupFlashcards(groupId);
-		for(Flashcard f:lazyFlashcards)
-		{
-			flashcards.add(new Flashcard(f.getAnswer(),f.getQuestion(),f.getHint(),f.getTag()));
-		}
-		s.close();
-		return flashcards;
+		return lazyFlashcards;
 	}
 	public Collection<Flashcard> getgroupPendingFlashcards(int groupId)
 	{
