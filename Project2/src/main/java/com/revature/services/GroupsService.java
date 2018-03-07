@@ -66,6 +66,13 @@ public class GroupsService {
 		return new FlashcardAdded(f!=null);
 	}
 	public GroupAddedUser addGroupUser(int groupId, String userId) {	
+		for(Users u: gdi.getGroupsUsers(groupId))
+			{
+				if(u.getId()==userId)
+				{
+					return new GroupAddedUser(false);
+				}
+			}
 		return new GroupAddedUser(gdi.addGroupUser(groupId, userId));
 	}
 }
