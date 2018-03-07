@@ -19,7 +19,7 @@ interface User {
 
 @Injectable()
 export class AuthService {
-
+   things:string;
   user: Observable<User>;
 
   constructor(private afAuth: AngularFireAuth,
@@ -71,11 +71,21 @@ export class AuthService {
     return userRef.set(data, { merge: true })
 
   }
+  updateItems(){
+    this.user.subscribe(data => this.setitem(data.displayName))
+  }
+  setitem(abc){
+    this.things = abc;
+   
+  }
 
+  getitem():String{
+    return this.things;
+  }
 
   signOut() {
     this.afAuth.auth.signOut().then(() => {
-        this.router.navigate(['']);
+        this.router.navigate(['login']);
     });
   }
 }

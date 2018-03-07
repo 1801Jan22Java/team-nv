@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AuthService } from '../../../core/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -9,8 +8,23 @@ import { AuthService } from '../../../core/auth.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private route:Router ) { }
 
+  traveHome(){
+    this.route.navigate(["/homepage"]);
+  }
+
+  travelMyGroups(){
+    
+  }
+  travelAddFlashcard(){
+    this.route.navigate(["/addFlashcards"]);
+
+  }
+  travelFlashcard(){
+    this.route.navigate(["/flashcards"]);
+
+  }
   ngOnInit() {
   }
 

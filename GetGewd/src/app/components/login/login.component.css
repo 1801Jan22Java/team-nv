@@ -1,3 +1,11 @@
-#mainForm {
-    margin-top: 250px;
+img{
+    position: absolute;;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+#outer{
+    position: absolute;
+    left:20%;
+    top:25%;
 }

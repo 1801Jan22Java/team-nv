@@ -1,0 +1,14 @@
+
+body{
+    overflow: hidden;
+}
+#things{
+position: absolute;
+height: 80%;
+width: 80%;
+top:8.9%;
+left: 20%;
+
+overflow:hidden;
+}
+
