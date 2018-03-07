@@ -16,14 +16,16 @@ export class AddFlashcardFormComponent implements OnInit {
   onSubmit(Form:NgForm){
     // need to post 
     console.log(Form.value);
-  // this.http.post("http://localhost:8080/Project2/user/addUser",Form.value).subscribe();
-   /*
-   this.auth.user.subscribe(data =>{
-     groupObject.leaderId = data.uid;
-     //console.log(groupObject);
-     this.httpClient.post("http://localhost:8080/Project2/group/addGroup",groupObject).subscribe();
-   })
-   this.router.navigate(["/homepage"]);*/
+    var cardObject ={
+      flashcardQuestion:Form.value.question,
+      flashcardAnswer:Form.value.answer,
+      flashcardHint:Form.value.hint,
+    }
+    this.auth.user.subscribe(data =>{
+      this.http.post("http://localhost:8080/Project2/group/addFlashcard",cardObject).subscribe();
+    });
+   
+
   }
   ngOnInit() {
   }
