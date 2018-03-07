@@ -15,7 +15,7 @@ export class NavComponent implements OnInit {
   }
 
   travelMyGroups(){
-    
+    this.route.navigate(["/mygroups"]);
   }
   travelAddFlashcard(){
     this.route.navigate(["/addFlashcards"]);

@@ -11,31 +11,10 @@ import { User } from '../../user';
   styleUrls: ['./flashcard-page.component.css']
 })
 export class FlashcardPageComponent implements OnInit {
-
-  private uriId: number;  // same as groupId
-  private flashcards: Flashcard[];
-  private user: User;
-  private uid = String;
-
-  constructor(private router: Router, private flashcardService: FlashcardService, private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit() {
-    let uri: string = this.router.url;
-    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
-    console.log(this.uriId);
-
-    this.flashcardService.getFlashcardsByGroupId(this.uriId).subscribe((flashcards: Flashcard[]) => {
-      this.flashcards = flashcards
-      console.log(this.flashcards);
-    });
-
-    this.authService.user.subscribe((user: User) => {
-      this.user = user
-      console.log(this.user.uid);
     
-      // write code here
-    
-    });
 
   }
 

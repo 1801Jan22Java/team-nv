@@ -1,6 +1,10 @@
+import{HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../core/auth.service';
-import{HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FlashcardService } from '../../../flashcard.service';
+import { Flashcard } from '../../../flashcard';
+import { User } from '../../../user';
 
 @Component({
   selector: 'app-flashcard-wheel',
@@ -10,13 +14,19 @@ import{HttpClient} from '@angular/common/http';
 export class FlashcardWheelComponent implements OnInit {
   private things:any;
   private position:number = 0;
+  private uriId: number;  // same as groupId
+  private flashcards: Flashcard[];
+  private user: User;
+  private uid = String;
 
-  constructor(public auth: AuthService,private httpClient:HttpClient) {    
+  constructor(private router: Router, private flashcardService: FlashcardService, private authService: AuthService,private httpClient:HttpClient) {    
    }
 
+   /*
    Cards(){
-      this.things =[{question:"blerp",answer:"bloop",hint:"blap"},{question:"blerpy",answer:"bloop",hint:"blap"},{question:"blerpest",answer:"bloop",hint:"blap"}];
-
+     // this.things =[{question:"blerp",answer:"bloop",hint:"blap"},{question:"blerpy",answer:"bloop",hint:"blap"},{question:"blerpest",answer:"bloop",hint:"blap"}];
+      
+     
       var question = document.createTextNode(this.things[0].question);
       //var holder = document.createElement("p");
       //holder.appendChild(question);
@@ -65,10 +75,25 @@ export class FlashcardWheelComponent implements OnInit {
     //holder.appendChild(question);
     document.getElementById("container").innerHTML =this.things[this.position].hint;
 
-   }
+   } */
 
   ngOnInit() {
+    let uri: string = this.router.url;
+    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
+    console.log(this.uriId);
 
+    this.flashcardService.getFlashcardsByGroupId(this.uriId).subscribe((flashcards: Flashcard[]) => {
+      this.flashcards = flashcards
+      console.log(this.flashcards);
+    });
+
+    this.authService.user.subscribe((user: User) => {
+      this.user = user
+      console.log(this.user.uid);
+      
+      //this.Cards();
+    
+    });
   
   }
 }
