@@ -74,6 +74,10 @@ public class TagDaoImpl implements TagDao{
 				tag = t;
 			}
 		}
+		if(tag == null) {
+			tag = new Tag(tagName);
+			s.persist(tag);
+		}
 		s.close();
 		return tag;
 	}
