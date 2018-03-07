@@ -58,9 +58,9 @@ public class UsersController {
 	@ResponseBody
 	public ResponseEntity<Progress> getUserProgress(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
-		int tagId = json.getInt("tagId");
+		String tagName = json.getString("tagName");
 		String userId = json.getString("UserId");
-		return new ResponseEntity<>(userService.getProgress(tagId, userId), HttpStatus.OK);
+		return new ResponseEntity<>(userService.getProgress(tagName, userId), HttpStatus.OK);
 	}
 	@RequestMapping(value = "/addUser", method = RequestMethod.POST)
 	@ResponseBody

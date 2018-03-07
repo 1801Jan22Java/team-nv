@@ -19,6 +19,7 @@ public List<Progress> getAllProgress();
 	public void changeProgressTag(int progressId, Tag tag);
 	public void changeProgressTotal(int progressId, int total);
 	public Progress getProgress(int tagId, String userId);
+	public Progress getProgress(String tagName, String userId);
 	public List<Progress> getProgressByUserId(String userId);
 }
 

@@ -56,8 +56,8 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 		}
 		return usersGroups;
 	}
-	public Progress getProgress(int tagId, String userId) {
-		return pdi.getProgress(tagId, userId);
+	public Progress getProgress(String tagName, String userId) {
+		return pdi.getProgress(tagName, userId);
 	}
 	public boolean addTag(String tag) {
 		for(Tag t : tdi.getAllTags()) {
