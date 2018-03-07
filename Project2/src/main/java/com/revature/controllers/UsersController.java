@@ -25,6 +25,7 @@ import com.revature.beans.Progress;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.ProgressAdded;
+import com.revature.messages.ProgressUpdated;
 import com.revature.messages.TagAdded;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
@@ -99,5 +100,14 @@ public class UsersController {
 		int tagId = json.getInt("tagId");
 		String userId = json.getString("userId");
 		return new ResponseEntity<>(new ProgressAdded(userService.addProgress(userId, tagId)), HttpStatus.OK);
+	}
+	@RequestMapping(value = "/updateProgress", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<ProgressUpdated> updateProgress(@RequestBody String jsonString){
+		JSONObject json = new JSONObject(jsonString);
+		String tagName = json.getString("tagName");
+		String userId = json.getString("userId");
+		boolean isCorrect = json.getBoolean("isCorrect");
+		return new ResponseEntity<>(new ProgressUpdated(userService.updateProgress(tagName, userId, isCorrect)), HttpStatus.OK);
 	}
 }

@@ -14,7 +14,7 @@ public List<Progress> getAllProgress();
 
 	public void addProgress(Progress p);
 	public void deleteProgress(int progressId);
-	
+	public boolean updateProgress(Progress p, boolean isCorrect);
 	public void changeProgressNumCorrect(int progressId, int numCorrect);
 	public void changeProgressTag(int progressId, Tag tag);
 	public void changeProgressTotal(int progressId, int total);
