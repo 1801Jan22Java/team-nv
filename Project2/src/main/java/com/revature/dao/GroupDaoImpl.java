@@ -79,4 +79,24 @@ public class GroupDaoImpl implements GroupDao{
 		s.close();
 		return group;
 	}
+
+	@Override
+	public void addFlashcard(Flashcard f, int groupId) {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		s.persist(f);
+		Group group = (Group)s.get(Group.class, groupId);
+		group.getFlashcards().add(f);
+		System.out.println(group.getFlashcards());
+		s.save(group);
+		tx.commit();
+		s.close();
+	}
+	public static void main(String[] args) {	
+		Tag tag = new Tag("jokes");
+		tag.setId(66);
+		Flashcard f = new Flashcard("Question", "Answer", "Hint", tag);
+		GroupDaoImpl gdi = new GroupDaoImpl();
+		gdi.addFlashcard(f, 53);
+	}
 }

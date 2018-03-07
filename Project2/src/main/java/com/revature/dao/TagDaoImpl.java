@@ -16,7 +16,6 @@ import java.util.List;
 public class TagDaoImpl implements TagDao{
 	public List<Tag> getAllTags() {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.beginTransaction();
 		Query q = s.createQuery("from Tag");
 		List<Tag> items = q.list();
 		s.close();
@@ -52,8 +51,6 @@ public class TagDaoImpl implements TagDao{
 		s.close();
 		return 1;
 	}
-
-
 
 	@Override
 	public Tag getTag(int tagId) {

@@ -27,5 +27,6 @@ public void addGroup(Group g);
 	public Collection<Users> getGroupsUsers(int groupId);
 	
 	public Group getGroupById(int groupId);
-
+	
+	public void addFlashcard(Flashcard f, int groupId);
 }

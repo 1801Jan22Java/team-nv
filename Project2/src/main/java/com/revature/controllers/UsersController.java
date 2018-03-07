@@ -24,6 +24,7 @@ import com.revature.beans.Group;
 import com.revature.beans.Progress;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupMessage;
+import com.revature.messages.TagAdded;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
 import com.revature.services.GroupsService;
@@ -77,5 +78,12 @@ public class UsersController {
 		int tagId = json.getInt("tagId");
 		userService.addFlashcard(userId, question, answer, hint, tagId);
 		return new ResponseEntity<>(new FlashcardAdded(true), HttpStatus.OK);
+	}
+	@RequestMapping(value = "/addTag", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<TagAdded> addTag(@RequestBody String jsonString){
+		JSONObject json = new JSONObject(jsonString);
+		String tag = json.getString("Tag");
+		return new ResponseEntity<>(new TagAdded(userService.addTag(tag)), HttpStatus.OK);
 	}
 }
