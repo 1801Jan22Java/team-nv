@@ -14,6 +14,7 @@ import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.dao.ProgressDaoImpl;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupAdded;
+import com.revature.messages.GroupAddedUser;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
 import com.revature.util.HibernateUtil;
@@ -59,6 +60,9 @@ public class GroupsService {
 	public FlashcardAdded addGroupFlashcard(Flashcard f, int groupId) {
 		gdi.addFlashcard(f, groupId);
 		return new FlashcardAdded(f!=null);
+	}
+	public GroupAddedUser addGroupUser(int groupId, String userId) {	
+		return new GroupAddedUser(gdi.addGroupUser(groupId, userId));
 	}
 }
 

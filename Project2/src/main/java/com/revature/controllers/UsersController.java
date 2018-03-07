@@ -54,7 +54,8 @@ public class UsersController {
 	public ResponseEntity<Collection<Progress>> getUserProgresses(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersProgresses(userId), HttpStatus.OK);
 	}
-	@RequestMapping(value="progress",method=RequestMethod.GET)
+	@RequestMapping(value="progress",method=RequestMethod.POST)
+	@ResponseBody
 	public ResponseEntity<Progress> getUserProgress(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
 		int tagId = json.getInt("tagId");
