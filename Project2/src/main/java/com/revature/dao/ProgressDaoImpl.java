@@ -66,7 +66,7 @@ public class ProgressDaoImpl implements ProgressDao{
 	}
 	public void changeProgressTag(int progressId, Tag tag) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.getTransaction();
+		Transaction tx = s.beginTransaction();
 		Progress p = (Progress) s.get(Progress.class, progressId);
 		p.setTag(tag);
 		s.update("Progress",p);
@@ -77,7 +77,7 @@ public class ProgressDaoImpl implements ProgressDao{
 	}
 	public void changeProgressTotal(int progressId, int total) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.getTransaction();
+		Transaction tx = s.beginTransaction();
 		Progress p = (Progress) s.get(Progress.class, progressId);
 		p.setTotal(total);
 		s.update("Progress",p);
@@ -134,9 +134,21 @@ public class ProgressDaoImpl implements ProgressDao{
 		s.close();
 		return temp;
 	}
-	public static void main(String[] args) {
-		ProgressDaoImpl pdi = new ProgressDaoImpl();
-		System.out.println(pdi.getProgress("fractions", "userTest2"));
-		
+	
+	@Override
+	public boolean updateProgress(Progress p, boolean isCorrect) {
+		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
+		Progress progressUpdate = (Progress)s.get(Progress.class, p.getProgressId());
+		int oldScore = progressUpdate.getNumCorrect();
+		int oldTotal = progressUpdate.getTotal();
+		if(isCorrect) {
+			progressUpdate.setNumCorrect(oldScore+1);
+		}
+		progressUpdate.setTotal(oldTotal+1);
+		s.update(progressUpdate);
+		tx.commit();
+		s.close();
+		return isCorrect;
 	}
 }

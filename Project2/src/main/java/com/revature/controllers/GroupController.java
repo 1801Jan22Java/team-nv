@@ -72,5 +72,6 @@ public class GroupController {
 		String userId = json.getString("UserId");
 		return new ResponseEntity<>(groupService.addGroupUser(groupId, userId), HttpStatus.OK);
 	}
+	
 }
 

@@ -84,4 +84,9 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 			return false;
 		}
 	}
+	public boolean updateProgress(String tagName, String userId, boolean isCorrect) {
+		Progress progress = pdi.getProgress(tagName, userId);
+		pdi.updateProgress(progress, isCorrect);
+		return false;
+	}
 }
