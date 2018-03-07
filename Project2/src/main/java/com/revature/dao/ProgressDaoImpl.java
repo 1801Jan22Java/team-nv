@@ -37,7 +37,7 @@ public class ProgressDaoImpl implements ProgressDao{
 
 	public void addProgress(Progress p) {
 		Session s = HibernateUtil.getSession();
-		Transaction tx = s.getTransaction();
+		Transaction tx = s.beginTransaction();
 		s.save(p);
 		tx.commit();
 		s.close();
@@ -104,5 +104,26 @@ public class ProgressDaoImpl implements ProgressDao{
 		}
 		s.close();
 		return progress;
+	}
+
+	@Override
+	public List<Progress> getProgressByUserId(String userId) {
+		Session s =HibernateUtil.getSession();
+		Query q =s.createQuery("from Progress where User_Id =:param1");
+		List<Progress> temp = null;
+		q.setParameter("param1", userId);
+		List<Progress> usersProgresses = q.list();
+		temp = usersProgresses;
+		s.close();
+		return temp;
+	}
+	public static void main(String[] args) {
+		TagDaoImpl tdi = new TagDaoImpl();	
+		UsersDaoImpl udi = new UsersDaoImpl();
+		FlashcardDaoImpl fcdi = new FlashcardDaoImpl();
+		ProgressDaoImpl pdi = new ProgressDaoImpl();
+		
+		pdi.addProgress(new Progress(tdi.getTag(101),udi.getUser("userTest2")));
+		//assertNotNull(temp);
 	}
 }

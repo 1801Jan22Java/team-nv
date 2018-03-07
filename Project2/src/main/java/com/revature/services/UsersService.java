@@ -69,4 +69,19 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 		tdi.addTag(new Tag(tag));
 		return true;
 	}
+	public List<Progress> getUsersProgresses(String userId)
+	{
+		return pdi.getProgressByUserId(userId);
+	}
+	public boolean addProgress(String userId, int tagId) {
+		Users user = udi.getUser(userId);
+		Tag tag = tdi.getTag(tagId);
+		if(user!=null && tag!= null){
+			pdi.addProgress(new Progress(tag, user));
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 }

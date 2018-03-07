@@ -49,6 +49,10 @@ public class UsersController {
 	public ResponseEntity<Collection<GroupMessage>> getUserGroups(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersGroups(userId), HttpStatus.OK);
 	}
+	@RequestMapping(value="progress/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Collection<Progress>> getUserProgresses(@PathVariable("id") String userId){
+		return new ResponseEntity<>(userService.getUsersProgresses(userId), HttpStatus.OK);
+	}
 	@RequestMapping(value="progress",method=RequestMethod.GET)
 	public ResponseEntity<Progress> getUserProgress(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);

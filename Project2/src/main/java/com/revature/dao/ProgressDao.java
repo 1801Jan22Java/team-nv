@@ -13,13 +13,12 @@ public List<Progress> getAllProgress();
 	public Progress getProgressById(int id);
 
 	public void addProgress(Progress p);
-	
 	public void deleteProgress(int progressId);
 	
 	public void changeProgressNumCorrect(int progressId, int numCorrect);
 	public void changeProgressTag(int progressId, Tag tag);
 	public void changeProgressTotal(int progressId, int total);
 	public Progress getProgress(int tagId, String userId);
-
+	public List<Progress> getProgressByUserId(String userId);
 }
 
