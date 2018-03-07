@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import{FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {NgForm} from '@angular/forms';
 import{HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../core/auth.service';
+
 
 @Component({
   selector: 'app-create-group',
@@ -10,19 +13,35 @@ import{HttpClient} from '@angular/common/http';
 })
 export class CreateGroupComponent implements OnInit {
   name:string = "";
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient:HttpClient,private router:Router,public auth: AuthService) {
     
    }
 
   onSubmit(heroForm:NgForm){
-     console.log(heroForm.value);
+    let groupObject ={
+      groupName:heroForm.value.id,
+      groupDescription:heroForm.value.description,
+      leaderId:null,
+    }
+  console.log(heroForm.value.description);
+    
+    console.log(heroForm.value);
+    this.auth.user.subscribe(data =>{
+      groupObject.leaderId = data.uid;
+      //console.log(groupObject);
+      this.httpClient.post("http://localhost:8080/Project2/group/addGroup",groupObject).subscribe();
+    })
+    this.router.navigate(["/homepage"]);
+    
   }
+  
+ // this.router.navigate(['homepage']);
 
-  getProfile(){
 
-  }
 
   ngOnInit() {
   }
 }
 // router garud prevents users from going to certain paiges 
+//this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
+  //console.log(data);
