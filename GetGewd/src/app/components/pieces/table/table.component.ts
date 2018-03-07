@@ -33,7 +33,7 @@ export class TableComponent implements OnInit {
   ngOnInit() {
    // this.httpClient.get(`http://localhost:8080/team-nv/Project2/user/group/all`).subscribe((data:any[]) => {
       //console.log(data);
-      
+      // get cards b
  // })
  this.createGraph();
 

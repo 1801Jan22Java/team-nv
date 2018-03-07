@@ -1,14 +1,14 @@
 <div id="container">
-<p>{{flashcards.flashcardId[0]}}</p>
-<p>{{flashcards.Question[0]}}</p>
-<p>{{flashcards.Hint[0]}}</p>
-<p>{{flashcards.Answer[0]}}</p>
+<p>{{flashcards[0].flashcardId}}</p>
+<p>{{flashcards[0].question}}</p>
+<p>{{flashcards[0].hint}}</p>
+<p>{{flashcards[0].answer}}</p>
 <!--<p>{{flashcards.tag}}</p>-->
 
 </div>
 <button (click)="nextCard()" id="next">Next</button>
 <button (click)="previousCard()" id="previous">Previous</button>
 <button (click)="previousCard()" id="previous">Learned</button>
-<button (click)="previousCard()" id="previous">Learning</button>
+<button (click)="previousCard()" id="previous">Still Learning</button>
 
 <button (click)="showCard()" id="show">Show</button>

@@ -13,7 +13,7 @@
         <form id="mainForm" method="post" #formCtrl="ngForm">
             <h3>Welcome, GUEST</h3>
             <p>Login to get started...</p>
-            <div class="form-group">
+            <!--div class="form-group">
                 <label for="inputEmail">Email address</label>
                 <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="user.email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
@@ -21,10 +21,10 @@
             <div class="form-group">
                 <label for="inputPassword">Password</label>
                 <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" [(ngModel)]="user.password">
-            </div>
+            </div-->
             <!-- Regular Login button -->
-            <button type="button" class="btn btn-primary" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">Submit</button>
-            <p>or</p>
+            <!--button type="button" class="btn btn-primary" (click)="signInWithEmail()" [disabled]="formCtrl.form.invalid">Submit</button>
+            <p>or</p-->
             <!-- Google button -->
             <button (click)="signInWithGoogle()" type="button" class="btn btn-primary btn-sm btn-block">
                 <i class="fab fa-google"></i> Connect Google

@@ -18,7 +18,7 @@ export class CreateGroupComponent implements OnInit {
    }
 
   onSubmit(heroForm:NgForm){
-    let groupObject ={
+    var groupObject ={
       groupName:heroForm.value.id,
       groupDescription:heroForm.value.description,
       leaderId:null,

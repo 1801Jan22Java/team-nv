@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
   signInWithGoogle() {
   	this.auth.googleLogin()
   	.then((res) => {
-      this.auth.user.subscribe(data => {this.httpClient.post("http://localhost:8080/Project2/user/addUser","userId"+data.uid).subscribe();
-
+      this.auth.user.subscribe(data => {this.httpClient.post("http://localhost:8080/Project2/user/addUser",data.uid).subscribe();
     
     });
       this.router.navigate(['homepage']);
@@ -36,11 +35,12 @@ export class LoginComponent implements OnInit {
   signInWithEmail() {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
+        this.auth.user.subscribe(data =>{
+          this.httpClient.post("http://localhost:8080/Project2/user/addUser",data.uid).subscribe();
+        })
       })
       .catch((err) => console.log('error: ' + err));
-      this.auth.user.subscribe(data =>{
-        this.httpClient.post("http://localhost:8080/Project2/user/addUser","userId"+data.uid).subscribe();
-      })
+     
       this.router.navigate(['homepage']);
   }
 
