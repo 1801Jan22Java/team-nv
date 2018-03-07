@@ -290,3 +290,247 @@
 2018-03-06 16:58:38 ERROR SqlExceptionHelper:146 - ORA-00001: unique constraint (HARMSP.SYS_C0010051) violated
 
 2018-03-06 16:58:38 INFO  AbstractBatchImpl:208 - HHH000010: On release of batch it still contained JDBC statements
+2018-03-07 16:12:34 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-07 16:12:34 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-03-07 16:12:34 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-07 16:12:34 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-07 16:12:34 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2018-03-07 16:12:34 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2018-03-07 16:12:34 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-03-07 16:12:34 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-03-07 16:12:34 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL]
+2018-03-07 16:12:34 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=HarmsP, password=****}
+2018-03-07 16:12:34 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-03-07 16:12:34 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-03-07 16:12:35 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-03-07 16:12:36 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-07 16:12:36 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-07 16:12:36 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2018-03-07 16:12:36 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2018-03-07 16:12:36 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:12:37 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:12:37 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: create table GROUP_TABLE_PENDING_FLASHCARDS (GROUP_TABLE_GROUP_ID number(10,0) not null, pendingFlashcards_Pending_Flashcard_Id number(10,0) not null)
+2018-03-07 16:12:37 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:12:38 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_b0wkhrwm5vb9vcnxyvhoxjk4x foreign key (pendingFlashcards_Pending_Flashcard_Id) references PENDING_FLASHCARDS
+2018-03-07 16:12:38 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:12:38 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_ofq2rm7gk0ik8w3asjk4rsuog foreign key (GROUP_TABLE_GROUP_ID) references GROUP_TABLE
+2018-03-07 16:12:38 ERROR SchemaUpdate:262 - ORA-00942: table or view does not exist
+
+2018-03-07 16:12:38 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2018-03-07 16:13:03 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-07 16:13:03 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-03-07 16:13:03 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-07 16:13:03 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-07 16:13:03 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2018-03-07 16:13:03 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2018-03-07 16:13:03 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-03-07 16:13:03 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-03-07 16:13:03 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL]
+2018-03-07 16:13:03 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=HarmsP, password=****}
+2018-03-07 16:13:03 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-03-07 16:13:03 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-03-07 16:13:04 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-03-07 16:13:04 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-07 16:13:04 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-07 16:13:04 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2018-03-07 16:13:04 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2018-03-07 16:13:05 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:05 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:05 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: create table GROUP_TABLE_PENDING_FLASHCARDS (GROUP_TABLE_GROUP_ID number(10,0) not null, pendingFlashcards_Pending_Flashcard_Id number(10,0) not null)
+2018-03-07 16:13:05 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:05 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_b0wkhrwm5vb9vcnxyvhoxjk4x foreign key (pendingFlashcards_Pending_Flashcard_Id) references PENDING_FLASHCARDS
+2018-03-07 16:13:05 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:05 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_ofq2rm7gk0ik8w3asjk4rsuog foreign key (GROUP_TABLE_GROUP_ID) references GROUP_TABLE
+2018-03-07 16:13:05 ERROR SchemaUpdate:262 - ORA-00942: table or view does not exist
+
+2018-03-07 16:13:05 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2018-03-07 16:13:15 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-07 16:13:15 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-03-07 16:13:15 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-07 16:13:15 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-07 16:13:15 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2018-03-07 16:13:15 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2018-03-07 16:13:15 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-03-07 16:13:15 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-03-07 16:13:15 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL]
+2018-03-07 16:13:15 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=HarmsP, password=****}
+2018-03-07 16:13:15 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-03-07 16:13:15 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-03-07 16:13:16 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-03-07 16:13:16 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-07 16:13:16 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-07 16:13:16 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2018-03-07 16:13:16 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2018-03-07 16:13:17 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:17 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:17 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: create table GROUP_TABLE_PENDING_FLASHCARDS (GROUP_TABLE_GROUP_ID number(10,0) not null, pendingFlashcards_Pending_Flashcard_Id number(10,0) not null)
+2018-03-07 16:13:17 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:18 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_b0wkhrwm5vb9vcnxyvhoxjk4x foreign key (pendingFlashcards_Pending_Flashcard_Id) references PENDING_FLASHCARDS
+2018-03-07 16:13:18 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:18 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_ofq2rm7gk0ik8w3asjk4rsuog foreign key (GROUP_TABLE_GROUP_ID) references GROUP_TABLE
+2018-03-07 16:13:18 ERROR SchemaUpdate:262 - ORA-00942: table or view does not exist
+
+2018-03-07 16:13:18 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
+2018-03-07 16:13:25 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2018-03-07 16:13:25 INFO  Version:54 - HHH000412: Hibernate Core {4.3.11.Final}
+2018-03-07 16:13:25 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2018-03-07 16:13:25 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2018-03-07 16:13:25 INFO  Configuration:2075 - HHH000043: Configuring from resource: hibernate.cfg.xml
+2018-03-07 16:13:25 INFO  Configuration:2094 - HHH000040: Configuration resource: hibernate.cfg.xml
+2018-03-07 16:13:25 INFO  Configuration:2216 - HHH000041: Configured SessionFactory: null
+2018-03-07 16:13:25 WARN  DriverManagerConnectionProviderImpl:93 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2018-03-07 16:13:25 INFO  DriverManagerConnectionProviderImpl:166 - HHH000401: using driver [oracle.jdbc.driver.OracleDriver] at URL [jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL]
+2018-03-07 16:13:25 INFO  DriverManagerConnectionProviderImpl:175 - HHH000046: Connection properties: {user=HarmsP, password=****}
+2018-03-07 16:13:25 INFO  DriverManagerConnectionProviderImpl:180 - HHH000006: Autocommit mode: false
+2018-03-07 16:13:25 INFO  DriverManagerConnectionProviderImpl:102 - HHH000115: Hibernate connection pool size: 20 (min=1)
+2018-03-07 16:13:26 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+2018-03-07 16:13:26 INFO  TransactionFactoryInitiator:62 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2018-03-07 16:13:26 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2018-03-07 16:13:26 INFO  SchemaUpdate:207 - HHH000228: Running hbm2ddl schema update
+2018-03-07 16:13:26 INFO  SchemaUpdate:218 - HHH000102: Fetching database metadata
+2018-03-07 16:13:27 INFO  SchemaUpdate:230 - HHH000396: Updating schema
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: FLASHCARD
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: GROUP_TABLE_PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PENDING_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: PROGRESS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: TAG
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_FLASHCARDS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_GROUPS
+2018-03-07 16:13:27 INFO  DatabaseMetaData:147 - HHH000262: Table not found: USERS_TAGS
+2018-03-07 16:13:28 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: create table GROUP_TABLE_PENDING_FLASHCARDS (GROUP_TABLE_GROUP_ID number(10,0) not null, pendingFlashcards_Pending_Flashcard_Id number(10,0) not null)
+2018-03-07 16:13:28 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:28 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_b0wkhrwm5vb9vcnxyvhoxjk4x foreign key (pendingFlashcards_Pending_Flashcard_Id) references PENDING_FLASHCARDS
+2018-03-07 16:13:28 ERROR SchemaUpdate:262 - ORA-00972: identifier is too long
+
+2018-03-07 16:13:28 ERROR SchemaUpdate:261 - HHH000388: Unsuccessful: alter table GROUP_TABLE_PENDING_FLASHCARDS add constraint FK_ofq2rm7gk0ik8w3asjk4rsuog foreign key (GROUP_TABLE_GROUP_ID) references GROUP_TABLE
+2018-03-07 16:13:28 ERROR SchemaUpdate:262 - ORA-00942: table or view does not exist
+
+2018-03-07 16:13:28 INFO  SchemaUpdate:267 - HHH000232: Schema update complete
