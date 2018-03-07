@@ -22,8 +22,8 @@ export class SidebarButtonsComponent implements OnInit {
     this.route.navigate(['createGroup']);
    }
 
-   goToJoinGroup(){
-    this.route.navigate(['joinPage']);
+   goToAllGroup(){
+    this.route.navigate(['allgroups']);
    }
 
   ngOnInit() {

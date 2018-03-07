@@ -38,6 +38,7 @@ import { AddFlashcardPageComponent } from './components/add-flashcard-page/add-f
 import { AddFlashcardFormComponent } from './components/pieces/add-flashcard-form/add-flashcard-form.component';
 import { FlashcardPageComponent } from './components/flashcard-page/flashcard-page.component';
 import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/flashcard-wheel.component';
+import { FlashcardService } from './flashcard.service';
 
 
 
@@ -81,6 +82,7 @@ import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/fla
   providers: [
     AuthService,
     GroupService,
+    FlashcardService,
   ],
   bootstrap: [AppComponent]
 })
