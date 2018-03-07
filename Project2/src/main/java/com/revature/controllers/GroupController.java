@@ -3,6 +3,7 @@ package com.revature.controllers;
 import java.util.Collection;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
+import com.revature.beans.Progress;
 import com.revature.messages.GroupAdded;
+import com.revature.messages.GroupAddedUser;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
 import com.revature.services.GroupsService;
@@ -56,6 +59,14 @@ public class GroupController {
 	@ResponseBody
 	public ResponseEntity<GroupAdded> addGroup(@RequestBody String groupName,@RequestBody String groupDescription,@RequestBody String leaderId){
 		return new ResponseEntity<>(groupService.addGroup(new Group(groupName,groupDescription, userService.getUser(leaderId))), HttpStatus.OK);
+	}
+	@PostMapping("/addUser")
+	@RequestMapping(value="progress",method=RequestMethod.GET)
+	public ResponseEntity<GroupAddedUser> addUser(@RequestBody String jsonString){
+		JSONObject json = new JSONObject(jsonString);
+		int groupId = json.getInt("groupId");
+		String userId = json.getString("UserId");
+		return new ResponseEntity<>(groupService.addGroupUser(groupId, userId), HttpStatus.OK);
 	}
 }
 

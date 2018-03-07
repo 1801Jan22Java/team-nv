@@ -29,4 +29,6 @@ public void addGroup(Group g);
 	public Group getGroupById(int groupId);
 	
 	public void addFlashcard(Flashcard f, int groupId);
+	
+	public boolean addGroupUser(int groupId, String userId);
 }
