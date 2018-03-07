@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.revature.beans.*;
 import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.PendingFlashcardDaoImpl;
+import com.revature.dao.ProgressDaoImpl;
 import com.revature.messages.GroupAdded;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
@@ -57,11 +58,10 @@ public class GroupsService {
 		return flashcards;
 	}
 	public static void main(String[] args) {
-		GroupsService gs = new GroupsService();
-		System.out.println(gdi.getAllGroups());
-		GroupMessage gm = new GroupMessage(gdi.getGroupById(53));
-		System.out.println(gm);
-		System.out.println(gs.getAllGroups());
+		
+			ProgressDaoImpl pdi = new ProgressDaoImpl();
+			System.out.println(pdi.getProgress(66, "userTest1"));
+	
 	}
 }
 

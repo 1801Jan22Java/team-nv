@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
+import com.revature.beans.Progress;
 import com.revature.beans.Users;
 import com.revature.dao.FlashcardDaoImpl;
+import com.revature.dao.ProgressDaoImpl;
 import com.revature.dao.TagDaoImpl;
 import com.revature.dao.UsersDaoImpl;
 import com.revature.messages.FlashcardAdded;
@@ -23,6 +25,7 @@ public class UsersService {
 static TagDaoImpl tdi = new TagDaoImpl();	
 static UsersDaoImpl udi = new UsersDaoImpl();
 static FlashcardDaoImpl fcdi = new FlashcardDaoImpl();
+static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	
 	public UserAdded addUser(String userId) {
 		udi.addUser(new Users(userId));
@@ -52,5 +55,7 @@ static FlashcardDaoImpl fcdi = new FlashcardDaoImpl();
 		}
 		return usersGroups;
 	}
-	
+	public Progress getProgress(int tagId, String userId) {
+		return pdi.getProgress(tagId, userId);
+	}
 }
