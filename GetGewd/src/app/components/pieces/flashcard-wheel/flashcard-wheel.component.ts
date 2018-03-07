@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../../core/auth.service';
+import{HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-flashcard-wheel',
@@ -9,7 +11,7 @@ export class FlashcardWheelComponent implements OnInit {
   private things:any;
   private position:number = 0;
 
-  constructor() {    
+  constructor(public auth: AuthService,private httpClient:HttpClient) {    
    }
 
    Cards(){
@@ -57,9 +59,16 @@ export class FlashcardWheelComponent implements OnInit {
     document.getElementById("container").innerHTML =this.things[this.position].answer;
 
    }
+   showHint(){
+   
+    //var holder = document.createElement("p");
+    //holder.appendChild(question);
+    document.getElementById("container").innerHTML =this.things[this.position].hint;
+
+   }
 
   ngOnInit() {
-    this.Cards();
+
   
   }
 }
