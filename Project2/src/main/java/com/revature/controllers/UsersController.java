@@ -24,6 +24,7 @@ import com.revature.beans.Group;
 import com.revature.beans.Progress;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupMessage;
+import com.revature.messages.ProgressAdded;
 import com.revature.messages.TagAdded;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
@@ -48,6 +49,10 @@ public class UsersController {
 	@RequestMapping(value="group/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Collection<GroupMessage>> getUserGroups(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersGroups(userId), HttpStatus.OK);
+	}
+	@RequestMapping(value="progress/{id}",method=RequestMethod.GET)
+	public ResponseEntity<Collection<Progress>> getUserProgresses(@PathVariable("id") String userId){
+		return new ResponseEntity<>(userService.getUsersProgresses(userId), HttpStatus.OK);
 	}
 	@RequestMapping(value="progress",method=RequestMethod.GET)
 	public ResponseEntity<Progress> getUserProgress(@RequestBody String jsonString){
@@ -83,7 +88,15 @@ public class UsersController {
 	@ResponseBody
 	public ResponseEntity<TagAdded> addTag(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
-		String tag = json.getString("Tag");
+		String tag = json.getString("tag");
 		return new ResponseEntity<>(new TagAdded(userService.addTag(tag)), HttpStatus.OK);
+	}
+	@RequestMapping(value = "/addProgress", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<ProgressAdded> addProgress(@RequestBody String jsonString){
+		JSONObject json = new JSONObject(jsonString);
+		int tagId = json.getInt("tagId");
+		String userId = json.getString("userId");
+		return new ResponseEntity<>(new ProgressAdded(userService.addProgress(userId, tagId)), HttpStatus.OK);
 	}
 }

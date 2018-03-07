@@ -18,9 +18,7 @@ public class TagDaoTest {
 	
 	@Test
 	public void addTagTest() {
-		Tag tag = new Tag("test");
 		Tag temp = null;
-		tdi.addTag(tag);
 		for(Tag t: tdi.getAllTags())
 		{
 			if(t.getTagName().equals("test"));
