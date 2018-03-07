@@ -17,11 +17,14 @@ export class AddFlashcardFormComponent implements OnInit {
     // need to post 
     console.log(Form.value);
     var cardObject ={
-      flashcardQuestion:Form.value.question,
-      flashcardAnswer:Form.value.answer,
-      flashcardHint:Form.value.hint,
+      question:Form.value.question,
+      answer:Form.value.answer,
+      hint:Form.value.hint,
+      tag:Form.value.tag,
+      userId:null,      
     }
     this.auth.user.subscribe(data =>{
+      cardObject.userId = data.uid;
       this.http.post("http://localhost:8080/Project2/group/addFlashcard",cardObject).subscribe();
     });
    
