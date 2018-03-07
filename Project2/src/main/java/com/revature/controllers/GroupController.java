@@ -57,7 +57,11 @@ public class GroupController {
 	}
 	@PostMapping("/addGroup")
 	@ResponseBody
-	public ResponseEntity<GroupAdded> addGroup(@RequestBody String groupName,@RequestBody String groupDescription,@RequestBody String leaderId){
+	public ResponseEntity<GroupAdded> addGroup(@RequestBody String jsonString){
+		JSONObject json = new JSONObject(jsonString);
+		String groupName = json.getString("groupName");
+		String groupDescription = json.getString("groupDescription");
+		String leaderId = json.getString("leaderId");
 		return new ResponseEntity<>(groupService.addGroup(new Group(groupName,groupDescription, userService.getUser(leaderId))), HttpStatus.OK);
 	}
 	@PostMapping("/addUser")
