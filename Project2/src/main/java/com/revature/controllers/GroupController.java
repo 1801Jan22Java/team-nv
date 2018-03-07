@@ -65,7 +65,7 @@ public class GroupController {
 		String leaderId = json.getString("leaderId");
 		return new ResponseEntity<>(groupService.addGroup(new Group(groupName,groupDescription, userService.getUser(leaderId))), HttpStatus.OK);
 	}
-	@PostMapping("/addUser")
+	@PostMapping("/addFlashcard")
 	@ResponseBody
 	public ResponseEntity<GroupAddedFlashcard> addFlashcard(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
