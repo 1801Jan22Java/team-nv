@@ -21,6 +21,7 @@ import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
 import com.revature.beans.Progress;
 import com.revature.messages.GroupAdded;
+import com.revature.messages.GroupAddedFlashcard;
 import com.revature.messages.GroupAddedUser;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
@@ -66,14 +67,15 @@ public class GroupController {
 	}
 	@PostMapping("/addUser")
 	@ResponseBody
-	public ResponseEntity<GroupAddedUser> addFlashcard(@RequestBody String jsonString){
+	public ResponseEntity<GroupAddedFlashcard> addFlashcard(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
 		int groupId = json.getInt("groupId");
 		String answer = json.getString("answer");
 		String question = json.getString("question");
 		String hint = json.getString("hint");
 		String tagName = json.getString("tagName");
-		return new ResponseEntity<>(groupService.addGroupFlashcard(question,answer,hint,tagName, groupId)), HttpStatus.OK);
+		groupService.addGroupFlashcard(question,answer,hint,tagName, groupId);
+		return new ResponseEntity<>(new GroupAddedFlashcard(true), HttpStatus.OK);
 	}
 	
 }
