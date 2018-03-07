@@ -17,6 +17,7 @@ import com.revature.dao.TagDaoImpl;
 import com.revature.dao.UsersDaoImpl;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupMessage;
+import com.revature.messages.ProgressMessage;
 import com.revature.messages.UserAdded;
 import com.revature.messages.UserValidation;
 
@@ -69,9 +70,13 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 		tdi.addTag(new Tag(tag));
 		return true;
 	}
-	public List<Progress> getUsersProgresses(String userId)
+	public List<ProgressMessage> getUsersProgresses(String userId)
 	{
-		return pdi.getProgressByUserId(userId);
+		List<ProgressMessage> progressMessages = new ArrayList<ProgressMessage>();
+		for(Progress p :pdi.getProgressByUserId(userId)) {
+			progressMessages.add(new ProgressMessage(p));
+		}
+		return progressMessages;
 	}
 	public boolean addProgress(String userId, int tagId) {
 		Users user = udi.getUser(userId);
@@ -88,5 +93,9 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 		Progress progress = pdi.getProgress(tagName, userId);
 		pdi.updateProgress(progress, isCorrect);
 		return false;
+	}
+	public static void main(String[] args) {
+		UsersService us = new UsersService();
+		System.out.println(us.getUsersProgresses("userTest2"));
 	}
 }
