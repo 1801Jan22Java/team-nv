@@ -25,6 +25,7 @@ import com.revature.beans.Progress;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.ProgressAdded;
+import com.revature.messages.ProgressMessage;
 import com.revature.messages.ProgressUpdated;
 import com.revature.messages.TagAdded;
 import com.revature.messages.UserAdded;
@@ -52,7 +53,7 @@ public class UsersController {
 		return new ResponseEntity<>(userService.getUsersGroups(userId), HttpStatus.OK);
 	}
 	@RequestMapping(value="progress/{id}",method=RequestMethod.GET)
-	public ResponseEntity<Collection<Progress>> getUserProgresses(@PathVariable("id") String userId){
+	public ResponseEntity<Collection<ProgressMessage>> getUserProgresses(@PathVariable("id") String userId){
 		return new ResponseEntity<>(userService.getUsersProgresses(userId), HttpStatus.OK);
 	}
 	@RequestMapping(value="progress",method=RequestMethod.POST)
