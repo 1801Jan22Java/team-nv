@@ -9,13 +9,7 @@
       <td>{{group.groupName}}</td>
       <td>{{group.groupDescription}}</td> 
       <td>{{group.groupLeader}}</td>
-      <!--<td><button (click)="myEvent($[group.groupId])">Join Group!</button></td>-->
-      <!--<td><input type="button" id={{group.groupId}} value="Join Group" onclick="dosomething(this.id)"></td>-->
-      <!--<td><a href="#/grouphome" type="submit" name="grouphome" ng-click="goToGroup([group.groupId])">Join Group</a></td>-->
       <td><a [routerLink]="['/grouphome', group.groupId]" routerLinkActive="active">Join Group!</a></td>
-      <!--<td><a routerLink="[group.groupId]" routerLinkActive="active">Join Group!</a></td>-->      
-      <!--[routerLink]="['']" [queryParams]="{ procesId : 12 }" paramMap="[group.groupId]"-->
 
   </tr>
-  <!--<router-outlet></router-outlet>-->
 </table>
