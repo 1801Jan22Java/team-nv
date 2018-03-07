@@ -26,7 +26,7 @@ public class GroupsService {
 	static PendingFlashcardDaoImpl pfcdi = new PendingFlashcardDaoImpl();
 	
 	public GroupAdded addGroup(Group g) {
-		gdi.addGroup(g);
+		gdi.addGroup(g); 
 		return new GroupAdded(gdi.getGroupById(g.getId())!=null);
 	}
 	public Collection<GroupMessage> getAllGroups(){

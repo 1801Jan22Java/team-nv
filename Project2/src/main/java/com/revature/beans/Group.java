@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.revature.beans.*;
+import com.revature.dao.UsersDaoImpl;
 
 @Component("group")
 @Entity
@@ -30,8 +31,12 @@ public class Group {
 		this.groupLeader = groupLeader;
 	}
 
-
-
+    public Group(String groupName, String groupDescription, String leaderId) {
+		super();
+		this.groupName = groupName;
+		this.groupDescription = groupDescription;
+		this.groupLeader = new Users(leaderId);
+	}
 
 	public Group(String groupName, Users groupLeader) {
 		super();
