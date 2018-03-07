@@ -95,7 +95,7 @@ public class DataBaseDriver
 		u4.getFlashcards().add(f4);
 		//Add Flashcards to groups
 		g1.getFlashcards().add(f1);
-		g2.getFlashcards().add(f2);
+		g1.getFlashcards().add(f2);
 		g3.getFlashcards().add(f3);
 		g4.getFlashcards().add(f4);
 		g5.getFlashcards().add(f5);

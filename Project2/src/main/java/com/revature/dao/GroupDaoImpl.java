@@ -41,8 +41,16 @@ public class GroupDaoImpl implements GroupDao{
 		Group currentGroup = (Group)s.get(Group.class, groupId);
 		System.out.println(currentGroup);
 		Collection<Flashcard>stuff = currentGroup.getFlashcards();
+		Collection<Flashcard> things = new ArrayList<Flashcard>();
+		for(Flashcard f: stuff)
+		{
+			if(!things.contains(f))
+			{
+				things.add(f);
+			}
+		}
 		s.close();
-		return stuff;
+		return things;
 	}
 
 	@Override
