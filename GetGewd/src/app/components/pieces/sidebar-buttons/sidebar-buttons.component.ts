@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar-buttons',
@@ -7,7 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarButtonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:Router) {
+
+
+   }
+
+   goToProgress(){
+     console.log("got here");
+     this.route.navigate(['progress']);
+   }
+
+   goToCreateGroup(){
+    this.route.navigate(['createGroup']);
+   }
+
+   goToJoinGroup(){
+    this.route.navigate(['joinPage']);
+   }
 
   ngOnInit() {
   }
