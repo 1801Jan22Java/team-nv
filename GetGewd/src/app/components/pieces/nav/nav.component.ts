@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
 
   constructor(public auth: AuthService, private route:Router ) { }
 
-  traveHome(){
+  travelHome(){
     this.route.navigate(["/homepage"]);
   }
 

@@ -1,9 +1,10 @@
-<table *ngIf="groups">
+<table *ngIf="groups" id ="groupTable">
   <caption>My Groups</caption>
   <tr>
     <th>Group Name</th>
     <th>Group Description</th>
     <th>Group Leader</th>
+    <th></th>
   </tr>
   <tr *ngFor="let group of groups">
       <td>{{group.groupName}}</td>
