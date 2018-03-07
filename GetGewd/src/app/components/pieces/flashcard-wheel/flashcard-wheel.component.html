@@ -1,11 +1,30 @@
-<div id="container">
-<p>{{flashcards.flashcardId[0]}}</p>
-<p>{{flashcards.Question[0]}}</p>
-<p>{{flashcards.Hint[0]}}</p>
-<p>{{flashcards.Answer[0]}}</p>
-<!--<p>{{flashcards.tag}}</p>-->
+<!--<ng-container *ngIf="flashcards">
+    <div *ngFor="let flashcard of flashcards" align="center">
+        <p>{{flashcard.tag.tagName}}</p>
+        <p>{{flashcard.flashcardId}}</p>
+        <p>{{flashcard.question}}</p>
+        <p>{{flashcard.hint}}</p>
+        <p>{{flashcard.answer}}</p>
+      </div>
+</ng-container>
+-->
 
-</div>
-<button (click)="nextCard()" id="next">Next</button>
-<button (click)="previousCard()" id="previous">Previous</button>
-<button (click)="showCard()" id="show">Show</button>
+<!--Outside div ngif
+ngfor on inner div
+ngif on each span
+Answer and form in own div
+Correct answer yes/no form for each answer with next card submit (post request on progress) (all in one line)
+Only go to next card if yes or no is selected-->
+
+
+<!--<div id="container">
+    <p>{{flashcards.flashcardId[0]}}</p>
+    <p>{{flashcards.Question[0]}}</p>
+    <p>{{flashcards.Hint[0]}}</p>
+    <p>{{flashcards.Answer[0]}}</p>
+    <p>{{flashcards.tag}}</p>-->
+    
+<!--</div>
+    <button (click)="nextCard()" id="next">Next</button>
+    <button (click)="previousCard()" id="previous">Previous</button>
+    <button (click)="showCard()" id="show">Show</button>-->
