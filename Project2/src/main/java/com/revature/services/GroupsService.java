@@ -12,6 +12,7 @@ import com.revature.beans.*;
 import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.dao.ProgressDaoImpl;
+import com.revature.dao.TagDaoImpl;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupAdded;
 import com.revature.messages.GroupAddedUser;
@@ -22,6 +23,7 @@ import com.revature.util.HibernateUtil;
 @Service("groupService")
 public class GroupsService {
 	
+	static TagDaoImpl tdi = new TagDaoImpl();
 	static GroupDaoImpl gdi = new GroupDaoImpl();
 	static PendingFlashcardDaoImpl pfcdi = new PendingFlashcardDaoImpl();
 	
@@ -57,7 +59,9 @@ public class GroupsService {
 		Collection<Flashcard> flashcards = pfcdi.getPendingFlashcards(groupId);
 		return flashcards;
 	}
-	public FlashcardAdded addGroupFlashcard(Flashcard f, int groupId) {
+	public FlashcardAdded addGroupFlashcard(String question,String answer,String hint,String tagName, int groupId) {
+		Tag tag = tdi.getTag(tagName);
+		Flashcard f = new Flashcard(question, answer, hint, tag);
 		gdi.addFlashcard(f, groupId);
 		return new FlashcardAdded(f!=null);
 	}
