@@ -30,5 +30,7 @@ public class ProgressMessage {
 	public void setNumAnswered(int numAnswered) {
 		this.total = numAnswered;
 	}
-
+	public String toString() {
+		return this.tagName;
+	}
 }
