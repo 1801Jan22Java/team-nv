@@ -28,7 +28,7 @@ export class CreateGroupComponent implements OnInit {
     console.log(heroForm.value);
     this.auth.user.subscribe(data =>{
       groupObject.leaderId = data.uid;
-      //console.log(groupObject);
+      console.log(groupObject);
       this.httpClient.post("http://localhost:8080/Project2/group/addGroup",groupObject).subscribe();
     })
     this.router.navigate(["/homepage"]);

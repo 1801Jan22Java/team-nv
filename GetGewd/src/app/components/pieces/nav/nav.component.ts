@@ -21,10 +21,12 @@ export class NavComponent implements OnInit {
     this.route.navigate(["/addFlashcards"]);
 
   }
+ /* 
   travelFlashcard(){
     this.route.navigate(["/flashcards"]);
 
   }
+  */
   ngOnInit() {
   }
 

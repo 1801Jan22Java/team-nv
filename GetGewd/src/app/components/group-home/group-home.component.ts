@@ -18,6 +18,10 @@ export class GroupHomeComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService, private groupService: GroupService) { }
 
+  goToAddFlashcards(){
+    this.router.navigate(['addFlashcards'])
+  }
+
   ngOnInit() {
     let uri: string = this.router.url;
     this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
@@ -26,7 +30,7 @@ export class GroupHomeComponent implements OnInit {
     this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
       this.group = group
       console.log(this.group);
-
+      
     // Post method to add user to group here.
     // Gets added if not already a member, otherwise do nothing.
     });
