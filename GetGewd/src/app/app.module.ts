@@ -17,7 +17,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './components/home/home.component';
 
 import { NavComponent } from './components/pieces/nav/nav.component';
 import { ProfileComponent } from './components/pieces/profile/profile.component';
@@ -30,19 +29,22 @@ import { CreateGroupComponent } from './components/pieces/create-group/create-gr
 import { CreateGroupPageComponent } from './components/create-group-page/create-group-page.component';
 import { TableComponent } from './components/pieces/table/table.component';
 import { ProgressPageComponent } from './components/progress-page/progress-page.component';
-//made change
-import {AuthService} from './core/auth.service';
+import { AuthService } from './core/auth.service';
+import { GroupService } from './group.service';
+import { AllGroupsComponent } from './components/all-groups/all-groups.component';
+import { MyGroupsComponent } from './components/my-groups/my-groups.component';
+import { GroupHomeComponent } from './components/group-home/group-home.component';
 import { AddFlashcardPageComponent } from './components/add-flashcard-page/add-flashcard-page.component';
 import { AddFlashcardFormComponent } from './components/pieces/add-flashcard-form/add-flashcard-form.component';
 import { FlashcardPageComponent } from './components/flashcard-page/flashcard-page.component';
 import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/flashcard-wheel.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
     NavComponent,
     ProfileComponent,
     ProfileSidebarComponent,
@@ -54,12 +56,14 @@ import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/fla
     CreateGroupPageComponent,
     TableComponent,
     ProgressPageComponent,
+    ProgressPageComponent,
+    AllGroupsComponent,
+    MyGroupsComponent,
+    GroupHomeComponent,
     AddFlashcardPageComponent,
     AddFlashcardFormComponent,
     FlashcardPageComponent,
     FlashcardWheelComponent,
-    
-    
   ],
   imports: [
     BrowserModule,
@@ -75,8 +79,8 @@ import { FlashcardWheelComponent } from './components/pieces/flashcard-wheel/fla
     HttpModule,
   ],
   providers: [
-    // made change
     AuthService,
+    GroupService,
   ],
   bootstrap: [AppComponent]
 })

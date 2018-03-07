@@ -7,14 +7,15 @@ import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firesto
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap'
+import { User } from '../user'
 
-interface User {
-  uid: string;
-  email: string;
-  photoURL?: string;
-  displayName?: string;
-  favoriteColor?: string;
-}
+// interface User {
+//  uid: string;
+//  email: string;
+//  photoURL?: string;
+//  displayName?: string;
+//  favoriteColor?: string;
+//}
 
 
 @Injectable()
@@ -22,22 +23,24 @@ export class AuthService {
    things:string;
   user: Observable<User>;
 
-  constructor(private afAuth: AngularFireAuth,
-              private afs: AngularFirestore,
-              private router: Router) {
+  //userid: String;
 
-      //// Get auth data, then get firestore user document || null
-      this.user = this.afAuth.authState
-        .switchMap(user => {
-          if (user) {
-            return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
-          } else {
-            return Observable.of(null)
-          }
-        })
+  constructor(private afAuth: AngularFireAuth,
+    private afs: AngularFirestore,
+    private router: Router) {
+
+    //// Get auth data, then get firestore user document || null
+    this.user = this.afAuth.authState
+      .switchMap(user => {
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges()
+        } else {
+          return Observable.of(null)
+        }
+      })
   }
 
-/** Added after lunch email login **/
+  /** Added after lunch email login **/
   signInRegular(email, password) {
     const credential = firebase.auth.EmailAuthProvider.credential(email, password);
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password);
@@ -88,4 +91,5 @@ export class AuthService {
         this.router.navigate(['login']);
     });
   }
+
 }
