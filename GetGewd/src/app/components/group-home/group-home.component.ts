@@ -6,6 +6,7 @@ import { Group } from '../../group'
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../user';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-group-home',
@@ -19,7 +20,7 @@ export class GroupHomeComponent implements OnInit {
   private user: User;
   private uid: string;
 
-  constructor(private router: Router, private authService: AuthService, private groupService: GroupService) { }
+  constructor(private router: Router, private authService: AuthService, private groupService: GroupService,private http:HttpClient) { }
 
   goToAddFlashcards(){
     this.router.navigate(['addFlashcards'])
@@ -40,7 +41,11 @@ export class GroupHomeComponent implements OnInit {
       this.group = group
       console.log(this.group);
     });
-
+    var userObject ={
+      groupId:this.uriId,
+      leaderId:this.uid
+    }
+    this.http.post("http://localhost:8080/Project2/group/addUser",userObject).subscribe()
     // post request here to add user to group, if not a part of the group already
   }  
 }

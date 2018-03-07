@@ -18,6 +18,7 @@ export class FlashcardWheelComponent implements OnInit {
   private flashcards: Flashcard[];
   private user: User;
   private uid: string;
+  private tagName:string;
 
   constructor(private router: Router, private flashcardService: FlashcardService, private authService: AuthService, private httpClient: HttpClient) {
   }
@@ -76,6 +77,26 @@ export class FlashcardWheelComponent implements OnInit {
    document.getElementById("container").innerHTML =this.things[this.position].hint;
 
   } */
+  Learned(){
+    var thingObject = {
+      userId:this.uid,
+       //need to set current tag name
+      tagName:null,
+      isCorrect:true,
+    }
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
+  }
+  Learning(){
+    var thingObject = {
+      userId:this.uid,
+      //need to set current tag name 
+      tagName:null,
+      isCorrect:false,
+
+    }
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
+  }
+
 
   ngOnInit() {
     let uri: string = this.router.url;
@@ -93,7 +114,8 @@ export class FlashcardWheelComponent implements OnInit {
       console.log(this.uid);
     });
 
-    //this.Cards();
+    //this.Cards()
+
 
   }
 
