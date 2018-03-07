@@ -65,12 +65,15 @@ public class GroupController {
 		return new ResponseEntity<>(groupService.addGroup(new Group(groupName,groupDescription, userService.getUser(leaderId))), HttpStatus.OK);
 	}
 	@PostMapping("/addUser")
-	@RequestMapping(value="progress",method=RequestMethod.GET)
-	public ResponseEntity<GroupAddedUser> addUser(@RequestBody String jsonString){
+	@ResponseBody
+	public ResponseEntity<GroupAddedUser> addFlashcard(@RequestBody String jsonString){
 		JSONObject json = new JSONObject(jsonString);
 		int groupId = json.getInt("groupId");
-		String userId = json.getString("UserId");
-		return new ResponseEntity<>(groupService.addGroupUser(groupId, userId), HttpStatus.OK);
+		String answer = json.getString("answer");
+		String question = json.getString("question");
+		String hint = json.getString("hint");
+		String tagName = json.getString("tagName");
+		return new ResponseEntity<>(groupService.addGroupFlashcard(question,answer,hint,tagName, groupId)), HttpStatus.OK);
 	}
 	
 }

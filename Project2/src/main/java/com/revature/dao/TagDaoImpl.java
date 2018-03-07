@@ -59,5 +59,23 @@ public class TagDaoImpl implements TagDao{
 		s.close();
 		return tag;
 	}
+
+
+
+	@Override
+	public Tag getTag(String tagName) {
+		Session s = HibernateUtil.getSession();
+		Tag tag = null;
+		Query q = s.createQuery("from Tag");
+		List<Tag> items = q.list();
+		for(Tag t : items) {
+			if(t.getTagName().equals(tagName))
+			{
+				tag = t;
+			}
+		}
+		s.close();
+		return tag;
+	}
 }
 
