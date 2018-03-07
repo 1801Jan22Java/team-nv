@@ -21,7 +21,7 @@ const routes: Routes =[
   {path:'allgroups',component:AllGroupsComponent},
   {path:'mygroups',component:MyGroupsComponent},
   {path:'grouphome/:group.groupId',component:GroupHomeComponent},
-  {path:'addFlashcards', component:AddFlashcardPageComponent},
+  {path:'addFlashcards/:group.groupId', component:AddFlashcardPageComponent},
   {path: 'flashcards/:group.groupId', component: FlashcardPageComponent},
 ];
 @NgModule({

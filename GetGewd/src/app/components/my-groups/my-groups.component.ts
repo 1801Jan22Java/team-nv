@@ -15,20 +15,23 @@ export class MyGroupsComponent implements OnInit {
 
   private user: User;
   private groups: Group[];
+  private uid: string;
 
   constructor(private authService: AuthService, private groupService: GroupService) { }
 
   ngOnInit() {
     this.authService.user.subscribe((user: User) => {
-      this.user = user
-      console.log(this.user.uid);
-
-      // below method should be switched to this.user.uid as argument
-      this.groupService.getGroupsByUid("userTest1").subscribe((groups: Group[]) => {
-        this.groups = groups
-        console.log(this.groups);
-      });
+      this.user = user;
+      this.uid = this.user.uid;
+      console.log(this.uid);
     });
+
+    // below method should be switched to this.user.uid as argument
+    this.groupService.getGroupsByUid("userTest1").subscribe((groups: Group[]) => {
+      this.groups = groups
+      console.log(this.groups);
+    });
+    
   }
 
 }

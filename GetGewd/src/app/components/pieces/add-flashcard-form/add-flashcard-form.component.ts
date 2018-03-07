@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import{FormBuilder,FormGroup,Validators} from '@angular/forms';
-import {NgForm} from '@angular/forms';
-import{HttpClient} from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../../core/auth.service';
+import { User } from '../../../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-flashcard-form',
@@ -10,28 +12,32 @@ import { AuthService } from '../../../core/auth.service';
   styleUrls: ['./add-flashcard-form.component.css']
 })
 export class AddFlashcardFormComponent implements OnInit {
+  private uriId: number;  // same as groupId
+  private user: User;
+  private uid: string;
 
-  constructor(private http:HttpClient,private auth:AuthService) { }
+  constructor(private http: HttpClient, private auth: AuthService, private router: Router) { }
 
-  onSubmit(Form:NgForm){
+  onSubmit(Form: NgForm) {
     // need to post 
     console.log(Form.value);
-    var cardObject ={
-      userId:null,
-      question:Form.value.question,
-      answer:Form.value.answer,
-      hint:Form.value.hint,
-      tag:Form.value.tag,
-            
+    var cardObject = {
+      groupId: null,
+      question: Form.value.question,
+      answer: Form.value.answer,
+      hint: Form.value.hint,
+      tag: Form.value.tag,
+
     }
-    this.auth.user.subscribe(data =>{
-      cardObject.userId = data.uid;
-      this.http.post("http://localhost:8080/Project2/group/addFlashcard",cardObject).subscribe();
-    });
-   
+
+    cardObject.groupId = this.uriId;
+    this.http.post("http://localhost:8080/Project2/group/addFlashcard", cardObject).subscribe();
 
   }
   ngOnInit() {
+    let uri: string = this.router.url;
+    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
+    console.log(this.uriId);
   }
 
 }
