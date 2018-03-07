@@ -12,6 +12,7 @@ import com.revature.beans.*;
 import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.dao.ProgressDaoImpl;
+import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupAdded;
 import com.revature.messages.GroupMessage;
 import com.revature.messages.UserAdded;
@@ -52,16 +53,12 @@ public class GroupsService {
 	}
 	public Collection<Flashcard> getgroupPendingFlashcards(int groupId)
 	{
-		Session s = HibernateUtil.getSession();
 		Collection<Flashcard> flashcards = pfcdi.getPendingFlashcards(groupId);
-		s.close();
 		return flashcards;
 	}
-	public static void main(String[] args) {
-		
-			ProgressDaoImpl pdi = new ProgressDaoImpl();
-			System.out.println(pdi.getProgress(66, "userTest1"));
-	
+	public FlashcardAdded addGroupFlashcard(Flashcard f, int groupId) {
+		gdi.addFlashcard(f, groupId);
+		return new FlashcardAdded(f!=null);
 	}
 }
 

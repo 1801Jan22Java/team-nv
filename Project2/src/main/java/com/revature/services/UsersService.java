@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.revature.beans.Flashcard;
 import com.revature.beans.Group;
 import com.revature.beans.Progress;
+import com.revature.beans.Tag;
 import com.revature.beans.Users;
 import com.revature.dao.FlashcardDaoImpl;
 import com.revature.dao.ProgressDaoImpl;
@@ -57,5 +58,15 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	}
 	public Progress getProgress(int tagId, String userId) {
 		return pdi.getProgress(tagId, userId);
+	}
+	public boolean addTag(String tag) {
+		for(Tag t : tdi.getAllTags()) {
+			if(t.getTagName().equals(tag))
+			{
+				return false;
+			}
+		}
+		tdi.addTag(new Tag(tag));
+		return true;
 	}
 }

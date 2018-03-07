@@ -3,7 +3,7 @@ package com.revature.beans;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "TAG")
 public class Tag {
 	
 	public Tag() {
@@ -21,7 +21,7 @@ public class Tag {
 	@Column(name="TAG_ID")
 	private int id;
 	//The name is the actual string value of the tag, ie. fractions, biology, etc.
-	@Column(name="ANIMAL_NAME")
+	@Column(name="TAG_NAME")
 	private String tagName;
 	//Getters and setters
 	public int getId() {
