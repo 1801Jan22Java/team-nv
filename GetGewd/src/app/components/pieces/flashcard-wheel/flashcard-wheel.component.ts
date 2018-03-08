@@ -21,10 +21,10 @@ export class FlashcardWheelComponent implements OnInit {
   private hint: string;
   private answer: string;
   private tag: string;
-  private  thingObject = {
-    userId:this.uid,
-    tagName:this.tag,
-    isCorrect:true,
+  private thingObject = {
+    userId: this.uid,
+    tagName: this.tag,
+    isCorrect: true,
   }
 
 
@@ -37,11 +37,9 @@ export class FlashcardWheelComponent implements OnInit {
     this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
 
     // get uid
-    this.authService.user.subscribe((user: User) => {
-      this.user = user;
-      this.uid = this.user.uid;
-    
-    
+    this.uid = localStorage.getItem("uid");
+    console.log(this.uid);
+
     // get flashcards
     this.flashcardService.getFlashcardsByGroupId(this.uriId).subscribe((flashcards: Flashcard[]) => {
       this.flashcards = flashcards;
@@ -50,7 +48,6 @@ export class FlashcardWheelComponent implements OnInit {
       this.hint = this.flashcards[this.position].hint;
       this.answer = this.flashcards[this.position].answer;
     });
-  });
 
   }
 
@@ -65,24 +62,24 @@ export class FlashcardWheelComponent implements OnInit {
     this.hideHintAndAnswer();
     this.nextCard();
   }
-  
-  learned(){
-    this.thingObject.userId=this.uid,
-    this.thingObject.tagName=this.tag,
-    this.thingObject.isCorrect=true,
 
-    console.log("uid is "+this.uid);
+  learned() {
+    this.thingObject.userId = this.uid,
+      this.thingObject.tagName = this.tag,
+      this.thingObject.isCorrect = true,
+
+      console.log("uid is " + this.uid);
     console.log(this.tag);
-    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress',this.thingObject).subscribe();
+    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress', this.thingObject).subscribe();
   }
 
-  learning(){
-    this.thingObject.userId=this.uid,
-    this.thingObject.tagName=this.tag,
-    this.thingObject.isCorrect=false,
-    console.log(this.thingObject);
-    console.log("uid is "+this.uid);
-    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress',this.thingObject).subscribe();
+  learning() {
+    this.thingObject.userId = this.uid,
+      this.thingObject.tagName = this.tag,
+      this.thingObject.isCorrect = false,
+      console.log(this.thingObject);
+    console.log("uid is " + this.uid);
+    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress', this.thingObject).subscribe();
   }
 
   hideHintAndAnswer() {
@@ -93,7 +90,7 @@ export class FlashcardWheelComponent implements OnInit {
   showHint() {
     document.getElementById("hint").style.opacity = "1";
   }
-  
+
   showAnswer() {
     document.getElementById("answer").style.opacity = "1";
   }
@@ -122,5 +119,5 @@ export class FlashcardWheelComponent implements OnInit {
     this.hint = this.flashcards[this.position].hint;
     this.answer = this.flashcards[this.position].answer;
   }
-  
+
 }

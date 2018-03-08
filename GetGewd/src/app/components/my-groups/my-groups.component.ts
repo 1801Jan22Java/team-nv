@@ -14,24 +14,19 @@ import { Observable } from 'rxjs/Observable';
 export class MyGroupsComponent implements OnInit {
 
   user: User;
-  groups: Group[];
   uid: string;
+  groups: Group[];
 
   constructor(private authService: AuthService, private groupService: GroupService) { }
 
   ngOnInit() {
-    this.authService.user.subscribe((user: User) => {
-      this.user = user;
-      this.uid = this.user.uid;
-      console.log(this.uid);    // below method should be switched to this.user.uid as argument
-      this.groupService.getGroupsByUid(this.uid).subscribe((groups: Group[]) => {
-        this.groups = groups
-        //console.log(this.groups);
-      });
-
+    this.uid = localStorage.getItem("uid");
+    console.log(this.uid);
+    this.groupService.getGroupsByUid(this.uid).subscribe((groups: Group[]) => {
+      this.groups = groups
+      //console.log(this.groups);
     });
 
-    
   }
 
 }
