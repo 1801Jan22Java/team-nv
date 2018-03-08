@@ -1,0 +1,19 @@
+#profile_pic{
+    position: absolute;
+    height:45%;
+    width: 25%;
+    background-color: black;
+    left:45%;
+    top:18%;
+    border-radius: 50%;
+    background-image: url(../../../../assets/images/1.gif);
+    background-position: center;
+}
+#WelcomeTxt{
+    top:8%;
+    left:53%;
+    color: black;
+    position: absolute;
+
+
+}
