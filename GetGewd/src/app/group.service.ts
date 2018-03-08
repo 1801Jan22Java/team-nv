@@ -18,7 +18,7 @@ const httpOptions = {
 @Injectable()
 export class GroupService {
 
-  getAllGroupsURL = 'http://localhost:8080/Project2/group/all';
+  getAllGroupsURL = 'http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/all';
 
   constructor(private http: HttpClient) { }
 
@@ -31,10 +31,10 @@ export class GroupService {
   }
 
   getGroupsByUid(uid: String): Observable<Group[]> {
-    return this.http.get<Group[]>(`http://localhost:8080/Project2/user/group/${uid}`); 
+    return this.http.get<Group[]>(`http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/group/${uid}`); 
   }
 
   getGroupByGroupId(uriId: number): Observable<Group> {
-    return this.http.get<Group>(`http://localhost:8080/Project2/group/${uriId}`); 
+    return this.http.get<Group>(`http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/${uriId}`); 
   }
 }

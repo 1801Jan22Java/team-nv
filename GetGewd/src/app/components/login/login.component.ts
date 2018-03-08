@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.auth.googleLogin()
       .then((res) => {
         this.auth.user.subscribe(data => {
-          this.httpClient.post("http://localhost:8080/Project2/user/addUser", data.uid).subscribe();
+          this.httpClient.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/addUser", data.uid).subscribe();
 
         });
         this.router.navigate(['homepage']);
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
         this.auth.user.subscribe(data => {
-          this.httpClient.post("http://localhost:8080/Project2/user/addUser", data.uid).subscribe();
+          this.httpClient.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/addUser", data.uid).subscribe();
         })
       })
       .catch((err) => console.log('error: ' + err));

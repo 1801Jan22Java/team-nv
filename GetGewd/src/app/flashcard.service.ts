@@ -9,7 +9,7 @@ export class FlashcardService {
   constructor(private httpClient: HttpClient) { }
 
   getFlashcardsByGroupId(uriId: number): Observable<Flashcard[]> {
-    return this.httpClient.get<Flashcard[]>(`http://localhost:8080/Project2/group/flashcard/${uriId}`); 
+    return this.httpClient.get<Flashcard[]>(`http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/flashcard/${uriId}`); 
   }
   
 }

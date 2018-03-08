@@ -63,7 +63,7 @@ import { FlashcardService } from './flashcard.service';
     AddFlashcardPageComponent,
     AddFlashcardFormComponent,
     FlashcardPageComponent,
-    FlashcardWheelComponent,
+    FlashcardWheelComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +76,7 @@ import { FlashcardService } from './flashcard.service';
     AngularFireStorageModule,
     AngularFireDatabaseModule,    
     HttpClientModule,
-    HttpModule,
+    HttpModule
   ],
   providers: [
     AuthService,

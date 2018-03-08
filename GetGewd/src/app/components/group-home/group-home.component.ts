@@ -55,7 +55,7 @@ export class GroupHomeComponent implements OnInit {
 
 
       console.log(userObject);
-      this.http.post("http://localhost:8080/Project2/group/addUser", userObject).subscribe()
+      this.http.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/addUser", userObject).subscribe()
       // post request here to add user to group, if not a part of the group already
     });
 

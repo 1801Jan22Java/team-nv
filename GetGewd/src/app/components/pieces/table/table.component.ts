@@ -37,7 +37,7 @@ export class TableComponent implements OnInit {
   }
   ngOnInit() {
     this.auth.user.subscribe(data1 => {
-      this.httpClient.get(`http://localhost:8080/Project2/user/progress/${data1.uid}`).subscribe((data: any[]) => {
+      this.httpClient.get(`http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/progress/${data1.uid}`).subscribe((data: any[]) => {
         console.log(data);
         console.log(data1.uid)
 
