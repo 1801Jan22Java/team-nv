@@ -20,7 +20,7 @@ import com.revature.util.HibernateUtil;
 public class UsersDaoTest {
 
 	public static UsersDaoImpl userDao = new UsersDaoImpl();
-	
+	/*
 	@Test
 	public void addUserTest() {
 		userDao.addUser("test6");
@@ -44,5 +44,5 @@ public class UsersDaoTest {
 	public void getUserFlashcard() {
 		Collection<Flashcard>test = userDao.getUsersFlashcards("userTest1");
 		assertNotNull(test);
-	}
+	}*/
 }
