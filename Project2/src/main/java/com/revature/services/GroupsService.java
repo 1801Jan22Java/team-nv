@@ -54,9 +54,7 @@ public class GroupsService {
 	}
 	public FlashcardAdded addGroupFlashcard(String question,String answer,String hint,String tagName, int groupId) {
 		Tag tag = tdi.getTag(tagName);
-		System.out.println(tag);
 		if(tag == null) {
-			System.out.println(tag);
 			tag = new Tag(tagName);
 			tdi.addTag(tag);
 		}
