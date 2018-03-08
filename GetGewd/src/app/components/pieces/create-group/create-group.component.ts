@@ -29,7 +29,7 @@ export class CreateGroupComponent implements OnInit {
     this.auth.user.subscribe(data =>{
       groupObject.leaderId = data.uid;
       console.log(groupObject);
-      this.httpClient.post("http://localhost:8080/Project2/group/addGroup",groupObject).subscribe();
+      this.httpClient.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/addGroup",groupObject).subscribe();
     })
     this.router.navigate(["/homepage"]);
     

@@ -73,7 +73,7 @@ export class FlashcardWheelComponent implements OnInit {
 
     console.log("uid is "+this.uid);
     console.log(this.tag);
-    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',this.thingObject).subscribe();
+    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress',this.thingObject).subscribe();
   }
 
   learning(){
@@ -82,7 +82,7 @@ export class FlashcardWheelComponent implements OnInit {
     this.thingObject.isCorrect=false,
     console.log(this.thingObject);
     console.log("uid is "+this.uid);
-    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',this.thingObject).subscribe();
+    this.httpClient.post('http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/user/updateProgress',this.thingObject).subscribe();
   }
 
   hideHintAndAnswer() {
