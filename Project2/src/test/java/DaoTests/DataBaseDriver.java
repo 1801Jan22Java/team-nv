@@ -73,8 +73,8 @@ public class DataBaseDriver
 		s.persist(pfc5);
 		//Create Progresses
 		Progress p1 = new Progress(tag1, u1);
-		Progress p2 = new Progress(tag2, u2);
-		Progress p3 = new Progress(tag3, u3);
+		Progress p2 = new Progress(tag2, u1);
+		Progress p3 = new Progress(tag3, u1);
 		Progress p4 = new Progress(tag4, u4);
 		Progress p5 = new Progress(tag5, u5);
 		s.persist(p1);

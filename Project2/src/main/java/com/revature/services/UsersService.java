@@ -96,6 +96,10 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	}
 	public static void main(String[] args) {
 		UsersService us = new UsersService();
+		us.updateProgress("jokes", "userTest1", true);
+		us.updateProgress("jokes", "userTest1", true);
+		us.updateProgress("jokes", "userTest1", false);
+		us.updateProgress("fractions", "userTest1", true);
 		System.out.println(us.getUsersProgresses("userTest2"));
 	}
 }
