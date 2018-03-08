@@ -28,36 +28,28 @@ export class GroupHomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.user.subscribe((user: User) => {
-      this.user = user;
-      this.uid = this.user.uid;
-      // console.log(this.uid);
+    this.uid = localStorage.getItem("uid");
+    console.log(this.uid);
 
+    let uri: string = this.router.url;
+    this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
+    //console.log(this.uriId);
 
-      let uri: string = this.router.url;
-      this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
-      //console.log(this.uriId);
-
-      this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
-        this.group = group
-        this.group.groupLeader = this.leaderId;
-        //console.log(this.group);
-        // console.log(this.group);
-      });
-
-
-
-
-      var userObject = {
-        groupId: this.uriId,
-        userId: this.uid,
-      }
-
-
-      console.log(userObject);
-      this.http.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/addUser", userObject).subscribe()
-      // post request here to add user to group, if not a part of the group already
+    this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
+      this.group = group
+      this.group.groupLeader = this.leaderId;
+      //console.log(this.group);
+      // console.log(this.group);
     });
+
+    var userObject = {
+      groupId: this.uriId,
+      userId: this.uid,
+    }
+
+    console.log(userObject);
+    this.http.post("http://ec2-34-229-145-42.compute-1.amazonaws.com:8080/team-nv/Project2/group/addUser", userObject).subscribe()
+    // post request here to add user to group, if not a part of the group already
 
   }
 }
