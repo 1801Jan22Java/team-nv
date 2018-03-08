@@ -9,8 +9,8 @@ public class GroupMessage {
 		this.groupName = g.getGroupName();
 		this.groupDescription = g.getGroupDescription();
 		this.groupId = g.getId();
-		if(groupLeader != null){
-			this.groupLeader = g.getGroupLeader().toString();
+		if(g.getGroupLeader() != null){
+			this.groupLeader = g.getGroupLeader().getId();
 		}
 	}
 	private String groupName;
@@ -41,5 +41,10 @@ public class GroupMessage {
 	}
 	public void setGroupId(int groupId) {
 		this.groupId = groupId;
+	}
+	public static void main(String[] args) {
+		Group g = new Group("wat", "wat", "wat");
+		System.out.println(g.getGroupLeader().getId());
+		System.out.println(new GroupMessage(g).groupLeader);
 	}
 }

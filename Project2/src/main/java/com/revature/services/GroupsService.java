@@ -13,6 +13,7 @@ import com.revature.dao.GroupDaoImpl;
 import com.revature.dao.PendingFlashcardDaoImpl;
 import com.revature.dao.ProgressDaoImpl;
 import com.revature.dao.TagDaoImpl;
+import com.revature.dao.UsersDaoImpl;
 import com.revature.messages.FlashcardAdded;
 import com.revature.messages.GroupAdded;
 import com.revature.messages.GroupAddedUser;
@@ -23,9 +24,15 @@ import com.revature.util.HibernateUtil;
 @Service("groupService")
 public class GroupsService {
 	
+	static UsersDaoImpl udi = new UsersDaoImpl();
 	static TagDaoImpl tdi = new TagDaoImpl();
 	static GroupDaoImpl gdi = new GroupDaoImpl();
 	static PendingFlashcardDaoImpl pfcdi = new PendingFlashcardDaoImpl();
+	
+	public UserAdded addUser(int groupId, String userId) {
+		gdi.addGroupUser(groupId, userId);
+		return new UserAdded(true);
+	}
 	
 	public GroupAdded addGroup(Group g) {
 		gdi.addGroup(g); 
@@ -40,6 +47,7 @@ public class GroupsService {
 		return groupMessages;
 	}
 	public GroupMessage getGroupById(int groupId){
+		System.out.println(gdi.getGroupById(groupId).getGroupLeader());
 		return new GroupMessage(gdi.getGroupById(groupId));
 	}
 	public Collection<Flashcard> getgroupFlashcards(int groupId)
@@ -54,19 +62,29 @@ public class GroupsService {
 	}
 	public FlashcardAdded addGroupFlashcard(String question,String answer,String hint,String tagName, int groupId) {
 		Tag tag = tdi.getTag(tagName);
+		if(tag == null) {
+			tag = new Tag(tagName);
+			tdi.addTag(tag);
+		}
 		Flashcard f = new Flashcard(question, answer, hint, tag);
 		gdi.addFlashcard(f, groupId);
 		return new FlashcardAdded(f!=null);
 	}
 	public GroupAddedUser addGroupUser(int groupId, String userId) {	
-		for(Users u: gdi.getGroupsUsers(groupId))
+		Collection<Group> groupsUsers = udi.getUsersGroups(userId);
+		System.out.println(groupsUsers);
+		for(Group g: groupsUsers)
 			{
-				if(u.getId()==userId)
+				if(g.getId()==groupId)
 				{
 					return new GroupAddedUser(false);
 				}
 			}
 		return new GroupAddedUser(gdi.addGroupUser(groupId, userId));
+	}
+	public static void main(String[] args) {
+		GroupsService gs = new GroupsService();
+		gs.addGroupUser(30, "userTest5");
 	}
 }
 

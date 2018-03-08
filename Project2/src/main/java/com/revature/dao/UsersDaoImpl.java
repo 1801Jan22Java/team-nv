@@ -23,8 +23,14 @@ public class UsersDaoImpl implements UsersDao{
 	public void addUser(String userId) {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
-		Users u = new Users(userId);
-		s.save(u);
+		Users testUser = (Users)s.get(Users.class, userId);
+		if(testUser != null){
+			
+		}
+		else {
+			Users u = new Users(userId);
+			s.save(u);
+		}
 		tx.commit();
 		s.close();
 	}
@@ -58,4 +64,8 @@ public class UsersDaoImpl implements UsersDao{
 		s.close();
 		return stuff;
 	} 
+	public static void main(String[] args) {
+		UsersDaoImpl udi = new UsersDaoImpl();
+		udi.addUser("temp6");
+	}
 }

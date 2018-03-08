@@ -1,4 +1,4 @@
-package com.revature.services;
+	package com.revature.services;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -91,7 +91,14 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	}
 	public boolean updateProgress(String tagName, String userId, boolean isCorrect) {
 		Progress progress = pdi.getProgress(tagName, userId);
-		pdi.updateProgress(progress, isCorrect);
+		System.out.println(progress);
+		if(progress == null) {
+			pdi.addProgress(new Progress(tdi.getTag(tagName), udi.getUser(userId)));
+		}
+		else {
+			pdi.updateProgress(progress, isCorrect);
+		}
+
 		return false;
 	}
 	public static void main(String[] args) {

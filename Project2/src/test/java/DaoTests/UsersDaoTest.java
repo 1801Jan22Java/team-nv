@@ -18,17 +18,15 @@ import com.revature.dao.UsersDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class UsersDaoTest {
-	/*
+
 	public static UsersDaoImpl userDao = new UsersDaoImpl();
-	
+	/*
 	@Test
 	public void addUserTest() {
-		Users u = new Users("temp6");
-		userDao.addUser(u);
-		//DataBaseDriver.create();
+		userDao.addUser("test6");
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
-		s.load(Users.class, "temp6");
+		Users u = (Users)s.get(Users.class, "temp6");
 		String temp = u.getId();
 		tx.commit();
 		s.close();
@@ -36,9 +34,8 @@ public class UsersDaoTest {
 	}
 	@Test
 	public void getUserTest() {
-		//DataBaseDriver.create();
 		//userDao.addUser(new Users("temp"));
-		Users temp = userDao.getUser("temp66");
+		Users temp = userDao.getUser("temp6");
 		//DataBaseDriver.destroy();
 		//System.out.println(temp.getId());
 		assertNotNull(temp);
