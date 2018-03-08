@@ -41,7 +41,7 @@ export class GroupHomeComponent implements OnInit {
     this.groupService.getGroupByGroupId(this.uriId).subscribe((group: Group) => {
       this.group = group
       this.group.groupLeader = this.leaderId;
-      console.log(this.group.groupLeader);
+      //console.log(this.group);
      // console.log(this.group);
     });
 

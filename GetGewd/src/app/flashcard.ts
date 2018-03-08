@@ -1,9 +1,12 @@
 export interface Flashcard {
     flashcardId: number;
-    Question: String;
-    Answer: String;
-    groupLeader: String;
-    tag: String;
+    Question: string;
+    Answer: string;
+    groupLeader: string;
+    tag: {
+		tagId:string,
+		tagName:string
+	}
 
 /*    @Column(name="FLASHCARD_ID")
 	private int flashcardId;
