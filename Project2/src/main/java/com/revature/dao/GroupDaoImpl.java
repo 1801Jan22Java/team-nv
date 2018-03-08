@@ -99,7 +99,6 @@ public class GroupDaoImpl implements GroupDao{
 		Group group = (Group)s.get(Group.class, groupId);
 		group.getFlashcards().add(f);
 		System.out.println(group.getFlashcards());
-		s.save(group);
 		tx.commit();
 		s.close();
 	}

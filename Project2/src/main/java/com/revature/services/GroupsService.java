@@ -54,6 +54,12 @@ public class GroupsService {
 	}
 	public FlashcardAdded addGroupFlashcard(String question,String answer,String hint,String tagName, int groupId) {
 		Tag tag = tdi.getTag(tagName);
+		System.out.println(tag);
+		if(tag == null) {
+			System.out.println(tag);
+			tag = new Tag(tagName);
+			tdi.addTag(tag);
+		}
 		Flashcard f = new Flashcard(question, answer, hint, tag);
 		gdi.addFlashcard(f, groupId);
 		return new FlashcardAdded(f!=null);
@@ -67,6 +73,10 @@ public class GroupsService {
 				}
 			}
 		return new GroupAddedUser(gdi.addGroupUser(groupId, userId));
+	}
+	public static void main(String[] args) {
+		GroupsService gs = new GroupsService();
+		gs.addGroupFlashcard("what even is?", "It be what it do", "Black spaceman", "blackspace man", 11);
 	}
 }
 
