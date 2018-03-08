@@ -15,29 +15,33 @@ export class AddFlashcardFormComponent implements OnInit {
   private uriId: number;  // same as groupId
   private user: User;
   private uid: string;
+  
 
   constructor(private http: HttpClient, private auth: AuthService, private router: Router) { }
 
   onSubmit(Form: NgForm) {
     // need to post 
-    console.log(Form.value);
     var cardObject = {
-      groupId: null,
+      groupId: this.uriId,
       question: Form.value.question,
       answer: Form.value.answer,
       hint: Form.value.hint,
-      tag: Form.value.tag,
+      //might need to change so only existing tags are possible
+      tagName: Form.value.tag,
 
     }
 
+
+
     cardObject.groupId = this.uriId;
-    this.http.post("http://localhost:8080/Project2/group/addFlashcard", cardObject).subscribe();
+   console.log(cardObject);
+    this.http.post('http://localhost:8080/Project2/group/addFlashcard', cardObject).subscribe();
 
   }
   ngOnInit() {
     let uri: string = this.router.url;
     this.uriId = parseInt(uri.substring(uri.lastIndexOf('/') + 1));
-    console.log(this.uriId);
+    
   }
 
 }

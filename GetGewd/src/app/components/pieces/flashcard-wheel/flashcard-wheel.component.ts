@@ -22,6 +22,7 @@ export class FlashcardWheelComponent implements OnInit {
   private answer: string;
   private tag: string;
 
+
   constructor(private router: Router, private flashcardService: FlashcardService, private authService: AuthService, private httpClient: HttpClient) {
   }
 
@@ -48,15 +49,34 @@ export class FlashcardWheelComponent implements OnInit {
   }
 
   onYes() {
-    // post request here
+    this.learned();
     this.hideHintAndAnswer();
     this.nextCard();
   }
 
   onNo() {
-    // post request here
+    this.learning();
     this.hideHintAndAnswer();
     this.nextCard();
+  }
+  
+  learned(){
+    let thingObject = {
+      userId:this.uid,
+      tagName:this.tag,
+      isCorrect:true,
+    }
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
+  }
+
+  learning(){
+    let thingObject = {
+      userId:this.uid,
+      tagName:this.tag,
+      isCorrect:false,
+
+    }
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
   }
 
   hideHintAndAnswer() {
@@ -67,7 +87,7 @@ export class FlashcardWheelComponent implements OnInit {
   showHint() {
     document.getElementById("hint").style.opacity = "1";
   }
-
+  
   showAnswer() {
     document.getElementById("answer").style.opacity = "1";
   }
