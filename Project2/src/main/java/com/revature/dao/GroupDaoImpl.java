@@ -58,8 +58,10 @@ public class GroupDaoImpl implements GroupDao{
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
 		Users leader = (Users)s.get(Users.class,g.getGroupLeader().getId());
-		s.save(g);
-		leader.getGroups().add(g);
+		if(s.get(Group.class, g.getId())==null){
+			s.persist(g);
+			leader.getGroups().add(g);
+		}
 		s.save(leader);
 		tx.commit();
 		s.close();
@@ -122,6 +124,7 @@ public class GroupDaoImpl implements GroupDao{
 	public static void main(String[] args) {
 		GroupDaoImpl gdi = new GroupDaoImpl();
 		Group g = new Group("testing Group", "Group what is for testing","userTest5");
+		System.out.println(g.getId());
 		gdi.addGroup(g);
 	}
 }
