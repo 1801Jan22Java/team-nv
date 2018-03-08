@@ -13,7 +13,7 @@ import com.revature.dao.TagDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class TagDaoTest {
-	
+	/*
 	static TagDaoImpl tdi = new TagDaoImpl();
 	
 	@Test
@@ -27,5 +27,5 @@ public class TagDaoTest {
 			}
 		}
 		assertNotNull(temp);
-	}
+	}*/
 }

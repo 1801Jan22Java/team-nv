@@ -19,8 +19,9 @@ public class ProgressDaoTest {
 	static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	
 	//@Test
+	/*
 	public void addProgressTest() {
 		pdi.addProgress(new Progress(tdi.getTag(101),udi.getUser("userTest2")));
 		//assertNotNull(temp);
-	}
+	}*/
 }
