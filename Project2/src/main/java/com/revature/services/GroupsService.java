@@ -40,6 +40,7 @@ public class GroupsService {
 		return groupMessages;
 	}
 	public GroupMessage getGroupById(int groupId){
+		System.out.println(gdi.getGroupById(groupId).getGroupLeader());
 		return new GroupMessage(gdi.getGroupById(groupId));
 	}
 	public Collection<Flashcard> getgroupFlashcards(int groupId)
