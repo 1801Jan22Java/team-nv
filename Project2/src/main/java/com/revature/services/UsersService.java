@@ -103,7 +103,6 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	}
 	public static void main(String[] args) {
 		UsersService us = new UsersService();
-		us.updateProgress("fraction", "userTest3", true);
 		System.out.println(us.getUsersProgresses("userTest2"));
 	}
 }
