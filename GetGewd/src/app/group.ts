@@ -1,8 +1,8 @@
 export interface Group {
     groupId: number;
-    groupName: String;
-    groupDescription: String;
-    groupLeader: String;
+    groupName: string;
+    groupDescription: string;
+    groupLeader: string;
     //flashcards: String;
 }
 
