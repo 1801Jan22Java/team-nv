@@ -47,8 +47,13 @@ public class GroupsService {
 		return groupMessages;
 	}
 	public GroupMessage getGroupById(int groupId){
-		System.out.println(gdi.getGroupById(groupId).getGroupLeader());
-		return new GroupMessage(gdi.getGroupById(groupId));
+		if(gdi.getGroupById(groupId)!=null)
+		{
+			return new GroupMessage(gdi.getGroupById(groupId));
+		}
+		else {
+			return null;
+		}
 	}
 	public Collection<Flashcard> getgroupFlashcards(int groupId)
 	{
