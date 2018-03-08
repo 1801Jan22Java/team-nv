@@ -1,3 +1,8 @@
+// added thurs
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
+import { AppComponent } from './app.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
@@ -26,8 +31,15 @@ const routes: Routes =[
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    // Added thurs
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
+  declarations: [
+    AppComponent,        
+  ],
+  bootstrap: [AppComponent],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
