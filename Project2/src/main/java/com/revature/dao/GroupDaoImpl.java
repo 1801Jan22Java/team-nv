@@ -112,6 +112,12 @@ public class GroupDaoImpl implements GroupDao{
 		Users newUser = (Users)s.get(Users.class, userId);
 		Group group = (Group)s.get(Group.class, groupId);
 		if(newUser != null && group!= null) {
+			for(Group g: newUser.getGroups()) {
+				if(g.getId()==groupId)
+				{
+					return false;
+				}
+			}
 			newUser.getGroups().add(group);
 			tx.commit();
 			s.close();
