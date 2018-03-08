@@ -21,6 +21,19 @@ export class NavComponent implements OnInit {
     this.route.navigate(["/addFlashcards"]);
 
   }
+  goToProgress(){
+    console.log("got here");
+    this.route.navigate(['progress']);
+  }
+
+  goToCreateGroup(){
+   this.route.navigate(['createGroup']);
+  }
+
+  goToAllGroup(){
+   this.route.navigate(['allgroups']);
+  }
+
  /* 
   travelFlashcard(){
     this.route.navigate(["/flashcards"]);

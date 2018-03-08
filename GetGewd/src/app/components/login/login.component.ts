@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
-import{HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -16,35 +16,36 @@ export class LoginComponent implements OnInit {
     email: '',
     password: ''
   };
-  
-  constructor(public auth: AuthService, private router: Router,private httpClient:HttpClient) { 
+
+  constructor(public auth: AuthService, private router: Router, private httpClient: HttpClient) {
   }
 
   signInWithGoogle() {
-  	this.auth.googleLogin()
-  	.then((res) => {
-      this.auth.user.subscribe(data => {this.httpClient.post("http://localhost:8080/Project2/user/addUser",data.uid).subscribe();
-    
-    });
-      this.router.navigate(['homepage']);
-      
-  	})
-  	.catch((err) => console.log(err)); 
+    this.auth.googleLogin()
+      .then((res) => {
+        this.auth.user.subscribe(data => {
+          this.httpClient.post("http://localhost:8080/Project2/user/addUser", data.uid).subscribe();
+
+        });
+        this.router.navigate(['homepage']);
+
+      })
+      .catch((err) => console.log(err));
   }
 
   signInWithEmail() {
     this.auth.signInRegular(this.user.email, this.user.password)
       .then((res) => {
-        this.auth.user.subscribe(data =>{
-          this.httpClient.post("http://localhost:8080/Project2/user/addUser",data.uid).subscribe();
+        this.auth.user.subscribe(data => {
+          this.httpClient.post("http://localhost:8080/Project2/user/addUser", data.uid).subscribe();
         })
       })
       .catch((err) => console.log('error: ' + err));
-     
-      this.router.navigate(['homepage']);
+
+    this.router.navigate(['homepage']);
   }
 
-   ngOnInit() {
+  ngOnInit() {
   }
 
 }

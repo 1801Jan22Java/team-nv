@@ -13,14 +13,16 @@ import { Observable } from 'rxjs/Observable';
 export class AllGroupsComponent implements OnInit {
 
   private groups: Group[];
+  private name:string;
 
   constructor(private authService: AuthService, private groupService: GroupService) { }
-
+ 
   ngOnInit() {
     this.groupService.getAllGroups().subscribe((groups: Group[]) => {
       this.groups = groups
       console.log(this.groups);
     });
+
   }
 
 }

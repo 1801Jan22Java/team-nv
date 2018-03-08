@@ -21,6 +21,11 @@ export class FlashcardWheelComponent implements OnInit {
   private hint: string;
   private answer: string;
   private tag: string;
+  private  thingObject = {
+    userId:this.uid,
+    tagName:this.tag,
+    isCorrect:true,
+  }
 
 
   constructor(private router: Router, private flashcardService: FlashcardService, private authService: AuthService, private httpClient: HttpClient) {
@@ -35,8 +40,8 @@ export class FlashcardWheelComponent implements OnInit {
     this.authService.user.subscribe((user: User) => {
       this.user = user;
       this.uid = this.user.uid;
-    });
-
+    
+    
     // get flashcards
     this.flashcardService.getFlashcardsByGroupId(this.uriId).subscribe((flashcards: Flashcard[]) => {
       this.flashcards = flashcards;
@@ -45,6 +50,7 @@ export class FlashcardWheelComponent implements OnInit {
       this.hint = this.flashcards[this.position].hint;
       this.answer = this.flashcards[this.position].answer;
     });
+  });
 
   }
 
@@ -61,22 +67,22 @@ export class FlashcardWheelComponent implements OnInit {
   }
   
   learned(){
-    let thingObject = {
-      userId:this.uid,
-      tagName:this.tag,
-      isCorrect:true,
-    }
-    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
+    this.thingObject.userId=this.uid,
+    this.thingObject.tagName=this.tag,
+    this.thingObject.isCorrect=true,
+
+    console.log("uid is "+this.uid);
+    console.log(this.tag);
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',this.thingObject).subscribe();
   }
 
   learning(){
-    let thingObject = {
-      userId:this.uid,
-      tagName:this.tag,
-      isCorrect:false,
-
-    }
-    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',thingObject).subscribe();
+    this.thingObject.userId=this.uid,
+    this.thingObject.tagName=this.tag,
+    this.thingObject.isCorrect=false,
+    console.log(this.thingObject);
+    console.log("uid is "+this.uid);
+    this.httpClient.post('http://localhost:8080/Project2/user/updateProgress',this.thingObject).subscribe();
   }
 
   hideHintAndAnswer() {
@@ -93,7 +99,7 @@ export class FlashcardWheelComponent implements OnInit {
   }
 
   nextCard() {
-    console.log("flashcards is " + this.flashcards.length)
+    //console.log("flashcards is " + this.flashcards.length)
     if (this.position === this.flashcards.length - 1) {
       this.position = 0;
     } else {
