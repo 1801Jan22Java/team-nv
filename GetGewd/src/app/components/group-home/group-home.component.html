@@ -4,5 +4,5 @@
 <p>Group Description: {{group.groupDescription}}</p> 
 <p>Group Leader: {{group.groupLeader}}</p>
 <a [routerLink]="['/flashcards', group.groupId]" routerLinkActive="active">Study Flashcards</a>
-<a (click)='goToAddFlashcards()' routerLink="addFlashcards" routerLinkActive="active">Create Flashcards</a>
+<a (click)='goToAddFlashcards()'>Create Flashcards</a>
 </div>
