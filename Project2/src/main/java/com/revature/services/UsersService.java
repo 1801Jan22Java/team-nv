@@ -51,9 +51,15 @@ static ProgressDaoImpl pdi = new ProgressDaoImpl();
 	public Collection<GroupMessage> getUsersGroups(String userId)
 	{
 		ArrayList<GroupMessage> usersGroups = new ArrayList<GroupMessage>();
+		ArrayList<Group> groups = new ArrayList<Group>();
 		for(Group g :udi.getUsersGroups(userId))
 		{
-			usersGroups.add(new GroupMessage(g));
+			GroupMessage gm = new GroupMessage(g);
+			if(!groups.contains(g))
+			{
+				groups.add(g);
+				usersGroups.add(gm);
+			}
 		}
 		return usersGroups;
 	}

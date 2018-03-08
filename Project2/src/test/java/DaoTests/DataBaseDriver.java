@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import com.revature.beans.*;
+import com.revature.dao.UsersDaoImpl;
 import com.revature.util.HibernateUtil;
 
 public class DataBaseDriver 
@@ -120,7 +121,7 @@ public class DataBaseDriver
 		s.close();
 	}
 	public static void main(String[] args) {
-		create();
-		//destroy();
+		UsersDaoImpl udi = new UsersDaoImpl();
+		System.out.println(udi.getUsersGroups("userTest1"));
 	}
 }
