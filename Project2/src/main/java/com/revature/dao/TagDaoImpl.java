@@ -27,7 +27,7 @@ public class TagDaoImpl implements TagDao{
 	public void addTag(Tag t) {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
-		s.save(t);
+		s.persist(t);
 		tx.commit();
 		s.close();
 		
@@ -65,6 +65,7 @@ public class TagDaoImpl implements TagDao{
 	@Override
 	public Tag getTag(String tagName) {
 		Session s = HibernateUtil.getSession();
+		Transaction tx = s.beginTransaction();
 		Tag tag = null;
 		Query q = s.createQuery("from Tag");
 		List<Tag> items = q.list();
@@ -78,6 +79,7 @@ public class TagDaoImpl implements TagDao{
 			tag = new Tag(tagName);
 			s.persist(tag);
 		}
+		tx.commit();
 		s.close();
 		return tag;
 	}
