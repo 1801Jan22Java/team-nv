@@ -19,13 +19,13 @@ import com.revature.util.HibernateUtil;
 public class GroupDaoTest {
 	
 	public static GroupDaoImpl groupDao = new GroupDaoImpl();
-	public static DataBaseDriver driver = new DataBaseDriver();
 	//@Test
 	public void addGroupTest() {
 		Session s = HibernateUtil.getSession();
 		Transaction tx = s.beginTransaction();
 		Group g = new Group("Group name","Desctiption",(Users)s.get(Users.class, "temp1"));
 		groupDao.addGroup(g);
+		s.persist(g);
 		int groupId = g.getId();
 		Group temp = (Group)s.get(Group.class, groupId);
 		assertNotNull(temp);

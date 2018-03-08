@@ -27,6 +27,11 @@ public class GroupsService {
 	static GroupDaoImpl gdi = new GroupDaoImpl();
 	static PendingFlashcardDaoImpl pfcdi = new PendingFlashcardDaoImpl();
 	
+	public UserAdded addUser(int groupId, String userId) {
+		gdi.addGroupUser(groupId, userId);
+		return new UserAdded(true);
+	}
+	
 	public GroupAdded addGroup(Group g) {
 		gdi.addGroup(g); 
 		return new GroupAdded(gdi.getGroupById(g.getId())!=null);
@@ -75,7 +80,7 @@ public class GroupsService {
 	}
 	public static void main(String[] args) {
 		GroupsService gs = new GroupsService();
-		gs.addGroupFlashcard("what even is?", "It be what it do", "Black spaceman", "blackspace man", 11);
+		gs.addUser(19, "userTest3");
 	}
 }
 

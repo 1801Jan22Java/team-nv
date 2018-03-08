@@ -37,6 +37,7 @@ public class ProgressDaoImpl implements ProgressDao{
 
 	public void addProgress(Progress p) {
 		Session s = HibernateUtil.getSession();
+		System.out.println(p);
 		Transaction tx = s.beginTransaction();
 		s.save(p);
 		tx.commit();
