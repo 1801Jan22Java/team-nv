@@ -81,7 +81,7 @@ import { FlashcardService } from './flashcard.service';
   providers: [
     AuthService,
     GroupService,
-    FlashcardService,
+    FlashcardService
   ],
   bootstrap: [AppComponent]
 })

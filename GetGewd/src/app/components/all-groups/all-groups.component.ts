@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../core/auth.service';
-import { GroupService } from '../../group.service'
-import { Group } from '../../group'
+import { GroupService } from '../../group.service';
+import { Group } from '../../group';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
@@ -12,17 +12,27 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AllGroupsComponent implements OnInit {
 
-  private groups: Group[];
-  private name:string;
+  // private group: Group[];
+  // private name:string;
+  groups: Group[];
+  name: string;
 
   constructor(private authService: AuthService, private groupService: GroupService) { }
  
   ngOnInit() {
-    this.groupService.getAllGroups().subscribe((groups: Group[]) => {
-      this.groups = groups
-      console.log(this.groups);
-    });
 
+    this.getAllGroups();
+    
+/*    this.groupService.getAllGroups().subscribe((groups: Group[]) => {
+      this.group = groups
+      console.log(this.group);
+    });
+*/
+  }
+
+  getAllGroups(): void {
+    this.groupService.getAllGroups()
+      .subscribe(groups => this.groups = groups);
   }
 
 }

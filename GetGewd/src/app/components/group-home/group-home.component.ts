@@ -15,11 +15,11 @@ import { Http } from '@angular/http';
 })
 export class GroupHomeComponent implements OnInit {
 
-  private uriId: number;  // same as groupId
-  private group: Group;
-  private user: User;
-  private uid: string;
-  private leaderId: string;
+  uriId: number;  // same as groupId
+  group: Group;
+  user: User;
+  uid: string;
+  leaderId: string;
 
   constructor(private router: Router, private authService: AuthService, private groupService: GroupService, private http: HttpClient) { }
 

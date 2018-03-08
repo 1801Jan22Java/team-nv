@@ -14,7 +14,7 @@ import { User } from '../../../user';
 export class FlashcardWheelComponent implements OnInit {
   private position: number = 0;
   private uriId: number;  // same as groupId
-  private flashcards: Flashcard[];
+  flashcards: Flashcard[];
   private user: User;
   private uid: string;
   private question: string;
