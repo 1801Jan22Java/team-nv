@@ -13,9 +13,9 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MyGroupsComponent implements OnInit {
 
-  private user: User;
-  private groups: Group[];
-  private uid: string;
+  user: User;
+  groups: Group[];
+  uid: string;
 
   constructor(private authService: AuthService, private groupService: GroupService) { }
 
