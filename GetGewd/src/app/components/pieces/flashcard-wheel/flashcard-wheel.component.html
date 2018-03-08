@@ -1,0 +1,29 @@
+<div id="container" *ngIf="flashcards">
+  <div id="tag" *ngIf="tag">
+    <p>Tag: {{tag}}</p>
+  </div>
+
+  <div id="question" *ngIf="question">
+    <p>Question: {{question}}</p>
+  </div>
+
+  <div>
+      <button (click)="showHint()" id="showHint">Show Hint</button>
+  </div>
+
+  <div id="hint" *ngIf="hint" style="opacity: 0"> 
+    <p>Hint: {{hint}}</p>
+  </div>
+
+  <div>
+      <button (click)="showAnswer()" id="showAnswer">Show Answer</button>
+  </div>
+
+  <div id="answer" *ngIf="answer" style="opacity: 0">
+    <p>Answer: {{answer}}</p>
+    <p>Did you get the answer correct?</p>
+    <button (click)="onYes()" id="onYes">Yes</button>
+    <button (click)="onNo()" id="onNo">No</button>
+  </div>
+
+</div>

@@ -1,0 +1,17 @@
+<app-nav></app-nav>
+<table *ngIf="groups">
+  <caption>Join An Existing Group!</caption>
+  <tr>
+    <th>Group Name</th>
+    <th>Group Description</th>
+    <th>Group Leader</th>
+    <th>Join</th>
+  </tr>
+  <tr *ngFor="let group of groups">
+      <td>{{group.groupName}}</td>
+      <td>{{group.groupDescription}}</td> 
+      <td>{{group.groupLeader}}</td>
+      <td><a [routerLink]="['/grouphome', group.groupId]" routerLinkActive="active">Join Group!</a></td>
+
+  </tr>
+</table>
