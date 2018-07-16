@@ -29,7 +29,7 @@
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
 		<property name="url" value="jdbc:oracle:thin:@prestonharmsdb-demo.cppjkpgpfa6x.us-east-1.rds.amazonaws.com:1521:ORCL"/>
 		<property name="username" value="HarmsP"/>
-		<property name="password" value="Footba1!6378"/>
+		<property name="password" value="wordPass1"/>
 	</bean>
 	
 	<!-- session factory  -->
